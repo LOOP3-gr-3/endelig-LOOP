@@ -5,7 +5,7 @@ if (!isset($_SESSION)) session_start();
 
     <style>
     /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-    .row.content {height: 1500px}
+    .row.content {height: 1500px} /* ved ikke om class for row påvirker hele hjemme siden - måske skab en anden class efterfølgende :) knus fra Mette */
     
     /* Set gray background color and 100% height */
     .sidenav {
@@ -18,7 +18,7 @@ if (!isset($_SESSION)) session_start();
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
-        padding: 15px;
+        padding: 15px; /* Ved ikke om denne skaber problemer, da header og footer ikke er rigtig på denne side, men er god nok på omos.php */
       }
       .row.content {height: auto;} 
     }
