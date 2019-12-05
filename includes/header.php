@@ -1,5 +1,5 @@
 <?php
-require_once('conn.php'); /*OPDATER DENNE!!! */
+require_once('conn.php');
 if (!isset($_SESSION)) session_start();
 if(isset($_SESSION['user_id'])) {
 	$menu = '
@@ -26,6 +26,7 @@ if(isset($_SESSION['user_id'])) {
 	
 }
 ?>
+<!-- Dette gør siden dynamisk, så navbaren bliver ændret alt efter om brugerne er logget ind eller ej-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,29 +47,27 @@ if(isset($_SESSION['user_id'])) {
     <!-- Custom styles for this template -->
     <link href="css/heroic-features.css" rel="stylesheet">
     <!-- js bootstrap -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <!-- Navigation -->
+<div class="container-fluid">
     <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="index.php">Mutuum</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <?php echo $menu; ?>
-    </div>
-  </div>
-</nav>
-    
-    </body>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Mutuum</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <?php echo $menu; ?>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+
 </html>

@@ -2,17 +2,106 @@
 .wascentrer {
     text-align: center;
 }
+
 .wastekstboks {
-    border-color: darkorange!important;
+    border-color: darkorange !important;
     background: white;
     border-radius: 2em;
 }
-.wastekstboks p{
+
+.wastekstboks p {
     color: darkblue;
 }
-.wastekstboks h2{
+
+.wastekstboks h2 {
     color: darkblue;
 }
+
 h3 {
     color: darkblue;
+}
+
+
+/*------------------- FOOTER ------------------------------------METTE*/
+
+.clearermed {
+    clear: both;
+    width: 100%;
+    height: 25px;
+}
+
+.visible-xs-block, .visible-xs-inline, 
+.visible-xs-inline-block {
+    display: none !important
+}
+
+@media(max-width:767px) {
+    .visible-xs {
+        display: block !important
+    }
+}
+
+@media(max-width:767px) {
+    .visible-xs-block {
+        display: block !important
+    }
+}
+
+@media(max-width:767px) {
+    .visible-xs-inline {
+        display: inline !important;
+    }
+}
+
+@media(max-width:767px) {
+    .visible-xs-inline-block {
+        display: inline-block !important;
+    }
+}
+
+.no-margin-top {
+    margin-top: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.footer ul li a {
+    font-size: 14px;
+    color: #555;
+    text-decoration: underline;
+}
+
+.vertical-align-35 {
+    margin-top: 35%;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+    align-self: center;
+}
+
+.vertical-align.content-centered > [class*=" col-"] {
+    justify-content: center;
+    text-align: center;
+}
+
+.topfooter {
+    position: static;
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+}
+
+.topfooter {
+    border-color: transparent
+}
+
+.clearermed{
+    clear:both;
+    width:100%;
+    height:25px;
 }
