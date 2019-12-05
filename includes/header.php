@@ -1,7 +1,31 @@
 <?php
-require_once('conn.php');
+require_once('conn.php'); /*OPDATER DENNE!!! */
+if (!isset($_SESSION)) session_start();
+if(isset($_SESSION['user_id'])) {
+	$menu = '
+				    <ul class="nav navbar-nav">
+                    <li class="active"><a href="minside.php">Min Side</a></li>
+                    <li><a href="opretkontrakt.php">Opret kontrakt</a></li>
+                    <li><a href="raadgivning.php">Økonomisk rådgivning</a></li>
+                    <li><a href="index.php">Forside</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span>Log ud</a></li>
+                    </ul>';
+} else {
+	$menu = '
+                    <ul class="nav navbar-nav">
+                    <li class="active"><a href="Forside.php">Forside</a></li>
+                    <li><a href="omos.php">Om Mutuum</a></li>
+                    <li><a href="handelsbetingelser.php">Handelsbetingelser</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    <li><a href="logind.php"><span class="glyphicon glyphicon-log-in"></span> Log Ind</a></li>
+                    <li><a href="opretbruger.php"><span class="glyphicon glyphicon-user"></span> Opret bruger</a></li>
+                    </ul>';
+	
+}
 ?>
-<!--skaber connection til databasen-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,63 +48,27 @@ require_once('conn.php');
     <!-- js bootstrap -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="maja-index.php">MUTUUM</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                <?php
-            if (isset($_SESSION['user_id'])){
-                echo '<li class="nav-item">
-                        <a class="nav-link" href="maja-index.php"> Forside <span class="sr-only">(current)</span> 
-                        </a> 
-                    </li>';
-                echo '<li class="nav-item">
-                        <a class="nav-link" href="minside.php">Min side
-                        </a>
-                    </li>';
-                echo '<li class="nav-item">
-                        <a class="nav-link" href="om_os.php">Om os
-                        </a>
-                    </li>';
-                echo '<li class="nav-item">
-                        <a class="nav-link" href="logout.php">Log ud
-                        </a>
-                    </li>';
-            }
-              
-                else { 
-                echo
-                 '<li class="nav-item">
-                        <a class="nav-link" href="maja-index.php"> Forside <span class="sr-only">(current)</span> 
-                        </a> 
-                    </li>';
-                echo '<li class="nav-item">
-                        <a class="nav-link" href="login.php">Log ind
-                        </a>
-                    </li>';
-                echo '<li class="nav-item">
-                        <a class="nav-link" href="opretbruger.php">Opret bruger
-                        </a>
-                    </li>';
-                echo '<li class="nav-item">
-                        <a class="nav-link" href="om_os.php">Om os
-                        </a>
-                    </li>';
-                }
-         ?>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.php">Mutuum</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <?php echo $menu; ?>
+    </div>
+  </div>
+</nav>
+    
+    </body>
+</html>
