@@ -1,5 +1,7 @@
 <?php
 require_once("includes/header.php");
+if (!isset($_SESSION)) session_start();
+if (isset($_SESSION['user_id']));
 ?>
 
     <style>
@@ -33,7 +35,7 @@ require_once("includes/header.php");
       <h2>DIN PROFIL</h2>
         <img src="images/logo">
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#section1">Dine oplysninger</a></li>
+        <li class="dinprofildineoplysninger"><a href="#section1">Dine oplysninger</a></li>
         <li>Navn...</li>
         <li>Efternavn...</li>
         <li>Email...</li>
