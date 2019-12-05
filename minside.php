@@ -38,12 +38,12 @@ if (!isset($_SESSION)) session_start();
       </ul><br>
     
     </div>
-    </div>
+   
 
     
 <div class="row mineaftaler text-center">
-      <div class="col-sm-4">
-        <h2>Kontrakter klar til dig</h2>
+      <div class="col-sm-3">
+        <h2>Kontrakter til dig</h2>
         <!-- Container (Pricing Section) -->
 <div class="container-fluid">
   <div class="row">
@@ -63,10 +63,9 @@ if (!isset($_SESSION)) session_start();
           <h4>per month</h4>
           <button class="btn btn-lg">Vis kontrakt</button>
         </div>
-      </div>      
-    </div>     
+      </div>        
 
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         <h2>Kontrakter du har oprettet</h2>
       <div class="panel panel-default text-center">
         <div class="panel-heading">
@@ -87,7 +86,7 @@ if (!isset($_SESSION)) session_start();
       </div>      
     </div>        
           
-        <div class="col-sm-4">
+        <div class="col-sm-3">
         <h2>Historik</h2>
       <div class="panel panel-default text-center">
         <div class="panel-heading">
@@ -112,6 +111,8 @@ if (!isset($_SESSION)) session_start();
         
     </div>
 </div>
+</div>
+</div>  
 
 <?php
 require_once("includes/footer.php");
