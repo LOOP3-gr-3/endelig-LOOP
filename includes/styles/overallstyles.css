@@ -1,0 +1,9 @@
+/*---------------------OM OS -------------------------------------*/
+.wascentrer {
+    text-align: center;
+}
+.wastekstboks {
+    border-color: forestgreen !important;
+    background: white;
+    border-radius: 2em;
+}
