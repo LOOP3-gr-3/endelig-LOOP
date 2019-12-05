@@ -39,8 +39,25 @@ if (!isset($_SESSION)) session_start();
     
     </div>
 
-    <div class="col-sm-9">
-      
+        
+    <div class="row mineaftaler text-center">
+      <div class="col-sm-3">
+        <h2>Kontrakter klar til dig</h2>
+        
+    </div>
+        <div class="col-sm-3">
+        <h2>Kontrakter du har oprettet</h2>
+        
+    </div>
+        <div class="col-sm-3">
+        <h2>Historik</h2>
+        
+    </div>
+        <div class="col-sm-3">
+    <p>rtgiorjgr</p>
+        
+    </div>
+        
     </div>
     </div>
 </div>
