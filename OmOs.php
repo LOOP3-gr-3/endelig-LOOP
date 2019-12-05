@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link href="includes/styles/overallstyles.css" type="text/css" rel="stylesheet">
-</head>
-<body>
+<?php
+require_once("includes/header.php");
+if (!isset($_SESSION)) session_start();
+?>
   
 <div class="container text-center"> 
 <hr>
@@ -35,5 +30,7 @@
   </div>
 </div><br>
 
-</body>
-</html>
+<?php
+require_once("includes/footer.php");
+?>
+

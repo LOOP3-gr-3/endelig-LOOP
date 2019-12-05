@@ -51,7 +51,7 @@ if(isset($_SESSION['user_id'])) {
 
 <body>
     <!-- Navigation -->
-<div class="container-fluid">
+
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -67,7 +67,7 @@ if(isset($_SESSION['user_id'])) {
             </div>
         </div>
     </nav>
-</div>
+
 </body>
 
 </html>
