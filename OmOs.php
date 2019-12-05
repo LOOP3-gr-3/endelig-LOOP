@@ -4,7 +4,7 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    
+<link href="includes/styles/overallstyles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
   
@@ -14,10 +14,13 @@
 <hr>
 <div class="col-sm-4">
       <div class="well wastekstboks">
-       <p><strong>MUTUUM startede på baggrund af et ønske fra Morten Refsgaard, Jens Eriksen og Sander Dyrvig om at hjælpe dem, der havde brug for lidt ekstra penge til indskud til diverse efter nødssituationer - men også ønsket om at gøre det lettere for to bekendte at låne penge til hinanden og samtidig sikre, at den økonomiske situation ikke kommer mellem dem vha. af en juridisk kontrakt, der skal holde begge parter ansvarlige for aftalen. Efterfølgende er hele designet, altså forretningmodellen og det videre koncept udarbejdet af en gruppe 3. semester studerende fra Aarhus Universitet.</strong></p>
+       <p><strong>MUTUUM</strong> startede på baggrund af et ønske fra Morten Refsgaard, Jens Eriksen og Sander Dyrvig om at hjælpe dem, der havde brug for lidt ekstra penge til indskud til diverse efter nødssituationer - men også ønsket om at gøre det lettere for to bekendte at låne penge til hinanden og samtidig sikre, at den økonomiske situation ikke kommer mellem dem vha. af en juridisk kontrakt, der skal holde begge parter ansvarlige for aftalen. Efterfølgende er hele designet, altså forretningmodellen og det videre koncept udarbejdet af en gruppe 3. semester studerende fra Aarhus Universitet.</p>
       </div>
       <div class="well wastekstboks">
-       <p>Some text..</p>
+       <h2><strong>Hvorfor vælge os?</strong></h2> <br> <p> Enkelte, overskuelige og juridiskbindende kontrakter<br><br></p>
+        <p>Slip for at sende en reminder eller komme i uønskede situationer med nære relationer<br><br></p>
+        <p>Kontrakter der tilgodeser både låntager og långiver<br><br></p>
+        <p>Du sætter selv reglerne for dine penge</p>
       </div>
     </div>
   <div class="row wascentrer">

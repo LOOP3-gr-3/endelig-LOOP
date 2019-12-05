@@ -3,7 +3,13 @@
     text-align: center;
 }
 .wastekstboks {
-    border-color: forestgreen !important;
+    border-color: darkorange!important;
     background: white;
     border-radius: 2em;
+}
+.wastekstboks p{
+    color: darkblue;
+}
+.wastekstboks h2{
+    color: darkblue;
 }
