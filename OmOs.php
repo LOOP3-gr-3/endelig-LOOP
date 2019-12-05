@@ -1,14 +1,3 @@
-<?php
-    $page = ('Om MUTUUM');
-    require_once('includes/header.php');
-   /* if (!isset($_SESSION)) session_start();
-    if(!isset($_SESSION['user_id'])) {
-        echo '<script>alert("Du er ikke logget ind på MUTUUM - log ind her, eller opret en bruger og få gratis adgang til platformen!");';
-        echo 'window.location.href="login.php";';
-        echo '</script>';
-        die(); /*Her bliver brugeren dirigeret til login, hvis de ikke er logget ind */
-}
-?>
 <div class="site-highlights">
 <hr>
   <h1><strong>HVEM ER VI?</strong></h1>
@@ -46,6 +35,3 @@
     </div>
   </div>
 </div>
-<?php
-require_once('includes/footer.php');
-?>
