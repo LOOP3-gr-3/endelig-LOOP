@@ -20,7 +20,7 @@ if(isset($_SESSION['user_id'])) {
                     <li><a href="handelsbetingelser.php">Handelsbetingelser</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                    <li><a href="logind.php"><span class="glyphicon glyphicon-log-in"></span> Log Ind</a></li>
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Log Ind</a></li>
                     <li><a href="opretbruger.php"><span class="glyphicon glyphicon-user"></span> Opret bruger</a></li>
                     </ul>';
 	
