@@ -55,10 +55,10 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
     <button class="btn btn-light" type="submit">Log Ind</button>
     <br>
     <br>
-    <p>Er du ikke registreret som bruger endnu? Tryk her:</p><a href="opretbruger.php" class="btn btn-secondary" role="button" aria-pressed="true">Opret Bruger</a>
+    <p>Er du ikke registreret som bruger endnu? Tryk her:</p><button href="opretbruger.php" class="btn btn-light" role="button" aria-pressed="true">Opret Bruger</button>
 </form>
 <br>
-</div>
+</div>  
 
 
 
