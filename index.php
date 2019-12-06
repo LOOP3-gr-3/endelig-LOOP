@@ -6,7 +6,7 @@ require_once("includes/header.php");
 <style>
 h1 {
     text-align: center;
-    color:darkorange;
+    color:darkblue;
     }   
 .blaabaggrundforside {
         background-color: whitesmoke;
@@ -16,7 +16,7 @@ h1 {
     margin-top: 3em;
     }
 #logopaaforsiden {
-        width: 40%;
+        max-width: 100;
         height: auto;
     }
 </style>
@@ -26,29 +26,25 @@ h1 {
 <div class="container text-left">    
   
   <div class="row blaabaggrundforside">
-       <div class="col-sm-2 col-lg-2 ">
-           <img src="images/nytlogo.png" id="logopaaforsiden">
-        </div>
-        <div class="col-sm-8 col-lg-10">
-            <p id="kundettepblå">MUTUUM har fokus på at låne sikkert og mellem relationer med klare aftaler gennem juridiskbindende kontrakter. Der er mulighed for at få rådgivning til din økonomiske situation og låne samt udlåne til den du ønsker, så længe begge parter er bruger på mutuum.dk</p>
-           
-        </div>           
+       <div class="col-sm-12 col-lg-12 ">
+           <img src="images/forsidebillede.png" id="logopaaforsiden">
+        </div>         
       </div> <br>
-      
+
     <div class="col-sm-4">
-      <div class="well">
+      <div>
        <p>Some text..</p>
       </div>
-      <div class="well">
+      <div>
        <p>Some text..</p>
       </div>
     
   </div>
 </div><br>
 
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
-
 </body>
 </html>
+
+<?php
+require_once("includes/footer.php");
+?>
