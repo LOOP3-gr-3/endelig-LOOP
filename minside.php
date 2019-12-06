@@ -66,7 +66,7 @@ if (!isset($_SESSION)) session_start();
     <hr><h1>HISTORIK</h1><hr>
     </div>
     
-    <div class="col-sm-12 col-lg-6">
+    <div class="col-sm-12 col-lg-5">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
                     <h3>Dato</h3>
@@ -79,7 +79,7 @@ if (!isset($_SESSION)) session_start();
                 </div>
             </div>      
     </div>
-    <div class="col-sm-12 col-lg-6">
+    <div class="col-sm-12 col-lg-5">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
                     <h3>Dato</h3>
