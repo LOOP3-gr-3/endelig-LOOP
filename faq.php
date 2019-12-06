@@ -4,6 +4,9 @@ require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
 ?>
 
+
+<!--Nedenstående kode er implementere fra en template fra Bootstrap. Der er foretaget rettelser mhp. tekst og indhold.-->
+
 <div class="container">
     <br />
     <br />
@@ -38,8 +41,7 @@ if (!isset($_SESSION)) session_start();
             </div>
             <div id="collapseTen" class="panel-collapse collapse">
                 <div class="panel-body">
-                    A lot of the content of the site has been submitted by the community. Whether it is a commercial element/template/theme 
-                    or a free one, you are encouraged to contribute. All credits are published along with the resources. 
+                    Skulle det ske at du havner i den uheldige situation hvor du glemmer dit password, så kan du på login-siden trykke på knappen "Glemt password" og få tilsendt et nyt via din tilknyttede email adresse.
                 </div>
             </div>
         </div>
@@ -65,25 +67,26 @@ if (!isset($_SESSION)) session_start();
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Any registed user, who presents a work, which is genuine and appealing, can post it on <strong>PrepBootstrap</strong>.
+                    På mutuum lader vi lånet blive bestemt af långiveren. Det betyder altså, at du må låne ud til <strong>hvem som helst!</strong>
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Bestemmer jeg selv renten og bindingsperioden på mit udlån?</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Bestemmer jeg selv renten og løbetiden på mit udlån?</a>
                 </h4>
             </div>
             <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
-                    The steps involved in this process are really simple. All you need to do is:
+                    Når du først er i gang med, at oprette en kontrakt vil du blive spurgt om hvad denne skal indeholde. Nogle af de ting du <strong>skal</strong> udfylde er bl.a.
+                    <hr>
                     <ul>
-                        <li>Register an account</li>
-                        <li>Activate your account</li>
-                        <li>Go to the <strong>Themes</strong> section and upload your theme</li>
-                        <li>The next step is the approval step, which usually takes about 72 hours.</li>
+                        <li>Rente</li>
+                        <li>Bindingsperiode</li>
+                        <li>Løbetid</li>
                     </ul>
+                    Der er selvfølgelig stillet nogle min. og maks. grænser for hvor langt disse kan strækkes over, men i mellem disse bestemmer du helt selv.
                 </div>
             </div>
         </div>
@@ -95,7 +98,7 @@ if (!isset($_SESSION)) session_start();
             </div>
             <div id="collapseFive" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Here, at <strong>PrepBootstrap</strong>, we offer a great, 70% rate for each seller, regardless of any restrictions, such as volume, date of entry, etc.
+                   Hvert lån har forskellige renter og løbetider tilknyttet. Det betyder også at et eventuelt afkast vil variere fra lån til lån. Når du opretter en kontrakt kan du via en hjælpefunktion udregne det afkast der vil være ifm. tilbagebetalingen af dit lån.
                     <br />
                 </div>
             </div>
@@ -108,11 +111,12 @@ if (!isset($_SESSION)) session_start();
             </div>
             <div id="collapseSix" class="panel-collapse collapse">
                 <div class="panel-body">
-                    There are a number of reasons why you should join us:
+                    Der er en række af forskellige årsager hvorfor du skal bruge Mutuum: 
+                <hr>
                     <ul>
-                        <li>A great 70% flat rate for your items.</li>
-                        <li>Fast response/approval times. Many sites take weeks to process a theme or template. And if it gets rejected, there is another iteration. We have aliminated this, and made the process very fast. It only takes up to 72 hours for a template/theme to get reviewed.</li>
-                        <li>We are not an exclusive marketplace. This means that you can sell your items on <strong>PrepBootstrap</strong>, as well as on any other marketplate, and thus increase your earning potential.</li>
+                        <li>Sikkerheden er i top og du får et lån direkte mellem långiver og låntager uden en mellemmand eller bank.</li>
+                        <li>Hurtig respons tid. Mange banker kan tage uger om, at fastlå hvorvidt et lån skal gennemføres eller ej. Hos Mutuum er du sikret penge på din konto efter 5 min.</li>
+                        <li>Du har muligheden for, at sætte sanktioner ifm. din kontrakt. I det her tilfælde menes der kontraktbrud, hvor långiveren f.eks. kan hæve rente eller sende lånet til inkasso.</li>
                     </ul>
                 </div>
             </div>
@@ -127,10 +131,7 @@ if (!isset($_SESSION)) session_start();
             </div>
             <div id="collapseFour" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Buying a theme on <strong>PrepBootstrap</strong> is really simple. Each theme has a live preview. 
-                    Once you have selected a theme or template, which is to your liking, you can quickly and securely pay via Paypal.
-                    <br />
-                    Once the transaction is complete, you gain full access to the purchased product. 
+                   For at tage et lån skal du først modtage en anmodning fra en ven eller relation. Anmodninger vil du modtage over den email som er tilknyttet Mutuum. Her har du så muligheden for, at gå ind og acceptere og underskrive det lån som den pågældende person har sendt til dig. 
                 </div>
             </div>
         </div>
@@ -142,7 +143,15 @@ if (!isset($_SESSION)) session_start();
             </div>
             <div id="collapseSeven" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Each item in <strong>PrepBootstrap</strong> is maintained to its latest version. This ensures its smooth operation.
+                    Såfremt du ikke lever op til tilbagebetalingen af dit lån kan dette have forskellige konsekvenser alt afhængig af hvilke kontraktbrug långiveren har valgt under oprettelsen af kontrakten. Dette kan være konsekvenser såsom; 
+                    <hr>
+                    <ul>
+                        <li>Lånt kan sende til inddrivelse hos inkasso</li>
+                        <li>Renten på dit lån kan blive hævet</li>
+                        <li>Din rating på Mutuum vil falde</li>
+                    <br>
+                    Vi anbefaler altid vores kunder til, at betale deres lån tilbage til den aftalte tid. Derfor er det også vigtigt, at man gør sig dissse overvejelser inden man skriver under på en aftale. 
+                    </ul>
                 </div>
             </div>
         </div>
@@ -153,34 +162,13 @@ if (!isset($_SESSION)) session_start();
     .faqHeader {
         font-size: 27px;
         margin: 20px;
+    
     }
 
-    .panel-heading [data-toggle="collapse"]:after {
-        font-family: 'Glyphicons Halflings';
-        content: "e072"; /* "play" icon */
-        float: right;
-        color: #F58723;
-        font-size: 18px;
-        line-height: 22px;
-        /* rotate "play" icon from > (right arrow) to down arrow */
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-    }
-
-    .panel-heading [data-toggle="collapse"].collapsed:after {
-        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-        color: #454444;
-    }
 </style>
 
 <?php
 require_once("includes/footer.php");
 ?>
+
+
