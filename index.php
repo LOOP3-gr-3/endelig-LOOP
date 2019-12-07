@@ -59,7 +59,7 @@ if (!isset($_SESSION)) session_start();
 <!-- Container (Portfolio Section) -->
 <div id="portfolio" class="container-fluid text-center">
   <div style="text-align:center">
-    <hr><h1><i><strong><i>HJÆLP DINE NÆRMESTE ELLER FJERNESTE</i></strong></i></h1>
+    <hr><h2><i><strong><i>HJÆLP DINE NÆRMESTE ELLER FJERNESTE</i></strong></i></h2>
     <hr>
     </div>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
