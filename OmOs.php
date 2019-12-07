@@ -61,23 +61,24 @@ require_once("includes/header.php");
  </div>
 </div>
    
-<div class="container text-center">    
+<div class="container text-center">
   <h2>Hvem er vi?</h2><br>
   <div class="row">
     <div class="col-sm-4">
-      <img src="images/Morten.jpg" class="img-responsive" style="width:100%" alt="Image">
+      <img src="images/Morten.jpg" style="width:90%" alt="Image">
       <p>Morten Refsgaard</p>
     </div>
+    <br>
     <div class="col-sm-4"> 
-      <img src="images/logo.png" class="img-responsive" style="width:100%" alt="Image">
+      <img src="images/gruppeen.PNG" style="width:100%" alt="Image">
       <p>Teamet - Aarhus Universitet</p>    
     </div>
     <div class="col-sm-4">
       <div class="well wasfarve">
-       <p>Uddannelse: Cand. Oecon. fra Århus Universitet <br> Erhvervserfaring: <br> Bankpartner, Selvstændig finansiel rådgiver (14-19)<br> Compliance og risikoansvarlig, Skjern Bank (12-13) <br> Stedfortrædende kreditchef, Skjern Bank (10-11) Erhvervsrådgiver, Sydbank (06-10)</p>
+       <p><strong>Morten Refsgaard</strong> <br> Uddannelse: Cand. Oecon. fra Århus Universitet <br> Erhvervserfaring: <br> Bankpartner, Selvstændig finansiel rådgiver (14-19)<br> Compliance og risikoansvarlig, Skjern Bank (12-13) <br> Stedfortrædende kreditchef, Skjern Bank (10-11) Erhvervsrådgiver, Sydbank (06-10)</p>
       </div>
       <div class="well wasfarve">
-       <p>Lasse Hvisthule <br> Maja Pallesen <br> Mette Weyergang <br> Mikkel Holt <br> Wasfia Hashemi <br> <br> Business Development studerende på 3. semester</p>
+       <p> <strong>Teamet</strong> <br> Lasse Hvisthule <br> Maja Pallesen <br> Mette Weyergang <br> Mikkel Holt <br> Wasfia Hashemi <br> <br> Business Development studerende på 3. semester</p>
       </div>
     </div>
   </div>
