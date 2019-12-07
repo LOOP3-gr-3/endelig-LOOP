@@ -24,8 +24,17 @@ if (!isset($_SESSION)) session_start();
     background: white;
     border-radius: 2em;
       }
+      .wasfarve p{
+          color: dimgray;
+      }
 .wasfarve1 {
+          color: dimgray;
+      }
+      h2 {
           color: darkblue;
+      }
+      .wastekstboks p{
+         color: dimgray;
       }
   </style>
     
@@ -94,6 +103,10 @@ if (!isset($_SESSION)) session_start();
 <br>
     </div>
   </div>
+<div style="text-align:cente" class="wastekstboks">
+    <h2><strong><i>VÆK MED ALT DET BESVÆRLIGE</i></strong></h2>
+    <p> <strong>Med Mutuum kan du investere eller låne fra bare 100 kroner. Det er dine penge, så du bestemmer hvad og hvordan de skal bruges. Med Mutuum kan du løbende se gode bud og dermed tilpasse den til dine ønsker og behov. Mutuum passer på dine penge, så de er i sikre hænder.</strong></p>
+</div>
 </div><br>
     
 <div class="container">    
