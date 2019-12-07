@@ -93,7 +93,7 @@ if (!isset($_SESSION)) session_start();
   <div class="row">
     <div class="col-sm-4 wasfarve1">
 <br>
-      <img src="images/loock.PNG" style="width:60%" alt="Image">
+      <div> <img src="images/loock.PNG" style="width:60%" alt="Image"></div>
       <p><strong>Lån sikkert med nemID. Nem og hurtig ansøgning. Bliv godkendt samme dag, pengene udbetales direkte til din konto</strong></p>
     </div>
     <div class="col-sm-4 wasfarve1">
@@ -116,7 +116,7 @@ if (!isset($_SESSION)) session_start();
     <h2><strong><i>VÆK MED ALT DET BESVÆRLIGE</i></strong></h2>
     <p> <strong>Med Mutuum kan du investere eller låne fra bare 100 kroner. Det er dine penge, så du bestemmer hvad og hvordan de skal bruges. Med Mutuum kan du løbende se gode bud og dermed tilpasse den til dine ønsker og behov. Mutuum passer på dine penge, så de er i sikre hænder.</strong></p>
 </div>
-</div><br>
+</div><br> <br>
     
 <div class="container wasbokserne"> 
 <div style="text-align:center" class="wastekstboks">
