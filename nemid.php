@@ -25,7 +25,7 @@ require_once("includes/header.php");
 </body>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <button id="xwknap" type="submit" class="btn btn-light" id="logmag">Næste</button>
-            <p>Tryk næste for at have underskrevet kontrakten</p>
+            <h3>Tryk næste for at underskrive kontrakten</h3>
 
 
 
