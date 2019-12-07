@@ -10,16 +10,21 @@ require_once("includes/header.php");
     background-size:cover; 
     }
 
-@media only screen and (max-width 375px) {
-    background-image: url(images/nemID_iphone.PNG);
+@media(max-width: 375px) {
+    #nemIDfake {
+    background-image:url(images/nemID_iphone.PNG);
     background-color: whitesmoke;
     background-repeat: no-repeat;
-    background-size:cover; 
+    background-size:inherit;
     }
+    }
+
 </style>
 
-<body id="nemIDfake">   
+<body id="nemIDfake"> 
 </body>
+<button id="xwknap" type="submit" class="btn btn-light" id="logmag">Næste</button>
+            <p>Tryk næste for at have underskrevet kontrakten</p>
 
 
 
