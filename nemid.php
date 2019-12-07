@@ -1,5 +1,5 @@
 <?php
-$page = ('NemID underskriv');
+$page = ('nemID');
 require_once("includes/header.php");
 ?>
 <style>
@@ -7,7 +7,7 @@ require_once("includes/header.php");
     background-image: url(images/nemID1.PNG);
     background-color: whitesmoke;
     background-repeat: no-repeat;
-    background-size:auto; 
+    background-size:inherit; 
     }
 </style>
 
