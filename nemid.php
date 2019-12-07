@@ -7,12 +7,13 @@ require_once("includes/header.php");
     background-image: url(images/nemID1.PNG);
     background-color: whitesmoke;
     background-repeat: no-repeat;
-    background-size:inherit; 
+    background-size:cover; 
     }
+
+@media only screen and (max-width 375px)
 </style>
 
 <body id="nemIDfake">   
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    
 </body>
 
 
