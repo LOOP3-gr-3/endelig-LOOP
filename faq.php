@@ -11,7 +11,7 @@ if (!isset($_SESSION)) session_start();
     <br />
     <br />
     <br />
-
+<div class="faqHeader" style="text-align:center">FAQ</div>
     <div class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         Hvis du ikke finder svaret på dine spørgsmål herinde, så er du velkommen til at kontakte os via mobil eller email.  
