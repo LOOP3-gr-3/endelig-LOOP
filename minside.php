@@ -3,10 +3,14 @@ $page = ('Din side');
 require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
 ?>
-
+<style>
+    .minprofilpaaminside {
+        background-color: whitesmoke;
+    }
+</style>
 
 <div class="rox majaminprofil">
-    <div class="col-sm-12 col-lg-4">
+    <div class="col-sm-12 col-lg-4 minprofilpaaminside">
         <hr><h1>MIN PROFIL</h1><hr>
         <?php
             $user_id = $_SESSION['user_id'];
@@ -22,6 +26,7 @@ if (!isset($_SESSION)) session_start();
                         }
         mysqli_close($con);   
         ?>
+        <br><br><br><br><br><br><br><br>
     </div>
       <!-- Mine aftaler sektionen -->
     <div class="col-sm-12 col-lg-8">
