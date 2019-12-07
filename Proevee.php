@@ -5,14 +5,11 @@ if (!isset($_SESSION)) session_start();
 ?>
   <style>
   .wasoverskrift {
-    background-color: darkblue;
-    color: #fff;
+    background-color: darkorange;
+    color: white;
   }
   .bg-grey {
     background-color: #f6f6f6;
-  }
-  .logo {
-    font-size: 10em;
   }
   @media screen {
     .waslogo {
@@ -40,10 +37,12 @@ if (!isset($_SESSION)) session_start();
     <img src="images/logo.png" style="width:70%" alt="Image">
 </div>
 </div>
-
+<br>
 <!-- Container (Services Section) -->
 <div class="container-fluid text-center">
+    <hr>
   <h2>Hvem er vi?</h2>
+    
   <div class="row">
     <div class="col-sm-4 waslogo">
       <img src="images/Morten.jpg" style="width:50%" alt="Image">
@@ -57,8 +56,8 @@ if (!isset($_SESSION)) session_start();
       <p>Lasse Hvisthule <br> Maja Pallesen <br> Mette Weyergang <br> Mikkel Holt <br> Wasfia Hashemi <br> Business Development studerende på 3. semester</p>
     </div>
     <div class="col-sm-4 waslogo">
-      <span class="glyphicon glyphicon-lock"></span>
-      <h4>JOB DONE</h4>
+      <img src="images/universitet.PNG" style="width:50%" alt="Image">
+      <h4>Aarhus Universitet</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
   </div>
