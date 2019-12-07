@@ -29,7 +29,7 @@ h3 {
     width: 100%;
     height: 25px;
 }
-
+/* Dette er bootstrap*/
 .visible-xs-block, .visible-xs-inline, 
 .visible-xs-inline-block {
     display: none !important
@@ -58,21 +58,21 @@ h3 {
         display: inline-block !important;
     }
 }
-
+/* Dette fjerner margin i toppen */
 .no-margin-top {
     margin-top: 0 !important;
 }
-
+/* Dette gør at der ikke er nogen margin */
 .no-margin {
     margin: 0 !important;
 }
 
 .footer ul li a {
-    font-size: 14px;
+    font-size: 0.8em;
     color: #555;
     text-decoration: underline;
 }
-
+/* class vertical-align gør at teksten vil rykke med efter hvordan columns i BS bliver vist*/
 .vertical-align-35 {
     margin-top: 35%;
 }
@@ -95,7 +95,7 @@ h3 {
     border-width: 5px 5px 0;
     border-top-color: #000;
 }
-
+/*Dette gør border farven gennemsigtig*/
 .topfooter {
     border-color: transparent
 }
