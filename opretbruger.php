@@ -1,9 +1,7 @@
 <?php
 $page = ('Opret bruger');
 require_once("includes/header.php");
-if (!isset($_SESSION)) session_destroy();
-                                                /*Hvis ikke brugeren er logget ind i forvejen, vil koden herunder afvikles*/
-else { 
+
 if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail']) && isset($_POST['password1']) && isset($_POST['telefon'])) {
 	$fornavn = get_post($con, 'fornavn');
 	$efternavn = get_post($con, 'efternavn');
@@ -60,7 +58,7 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
         die();
     }
 }
-}
+
 ?>
 <div class="container">
 <!-- Her er formen som skal udfyldes. Fieldset tagget er fordi denne gruppe af data er relaterede. Legend tagget er overskrift for fireldset tagget -->

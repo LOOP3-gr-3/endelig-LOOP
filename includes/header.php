@@ -15,7 +15,7 @@ if(isset($_SESSION['user_id'])) {
 } else {
 	$menu = '
                     <ul class="nav navbar-nav">
-                    <li class="active"><a href="Forside.php">Forside</a></li>
+                    <li class="active"><a href="index.php">Forside</a></li>
                     <li><a href="omos.php">Om Mutuum</a></li>
                     <li><a href="handelsbetingelser.php">Handelsbetingelser</a></li>
                     </ul>
