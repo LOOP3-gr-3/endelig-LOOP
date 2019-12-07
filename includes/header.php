@@ -9,7 +9,7 @@ if(isset($_SESSION['user_id'])) {
                     <li><a href="index.php">Forside</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span>Log ud</a></li>
+                    <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Log ud</a></li>
                     </ul>';
 } else {
 	$menu = '
