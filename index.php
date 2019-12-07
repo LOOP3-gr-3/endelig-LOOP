@@ -13,42 +13,42 @@ if (!isset($_SESSION)) session_start();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
-  <style>
-.carousel-inner img {
+<style>
+    .carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
       min-height:200px;
     }
-.wasfarve {
+    .wasfarve {
     border-color: darkorange;
     background: white;
-    border-radius: 2em;
+    border-radius: 3em;
     }
-.wasfarve p{
+    .wasfarve p{
           color: dimgray;
     }
-.wasfarve1 {
+    .wasfarve1 {
           color: dimgray;
     }
-h2 {
+    h2 {
           color: darkblue;
     }
-.wastekstboks p{
+    .wastekstboks p{
          color: dimgray;
     }
-h3 {
+    h3 {
           color: dimgray;
     }
-.waskasser {
+    .waskasser {
           color: dimgray;
     }
-.wasbokse {
+    .wasbokse {
           border-radius: 8em;
     }
-  </style>
-    
-</head>
-<body>
+    .wasbokserne {
+          width: 80%;
+      }
+</style>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -118,7 +118,7 @@ h3 {
 </div>
 </div><br>
     
-<div class="container"> 
+<div class="container wasbokserne"> 
 <div style="text-align:center" class="wastekstboks">
     <h3><strong>Så let kommer du i gang</strong></h3>
 </div>
