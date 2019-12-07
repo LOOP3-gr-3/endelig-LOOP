@@ -1,4 +1,4 @@
-<footer class="navbar-fixed-bottom container-fluid">
+<footer class="navbar-static-bottom container-fluid">
     <!-- Her bliver footer fastgjort til bunden af viewporten -->
         <hr class="topfooter no-margin-top" /> <!-- Dette skaber horisontal linjen på footer - / gør at den skaber en mere, når footeren er foldet ud -->
         <div class="row">

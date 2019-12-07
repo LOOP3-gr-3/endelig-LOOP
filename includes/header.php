@@ -1,6 +1,5 @@
 <?php
 require_once('conn.php');
-if (!isset($_SESSION)) session_start();
 if(isset($_SESSION['user_id'])) {
 	$menu = '
 				    <ul class="nav navbar-nav">
