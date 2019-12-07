@@ -48,6 +48,9 @@ if (!isset($_SESSION)) session_start();
     .wasbokserne {
           width: 80%;
       }
+    .wasrulle {
+        color: dimgray
+    }
 </style>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -70,12 +73,12 @@ if (!isset($_SESSION)) session_start();
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner wasrulle" role="listbox">
       <div class="item active">
-        <h4> <br> <strong> Hvad er Mutuum? <br> <br> Mutuum lån er ikke som alle andre traditionelle lån - vi vil ikke sammenlignes med bankerne eller kviklånsmarkedet!</strong> <br> <br> <br></h4>
+        <h4> <br> <strong> Hvad er Mutuum? <br> <br> Mutuum lån er ikke som alle andre traditionelle lån - vi vil ikke sammenlignes med <br> bankerne eller kviklånsmarkedet!</strong> <br> <br> <br></h4>
       </div>
       <div class="item">
-        <h4> <br> <strong>Med kun ét klik væk! <br> <br> Start din investering eller lån med kun ét klik. Vi udbyder en platform hvor du frit kan udlåne eller låne med tryghed og sikkerhed. </strong>´<br> <br> <br></h4>
+        <h4> <br> <strong>Med kun ét klik væk! <br> <br> Start din investering eller lån med kun ét klik. <br> Vi udbyder en platform hvor du frit kan udlåne eller låne med tryghed og sikkerhed. </strong>´<br> <br> <br></h4>
       </div>
  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
