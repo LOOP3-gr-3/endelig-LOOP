@@ -11,40 +11,16 @@ h1 {
 .blaabaggrundforside {
         background-color: whitesmoke;
     }
-#kundettepblå {
-        color: darkblue;
-    margin-top: 3em;
-    }
+
 #logopaaforsiden {
-        max-width: 100;
+        max-width: 45%;
         height: auto;
     }
 </style>
 
+<!--link til billede på forsiden https://unsplash.com/s/photos/teamwork--> 
 
-<hr><h1>VELKOMMEN TIL MUTUUM</h1><hr>
-<div class="container text-left">    
-  
-  <div class="row blaabaggrundforside">
-       <div class="col-sm-12 col-lg-12 ">
-           <img src="images/forsidebillede.png" id="logopaaforsiden">
-        </div>         
-      </div> <br>
-
-    <div class="col-sm-4">
-      <div>
-       <p>Some text..</p>
-      </div>
-      <div>
-       <p>Some text..</p>
-      </div>
-    
-  </div>
-</div><br>
-
-</body>
-</html>
-
+<hr><h1>VELKOMMEN TIL <img src="images/logoudenbaggrund.png" id="logopaaforsiden"></h1><hr>
 <?php
 require_once("includes/footer.php");
 ?>
