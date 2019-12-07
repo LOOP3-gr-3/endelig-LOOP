@@ -7,7 +7,7 @@ require_once("includes/header.php");
     background-image: url(images/nemID1.PNG);
     background-color: whitesmoke;
     background-repeat: no-repeat;
-    background-size:cover; 
+    background-size:inherit; 
     }
 
 @media(max-width: 375px) {
@@ -23,6 +23,7 @@ require_once("includes/header.php");
 
 <body id="nemIDfake"> 
 </body>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <button id="xwknap" type="submit" class="btn btn-light" id="logmag">Næste</button>
             <p>Tryk næste for at have underskrevet kontrakten</p>
 
