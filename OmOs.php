@@ -21,9 +21,6 @@ require_once("includes/header.php");
 .wasfarve p{
     color: darkblue;
     }
-h2 {
-    color: darkblue;
-    }
 </style>
 </head>
 <body>

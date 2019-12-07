@@ -1,72 +1,126 @@
+<?php
+$page = ('Forside');
+require_once("includes/header.php");
+if (!isset($_SESSION)) session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
-<style>
-.container-relative {
-        position: relative;
+  <style>
+  .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+      min-height:200px;
+  }
+.wasfarve {
+    border-color: darkorange;
+    background: white;
+    border-radius: 2em;
+      }
+.wasfarve1 {
+          color: darkblue;
+      }
+  </style>
     
-    }
-#kunskriftfarvetilforside {
-        color: white;
-        text-align: center;
-    }
+</head>
+<body>
 
-#kuntilforsidebillede {
-        max-width: 100%;
-        position: fixed;
-    }
-
-/*Vi skal have fjerne margin på forsiden for kun denne*/
-.kundennene {
-        margin-top: none;
-    }
-
-.fixedfordenne {
-        position: absolute;
-        text-align: center;
-    }
-
-.majaboxeforside {
-        text-align: center;
-        background-color: whitesmoke;
-        height:15em;
-        border-style: solid;
-        border-radius: 2em;
-    }
-    
-</style>
-
-<!--link til billede på forsiden https://unsplash.com/s/photos/teamwork--> 
-<container class="container-relative no-margin">
-    <div class="row">
-         <div class="col-sm-12">
-            <body>
-                <img src="images/benjamin-sow-CB4z0uTFSYg-unsplash.jpg" id="kuntilforsidebillede">
-            </body>
-        </div>
-        
-        <div class="col-sm-12 text-center fixedfordenne">
-            <br><br><br><br>
-                <h1 id="kunskriftfarvetilforside">  <strong>VELKOMMEN TIL MUTUUM</strong></h1>
-                <br>
-        
-            <p id="kunskriftfarvetilforside">Her kan du låne eller udlåne penge til lige den du ønsker</p>
-            <br><br><br><br><br>
-      
-            <button class="btn btn-warning">OPRET BRUGER</button>
-        </div>
-
-        <div class="col-sm 11 col-lg-5 majaboxeforside">
-            <p>jkrnkjfnvcsjrkfnvfrjdk</p>
-        </div> 
-        
-        <div class="col-sm 11 col-lg-5 majaboxeforside">
-             <p>iuuhiebcid</p>
-        </div> 
-    
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+<!-- Container (Portfolio Section) -->
+<div id="portfolio" class="container-fluid text-center">
+  <div style="text-align:center">
+    <hr><h3><strong><i>HJÆLP DINE NÆRMESTE ELLER FJERNESTE</i></strong></h3>
+    <hr>
+    </div>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4> <br> <strong> Hvad er Mutuum? <br> <br> Mutuum lån er ikke som alle andre traditionelle lån - vi vil ikke sammenlignes med bankerne eller kviklånsmarkedet!</strong> <br> <br> <br></h4>
+      </div>
+      <div class="item">
+        <h4> <br> <strong>Med kun ét klik væk! <br> <br> Start din investering eller lån med kun ét klik. Vi udbyder en platform hvor du frit kan udlåne eller låne med tryghed og sikkerhed. </strong>´<br> <br> <br></h4>
+      </div>
+ <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+ </div>
 </div>
-</container>
+  
+<div class="container text-center">    
+  <div class="row">
+    <div class="col-sm-4 wasfarve1">
+<br>
+      <img src="images/loock.PNG" style="width:60%" alt="Image">
+      <p><strong>Lån sikkert med nemID. Nem og hurtig ansøgning. Bliv godkendt samme dag, pengene udbetales direkte til din konto</strong></p>
+    </div>
+    <div class="col-sm-4 wasfarve1">
+<br>
+      <img src="images/betingelser.PNG" style="width:55%" alt="Image">
+      <p> <strong> <br>Udfyld ansøgning til kreditgodkendelse - godkend den endelige rente og lånebetingelser. Alt står med stort, ingen skjulte gebyrer</strong></p>    
+    </div>
+<br>
+    <div class="col-sm-4">
+      <div class="well wasfarve">
+       <p><strong>Långiver</strong> <br> Start din investering med kun ét klik. Med Mutuum behøver du hverken være økonom eller millionær for at have en professionel investering. Opret dig med det samme og indsæt dit beløb ved, at lave en kontrakt - lån dig tilbage og tjen med god samvittighed. </p>
+      </div>
+      <div class="well wasfarve">
+       <p><strong>Låntager</strong> <br> Start dit lån med kun ét klik. Mutuum står klar til at hjælpe dig. Du kan oprette dig som bruger med det samme og tage et lån på under 5 minutter. Det er et lån mellem dig og långiver, vi blander os ikke.</p>
+      </div>
+<br>
+    </div>
+  </div>
+</div><br>
+    
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-success">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+      </div>
+    </div>
+  </div>
+</div><br>
 
 <?php
 require_once("includes/footer.php");
