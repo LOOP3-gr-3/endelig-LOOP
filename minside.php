@@ -3,6 +3,7 @@ $page = ('Din side');
 require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
 ?>
+
 <style>
     .minprofilpaaminside {
         background-color: whitesmoke;
