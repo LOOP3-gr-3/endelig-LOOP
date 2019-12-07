@@ -29,7 +29,7 @@ if (!isset($_SESSION)) session_start();
                         }
         mysqli_close($con);   
         ?>
-            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br>
         </div>
         <!-- Mine aftaler sektionen -->
         <div class="col-xs-12 col-sm-12 col-lg-8">

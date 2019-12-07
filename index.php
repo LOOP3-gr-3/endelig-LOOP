@@ -4,46 +4,71 @@ require_once("includes/header.php");
 ?>
 
 <style>
-h1 {
-    text-align: center;
-    color:darkblue;
-    }   
-.blaabaggrundforside {
+
+.container-relative {
+        position: relative;
+    
+    }
+#kunskriftfarvetilforside {
+        color: white;
+        text-align: center;
+    }
+
+#kuntilforsidebillede {
+        max-width: 100%;
+        position: fixed;
+    }
+
+/*Vi skal have fjerne margin på forsiden for kun denne*/
+.kundennene {
+        margin-top: none;
+    }
+
+.fixedfordenne {
+        position: absolute;
+        text-align: center;
+    }
+
+.majaboxeforside {
+        text-align: center;
         background-color: whitesmoke;
+        height:15em;
+        border-style: solid;
+        border-radius: 2em;
     }
-#kundettepblå {
-        color: darkblue;
-    margin-top: 3em;
-    }
-#logopaaforsiden {
-        max-width: 100;
-        height: auto;
-    }
+    
 </style>
 
+<!--link til billede på forsiden https://unsplash.com/s/photos/teamwork--> 
+<container class="container-relative no-margin">
+    <div class="row">
+         <div class="col-sm-12">
+            <body>
+                <img src="images/benjamin-sow-CB4z0uTFSYg-unsplash.jpg" id="kuntilforsidebillede">
+            </body>
+        </div>
+        
+        <div class="col-sm-12 text-center fixedfordenne">
+            <br><br><br><br>
+                <h1 id="kunskriftfarvetilforside">  <strong>VELKOMMEN TIL MUTUUM</strong></h1>
+                <br>
+        
+            <p id="kunskriftfarvetilforside">Her kan du låne eller udlåne penge til lige den du ønsker</p>
+            <br><br><br><br><br>
+      
+            <button class="btn btn-warning">OPRET BRUGER</button>
+        </div>
 
-<hr><h1>VELKOMMEN TIL MUTUUM</h1><hr>
-<div class="container text-left">    
-  
-  <div class="row blaabaggrundforside">
-       <div class="col-sm-12 col-lg-12 ">
-           <img src="images/forsidebillede.png" id="logopaaforsiden">
-        </div>         
-      </div> <br>
-
-    <div class="col-sm-4">
-      <div>
-       <p>Some text..</p>
-      </div>
-      <div>
-       <p>Some text..</p>
-      </div>
+        <div class="col-sm 11 col-lg-5 majaboxeforside">
+            <p>jkrnkjfnvcsjrkfnvfrjdk</p>
+        </div> 
+        
+        <div class="col-sm 11 col-lg-5 majaboxeforside">
+             <p>iuuhiebcid</p>
+        </div> 
     
-  </div>
-</div><br>
-
-</body>
-</html>
+</div>
+</container>
 
 <?php
 require_once("includes/footer.php");
