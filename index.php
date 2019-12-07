@@ -14,28 +14,37 @@ if (!isset($_SESSION)) session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
   <style>
-  .carousel-inner img {
+.carousel-inner img {
       width: 100%; /* Set width to 100% */
       margin: auto;
       min-height:200px;
-  }
+    }
 .wasfarve {
     border-color: darkorange;
     background: white;
     border-radius: 2em;
-      }
-      .wasfarve p{
+    }
+.wasfarve p{
           color: dimgray;
-      }
+    }
 .wasfarve1 {
           color: dimgray;
-      }
-      h2 {
+    }
+h2 {
           color: darkblue;
-      }
-      .wastekstboks p{
+    }
+.wastekstboks p{
          color: dimgray;
-      }
+    }
+h3 {
+          color: dimgray;
+    }
+.waskasser {
+          color: dimgray;
+    }
+.wasbokse {
+          border-radius: 8em;
+    }
   </style>
     
 </head>
@@ -50,7 +59,7 @@ if (!isset($_SESSION)) session_start();
 <!-- Container (Portfolio Section) -->
 <div id="portfolio" class="container-fluid text-center">
   <div style="text-align:center">
-    <hr><h3><strong><i>HJÆLP DINE NÆRMESTE ELLER FJERNESTE</i></strong></h3>
+    <hr><h1><strong><i>HJÆLP DINE NÆRMESTE ELLER FJERNESTE</i></strong></h1>
     <hr>
     </div>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
@@ -103,33 +112,37 @@ if (!isset($_SESSION)) session_start();
 <br>
     </div>
   </div>
-<div style="text-align:cente" class="wastekstboks">
+<div style="text-align:center" class="wastekstboks">
     <h2><strong><i>VÆK MED ALT DET BESVÆRLIGE</i></strong></h2>
     <p> <strong>Med Mutuum kan du investere eller låne fra bare 100 kroner. Det er dine penge, så du bestemmer hvad og hvordan de skal bruges. Med Mutuum kan du løbende se gode bud og dermed tilpasse den til dine ønsker og behov. Mutuum passer på dine penge, så de er i sikre hænder.</strong></p>
 </div>
 </div><br>
     
-<div class="container">    
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+<div class="container"> 
+<div style="text-align:center" class="wastekstboks">
+    <h3><strong>Så let kommer du i gang</strong></h3>
+</div>
+<br>
+  <div class="row waskasser">
+    <div class="col-sm-4" align="center">
+      <div class="panel panel-primary wasbokse">
+        <div class="panel-heading wasbokse"> <strong>STEP 1</strong></div>
+        <div class="panel-body"><img src="images/moneey.PNG" class="img-responsive" style="width:60%" alt="Image"></div>
+        <div class="panel-footer wasbokse"><strong>Besvar nogle simple spørgsmål</strong> <br> Fortæl os hvor meget du vil låne eller udlåne, hvor længe, med hvilken rente og lidt om din økonomiske situation</div>
       </div>
     </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-danger">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+    <div class="col-sm-4" align="center"> 
+      <div class="panel panel-primary wasbokse">
+        <div class="panel-heading wasbokse"> <strong>STEP 2</strong></div>
+        <div class="panel-body"><img src="images/wait.PNG" class="img-responsive" style="width:56%" alt="Image"></div>
+        <div class="panel-footer wasbokse"><strong>Se de diverse bud</strong> <br> På baggrund af dine svar får du som låntager forskellige tilbud, som du enten kan takke ja eller nej til. Som långiver afventer du indtil låntageren har godkendt lånet.</div>
       </div>
     </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-success">
-        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+    <div class="col-sm-4" align="center"> 
+      <div class="panel panel-primary wasbokse">
+        <div class="panel-heading wasbokse"><strong>STEP 3</strong></div>
+        <div class="panel-body"><img src="images/deal.PNG" class="img-responsive" style="width:58%" alt="Image"></div>
+        <div class="panel-footer wasbokse"><strong>Godkend og underskriv</strong> <br> Når du som låntager ser dig tilfreds med de forskellige krav fra långiveren, underskriver du og får straks pengene sendt til din konto</div>
       </div>
     </div>
   </div>
