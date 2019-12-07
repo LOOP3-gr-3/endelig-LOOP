@@ -1,10 +1,13 @@
 <?php
-$page = ('MUTUUM');
+$page = ('Om os');
 require_once("includes/header.php");
 ?>
-
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
 <style>
-
 .container-relative {
         position: relative;
     
