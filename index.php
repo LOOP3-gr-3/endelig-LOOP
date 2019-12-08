@@ -51,47 +51,125 @@ if (!isset($_SESSION)) session_start();
     .wasrulle {
         color: dimgray
     }
-</style>
+    * {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
-<!-- Container (Portfolio Section) -->
-<div id="portfolio" class="container-fluid text-center">
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: white;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 0.6em;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -1em;
+  padding: 1em;
+  color: #888;
+  font-weight: bold;
+  font-size: 1.2em;
+  
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 1em;
+    background: darkblue;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 0.5em;
+  width: 0.5em;
+  margin: 0 0.2em;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: darkorange;
+}
+</style>
   <div style="text-align:center">
-    <hr><h2><i><strong><i>HJÆLP DINE NÆRMESTE ELLER FJERNESTE</i></strong></i></h2>
+    <hr><h2><i><strong><i>DU BEHØVER IKKE AT DRØMME SMÅT!</i></strong></i></h2>
     <hr>
     </div>
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner wasrulle" role="listbox">
-      <div class="item active">
-        <h4> <br> <strong> Hvad er Mutuum? <br> <br> Mutuum lån er ikke som alle andre traditionelle lån - vi vil ikke sammenlignes med <br> bankerne eller kviklånsmarkedet!</strong> <br> <br> <br></h4>
-      </div>
-      <div class="item">
-        <h4> <br> <strong>Med kun ét klik væk! <br> <br> Start din investering eller lån med kun ét klik. <br> Vi udbyder en platform hvor du frit kan udlåne eller låne med tryghed og sikkerhed. </strong>´<br> <br> <br></h4>
-      </div>
- <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
- </div>
+
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <h4><strong> Hvad er Mutuum? <br> <br> Mutuum lån er ikke som alle andre traditionelle lån - vi vil ikke sammenlignes med <br> bankerne eller kviklånsmarkedet!</strong></h4>
 </div>
-  
+
+<div class="mySlides">
+  <h4><strong>Med kun ét klik væk! <br> <br> Start din investering eller lån med kun ét klik. <br> Vi udbyder en platform hvor du frit kan udlåne eller låne med tryghed og sikkerhed. </strong></h4>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span>  
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
 <div class="container text-center">    
   <div class="row">
     <div class="col-sm-4 wasfarve1">
@@ -117,7 +195,7 @@ if (!isset($_SESSION)) session_start();
   </div>
 <div style="text-align:center" class="wastekstboks">
     <h2><strong><i>VÆK MED ALT DET BESVÆRLIGE</i></strong></h2>
-    <p> <strong>Med Mutuum kan du investere eller låne fra bare 100 kroner. Det er dine penge, så du bestemmer hvad og hvordan de skal bruges. Med Mutuum kan du løbende se gode bud og dermed tilpasse den til dine ønsker og behov. Mutuum passer på dine penge, så de er i sikre hænder.</strong></p>
+    <p> <br><strong>Med Mutuum kan du investere eller låne fra bare 100 kroner. Det er dine penge, så du bestemmer hvad og hvordan de skal bruges. Med Mutuum kan du løbende se gode bud og dermed tilpasse den til dine ønsker og behov. Mutuum passer på dine penge, så de er i sikre hænder.</strong></p>
 </div>
 </div><br> <br>
     
