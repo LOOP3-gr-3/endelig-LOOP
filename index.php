@@ -52,97 +52,92 @@ if (!isset($_SESSION)) session_start();
         color: dimgray
     }
     * {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
+    body {font-family: Verdana, sans-serif; margin:0}
 
 /* Slideshow container */
-.slideshow-container {
-  position: relative;
-  background: white;
-}
+    .slideshow-container {
+    position: relative;
+    background: white;
+    }
 
 /* Slides */
-.mySlides {
-  display: none;
-  padding: 0.6em;
-  text-align: center;
-}
+    .mySlides {
+    display: none;
+    padding: 0.6em;
+    text-align: center;
+    }
 
 /* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -1em;
-  padding: 1em;
-  color: #888;
-  font-weight: bold;
-  font-size: 1.2em;
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -2.5em;
+    padding: 1em;
+    color: #888;
+    font-weight: bold;
+    font-size: 1.2em;
   
-  user-select: none;
-}
+    user-select: none;
+    }
 
 /* Position the "next button" to the right */
-.next {
-  position: absolute;
-  right: 0;
-}
+    .next {
+    position: absolute;
+    right: 0;
+    }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-  color: white;
-}
+    .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    }
 
 /* The dot/bullet/indicator container */
-.dot-container {
+    .dot-container {
     text-align: center;
     padding: 1em;
     background: darkblue;
-}
+    }
 
 /* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 0.5em;
-  width: 0.5em;
-  margin: 0 0.2em;
-  background-color: white;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
+    .dot {
+    cursor: pointer;
+    height: 0.5em;
+    width: 0.5em;
+    margin: 0 0.2em;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    }
 
 /* Add a background color to the active dot/circle */
-.active, .dot:hover {
-  background-color: darkorange;
-}
+    .active, .dot:hover {
+    background-color: darkorange;
+    }
 </style>
-  <div style="text-align:center">
-    <hr><h2><i><strong><i>DU BEHØVER IKKE AT DRØMME SMÅT!</i></strong></i></h2>
+<div style="text-align:center">
     <hr>
-    </div>
-
-<div class="slideshow-container">
-
-<div class="mySlides">
-  <h4><strong> Hvad er Mutuum? <br> <br> Mutuum lån er ikke som alle andre traditionelle lån - vi vil ikke sammenlignes med <br> bankerne eller kviklånsmarkedet!</strong></h4>
+    <h2><i><strong><i>DU BEHØVER IKKE AT DRØMME SMÅT!</i></strong></i></h2>
+    <hr>
 </div>
 
+<div class="slideshow-container">
+<div class="mySlides">
+  <h4><strong> Hvad er Mutuum? <br> <br> Mutuum lån er ikke som alle andre traditionelle lån - vi vil ikke sammenlignes <br> med bankerne eller kviklånsmarkedet!</strong></h4>
+</div>
 <div class="mySlides">
   <h4><strong>Med kun ét klik væk! <br> <br> Start din investering eller lån med kun ét klik. <br> Vi udbyder en platform hvor du frit kan udlåne eller låne med tryghed og sikkerhed. </strong></h4>
 </div>
-
 <a class="prev" onclick="plusSlides(-1)">❮</a>
 <a class="next" onclick="plusSlides(1)">❯</a>
-
 </div>
-
 <div class="dot-container">
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span>  
 </div>
-
 <script>
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -192,7 +187,7 @@ function showSlides(n) {
       </div>
 <br>
     </div>
-  </div>
+    </div>
 <div style="text-align:center" class="wastekstboks">
     <h2><strong><i>VÆK MED ALT DET BESVÆRLIGE</i></strong></h2>
     <p> <br><strong>Med Mutuum kan du investere eller låne fra bare 100 kroner. Det er dine penge, så du bestemmer hvad og hvordan de skal bruges. Med Mutuum kan du løbende se gode bud og dermed tilpasse den til dine ønsker og behov. Mutuum passer på dine penge, så de er i sikre hænder.</strong></p>
@@ -212,13 +207,13 @@ function showSlides(n) {
         <div class="panel-footer wasbokse"><strong>Besvar nogle simple spørgsmål</strong> <br> Fortæl os hvor meget du vil låne eller udlåne, hvor længe, med hvilken rente og lidt om din økonomiske situation</div>
       </div>
     </div>
-    <div class="col-sm-4" align="center"> 
-      <div class="panel panel-primary wasbokse">
+<div class="col-sm-4" align="center"> 
+    <div class="panel panel-primary wasbokse">
         <div class="panel-heading wasbokse"> <strong>STEP 2</strong></div>
         <div class="panel-body"><img src="images/wait.PNG" class="img-responsive" style="width:56%" alt="Image"></div>
         <div class="panel-footer wasbokse"><strong>Se de diverse bud</strong> <br> På baggrund af dine svar får du som låntager forskellige tilbud, som du enten kan takke ja eller nej til. Som långiver afventer du indtil låntageren har godkendt lånet.</div>
-      </div>
     </div>
+</div>
     <div class="col-sm-4" align="center"> 
       <div class="panel panel-primary wasbokse">
         <div class="panel-heading wasbokse"><strong>STEP 3</strong></div>
@@ -228,7 +223,6 @@ function showSlides(n) {
     </div>
   </div>
 </div><br>
-
 <?php
 require_once("includes/footer.php");
 ?>
