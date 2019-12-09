@@ -5,7 +5,7 @@ if (!isset($_SESSION)) session_start();
 ?>
   <style>
   .wasoverskrift {
-    background-color: darkorange;
+    background-color: black;
     color: white;
   }
   .bg-grey {
