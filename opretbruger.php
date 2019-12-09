@@ -71,10 +71,12 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
             <label for="efternavn">Efternavn:</label>
             <input type="text" class="form-control" name="efternavn" placeholder="Efternavn" required>
         </div>
+        
         <div class="form-group">
             <label for="mail">Mail:</label>
             <input type="email" class="form-control" name="mail" placeholder="skriv@mail.dk" required>
         </div>
+        
         <div class="form-group">
             <label for="tf">Telefonnummer:</label>
             <input type="tel" class="form-control" name="telefon" placeholder="00 00 00 00" required>
@@ -88,6 +90,15 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
             <label for="p2">Gentag password:</label>
             <input type="password" class="form-control" name="password2" id="p2" placeholder="********" onkeyup='check();' required>
         </div>
+        <div class="form-group">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck"> Accepter betingelserne </label>
+						<div class="invalid-feedback"> Du skal acceptere betingelserne for, at kunne oprette en bruger. </div>
+                        <a href="handelsbetingelser.php">Se betingelserne her!</a>
+					</div>
+				</div>
+        <hr>
         <button type="submit" class="btn btn-primary blaaknap">Opret Bruger</button>
         <!-- Her er der tilføjet et stykke tekst der kan skifte farve. Det knytter sig til vores JS funktion som tjekker in real time, om der er tastet ens i de 2 passwordfelter -->
         <span id="passwordtjek"></span>
@@ -108,7 +119,6 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
             document.getElementById("passwordtjek").innerHTML = " Password matcher ikke!";
         }
     }
-
 </script>
 
 <!--Denne funktion sikre der kommer "rigtig" eller forventet data, for at lave et sikkerhedslag-->
