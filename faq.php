@@ -20,7 +20,7 @@ if (!isset($_SESSION)) session_start();
     <br />
 
     <div class="panel-group" id="accordion">
-        <div class="faqHeader"><h1>Generelle spørgsmål</h1></div>
+        <div class="faqHeader"><h2>Generelle spørgsmål</h2></div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -58,7 +58,7 @@ if (!isset($_SESSION)) session_start();
             </div>
         </div>
 
-        <div class="faqHeader"><h1>Långiver</h1></div>
+        <div class="faqHeader"><h2>Långiver</h2></div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -121,7 +121,7 @@ if (!isset($_SESSION)) session_start();
             </div>
         </div>
 
-        <div class="faqHeader"><h1>Låntager</h1></div>
+        <div class="faqHeader"><h2>Låntager</h2></div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">

@@ -1,5 +1,5 @@
 <?php
-$page = ('Handesbetingelser');
+$page = ('Login');
 require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
 if(isset($_SESSION['user_id'])) {
@@ -58,6 +58,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
     <p>Er du ikke registreret som bruger endnu? Tryk her:</p><button href="opretbruger.php" class="btn btn-light" role="button" aria-pressed="true">Opret Bruger</button>
 </form>
 <br>
+    <a href="glemtpassword.php">Glemt password?</a>
 </div>
 
 <?php
