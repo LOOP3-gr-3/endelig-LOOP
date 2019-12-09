@@ -33,7 +33,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
                 $_SESSION['user_id'] = $user_id;
                 header('Location: minside.php');
             }
-        }
+        }   
     }
 }
 ?>
