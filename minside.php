@@ -2,38 +2,38 @@
 $page = ('Din side');
 require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
+if (!isset($_SESSION['user_id'])) {
+        echo '<script>alert("Du er ikke logget ind på MUTUUM - log ind her, eller opret en bruger og få gratis adgang til platformen!");';
+        echo 'window.location.href="login.php";';
+        echo '</script>' ;
+        die();
+  }
 $user_id = $_SESSION['user_id'];
 ?>
 
-<style>
-    .minprofilpaaminside {
-        background-color: whitesmoke;
-    }
-</style>
-
-
 <!-******************ALT KODE TIL MIN PROFIL*****************-->
-
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 minprofilpaaminside">
                 <hr>
                 <h1>MIN PROFIL</h1>
                 <hr>
+                
                 <?php
             $udfyld = "SELECT mail, fornavn, efternavn, mobil FROM users WHERE user_id = '$user_id'";
                 $result = mysqli_query($con, $udfyld);
                 $row = mysqli_num_rows($result);
                     if ($row > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
-                    echo "&nbsp;<strong>Brugernavn:</strong> " . $row['mail'] . "<br>&nbsp;<strong>Fornavn:</strong> " . $row['fornavn'] . "<br>&nbsp;<strong>Efternavn:</strong> " . $row['efternavn'] . "<br>&nbsp;<strong>Telefon nr.:</strong> " . $row['mobil'] . "<br><br><br>";
+                    echo "&nbsp;<strong>Brugernavn:</strong> " . $row['mail'] . "<br>&nbsp;<strong>Fornavn:</strong> " . $row['fornavn'] . "<br>&nbsp;<strong>Efternavn:</strong> " . $row['efternavn'] . "<br>&nbsp;<strong>Telefon nr.:</strong> " . $row['mobil'] . "<br><br>";
                     } 
                     } else {
                         echo "<br>Data er ikke blevet oplyst. Opret bruger eller oplys manglende data";
                         }   
         ?>
-
+                <a href="retoplysninger.php"><button class="btn btn-warning" >Ret oplysninger</button></a>
+                <br>
+                <br>
             </div>
         </div>
             <div class="row">

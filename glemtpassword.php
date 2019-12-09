@@ -27,7 +27,7 @@ if(isset($_POST['mail'])) { /* Her tjekker vi for at både mail er sat */
     }
 ?>
 
-<div class="container container-yderstomallesider">
+<div class="container"> 
 
 <h1><strong>Reset password</strong></h1>
 

@@ -17,11 +17,6 @@
     color: darkblue;
 }
 
-h3 {
-    color: darkblue;
-}
-
-
 /*------------------- FOOTER ------------------------------------METTE*/
 
 .clearermed {
@@ -97,10 +92,15 @@ h3 {
 }
 /*Dette gør border farven gennemsigtig*/
 .topfooter {
-    border-color: transparent
+    border-color: black;
 }
 
 /*____________________________GENERELT KNAP______________________ */
 .blaaknap {
   background-color: darkblue;
   border-color: darkblue; }
+
+/* __________________________MIN SIDE_____________________________MAJA og METTE*/
+ .minprofilpaaminside {
+        background-color: whitesmoke !important;
+    }

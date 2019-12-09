@@ -7,10 +7,17 @@
                 <!-- class collapse er en BS, som gør kollapse footeren. ID gør at vi kan sige, hvornår det ene eller andet skal ske -->
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
+                        <?php 
+                        if(!$_SESSION['user_id']) {
+                            echo '
                         <h4>Kom i gang her:</h4>
                         <div>
                             <a href=opretbruger.php><button type="button" class="btn btn-warning">Opret en bruger</button></a>
-                        </div>
+                            </div>';
+                        }else {
+                            echo '<h4>Se din oversigt her:</h4>
+                            <a href=opretbruger.php><button type="button" class="btn btn-warning">Min Side</button></a>';}
+                        ?>
                     </div>
                     <div class="col-xs-12 col-sm-4">
                         <h4>Om Mutuum</h4>
@@ -54,7 +61,7 @@
     </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
