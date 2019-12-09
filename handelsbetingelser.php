@@ -24,7 +24,7 @@ if (!isset($_SESSION)) session_start();
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><h4>Lånebetingelser</h4></a>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Lånebetingelser</a>
                 </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
