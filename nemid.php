@@ -25,22 +25,15 @@ require_once("includes/header.php");
 </body>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-    <button class="btn btn-light" type="button"
-            onclick="document.getElementById('demo').innerHTML = Date()">
-            Tryk næste for at underskrive og se tidspunkt</button>
+    <script>
+        function changeElement() {
+        document.getElementById('underskrevet').innerHTML = "Du har nu underskrevet kontrakten";
+        }
+    </script>
 
-    <p id="demo"></p>
+    <button onclick="changeElement()" class="btn btn-light" type="button">Underskriv kontrakt</button>
+        <p id='underskrevet'>Kontrakt endnu ikke underskrevt, klik på "underskriv kontrakt"</p>
 
-<script>
-function changeElemen() {
-    document.getElementById('p1').innerHTML = "noget helt andet"
-    alert('hello');
-}
-
-</script>
-
-<button onclick="changeElement()">Klik</button>
-<p id='p1'>noget tekst</p>
 
 <!--footeren skal HENTES IND HERINDE I STEDET FOR REQUIRE, DA DET LIGE NU KUN ER BAGGRUND OG IKKE NOGET "FYLD"-->
 <?php
