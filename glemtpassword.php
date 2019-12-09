@@ -3,7 +3,7 @@ $page = ('Glemt password');
 require_once("includes/header.php");
 if (isset($_SESSION)) session_destroy();
 
-if(isset($_POST['mail'])) { /* Her tjekker vi for at både mail og password er sat */
+if(isset($_POST['mail'])) { /* Her tjekker vi for at både mail er sat */
     $mail_temp = $_POST['mail'];
     $query = "SELECT * FROM users WHERE mail = '$mail_temp'";
     $result = mysqli_query($con, $query);

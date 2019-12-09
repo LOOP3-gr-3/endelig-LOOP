@@ -12,15 +12,13 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
     
 /*Koden over tjekker om der er blevet sat noget ind i tekstfelterne, og hvis der er, lægges de i nogle variable 
   Koden under sammenligner de 2 indtastede kodeord INDEN de hashes */
-    
-    if($password1 != $password2){
+        if($password1 != $password2){
         echo '<script>alert("Dine passwords matchede ikke. Prøv igen!");';
         echo 'window.location.href="opretbruger.php";';
         echo '</script>' ;
         die();
         /*REDIRECT TIL DENNE SIDE IGEN FORFRA*/
         }
-    
 
     /*Password hashes*/
 
@@ -84,7 +82,7 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
         <hr>
         <div class="form-group">
             <label for="p1">Password:</label>
-            <input type="password" class="form-control" name="password1" id="p1" placeholder="********" onkeyup='check();' required>
+            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="password1" id="p1" titel="Skal indeholde mindst 1 stort bogstav" placeholder="********" onkeyup='check();' required>
         </div>
         <div class="form-group">
             <label for="p2">Gentag password:</label>
