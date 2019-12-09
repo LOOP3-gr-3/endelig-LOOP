@@ -31,7 +31,7 @@ require_once("includes/header.php");
     background: white;
     }
     .wasbokserne {
-    width: 80%;
+    width: 85%;
     }
   </style>
 <body>
@@ -49,21 +49,21 @@ require_once("includes/header.php");
   <div class="row waskasser">
     <div class="col-sm-4" align="center">
       <div class="panel panel-white wasbokse">
-        <div class="panel-heading wasbokse"> <strong>STEP 1</strong></div>
+        <div class="panel-heading wasbokse1"> <strong>STEP 1</strong></div>
         <div class="panel-body"><img src="images/moneyy.PNG" class="img-responsive" style="width:60%" alt="Image"></div>
         <div class="panel-footer wasbokse"><strong>Besvar nogle simple spørgsmål</strong> <br> Fortæl os hvor meget du vil låne eller udlåne, hvor længe, med hvilken rente og lidt om din økonomiske situation</div>
       </div>
     </div>
 <div class="col-sm-4" align="center"> 
     <div class="panel panel-white wasbokse">
-        <div class="panel-heading wasbokse"> <strong>STEP 2</strong></div>
+        <div class="panel-heading wasbokse1"> <strong>STEP 2</strong></div>
         <div class="panel-body"><img src="images/waiit.PNG" class="img-responsive" style="width:45%" alt="Image"></div>
         <div class="panel-footer wasbokse"><strong>Se de diverse bud</strong> <br> På baggrund af dine svar får du som låntager forskellige tilbud, som du enten kan takke ja eller nej til. Som långiver afventer du indtil låntageren har godkendt lånet.</div>
     </div>
 </div>
     <div class="col-sm-4" align="center"> 
       <div class="panel panel-white wasbokse">
-        <div class="panel-heading wasbokse"><strong>STEP 3</strong></div>
+        <div class="panel-heading wasbokse1"><strong>STEP 3</strong></div>
         <div class="panel-body"><img src="images/deall.PNG" class="img-responsive" style="width:62%" alt="Image"></div>
         <div class="panel-footer wasbokse"><strong>Godkend og underskriv</strong> <br> Når du som låntager ser dig tilfreds med de forskellige krav fra långiveren, underskriver du og får straks pengene sendt til din konto</div>
       </div>
