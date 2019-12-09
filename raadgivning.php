@@ -23,7 +23,7 @@ if (!isset($_SESSION)) session_start();
             </ul>
         </div>
             <br>
-            <h4>2) Læg et nyt realistisk budget, som du kan overholde</h4>
+            <h4><strong>2) Læg et nyt realistisk budget, som du kan overholde</strong></h4>
             <p>Efter step 1 vil du nu have et overblik på dine nuværende indtægter og udgifter. Det vil nu være muligt at lave et nyt budget, som kan hjælpe dig til at holde dine udgifter under din indtægt.</p>
             <div class=text-center>
             <button data-toggle="collapse" data-target="#step2" class="btn btn-warning text-center">Læs mere</button>
@@ -49,7 +49,7 @@ if (!isset($_SESSION)) session_start();
             </ul>
             </div>
             <br>
-            <h4>3) Brug for økonomisk rådgivning?</h4>
+            <h4><strong>3) Brug for økonomisk rådgivning?</strong></h4>
             <p>KFUM Økonomisk Rådgivning står klar til at hjælpe dig med at få styr på økonomien.
                 <br><strong>Find rådgivning her:  </strong><a href="https://www.kfumsoc.dk/projekter/paa-fode-igen/"> KFUM</a></p>
             
@@ -76,8 +76,8 @@ if (!isset($_SESSION)) session_start();
 
                             <textarea class="form-control" id="comments" name="comments" placeholder="Besked" rows="5"></textarea><br>
                             <div class="form-group">
-                                <button class="btn btn-warning pull-right" type="submit">Send</button>
-                            </div>
+                                <a href="sendtmail.php"><button class="btn btn-warning pull-right" type="submit" id="sendmail">Send</button></a>
+                     </div>
                         </div>
                     </div>
                 </div>    
