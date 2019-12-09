@@ -3,7 +3,7 @@ require_once('conn.php');
 if(isset($_SESSION['user_id'])) {
 	$menu = '
 				    <ul class="nav navbar-nav">
-                    <li class="active"><a href="minside.php">Min Side</a></li>
+                    <li><a href="minside.php">Min Side</a></li>
                     <li><a href="opretkontrakt.php">Opret kontrakt</a></li>
                     <li><a href="raadgivning.php">Økonomisk rådgivning</a></li>
                     <li><a href="index.php">Forside</a></li>
@@ -14,7 +14,7 @@ if(isset($_SESSION['user_id'])) {
 } else {
 	$menu = '
                     <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.php">Forside</a></li>
+                    <li><a href="index.php">Forside</a></li>
                     <li><a href="omos.php">Om Mutuum</a></li>
                     <li><a href="handelsbetingelser.php">Handelsbetingelser</a></li>
                     </ul>
@@ -54,12 +54,12 @@ if(isset($_SESSION['user_id'])) {
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
+                <a href="index.php"><img src="images/logomarkat.png" class="logoheader"></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Mutuum</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <?php echo $menu; ?>

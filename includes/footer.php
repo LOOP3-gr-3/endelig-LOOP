@@ -1,8 +1,8 @@
-<footer class="navbar-static-bottom container-fluid">
+<footer class="navbar-static-bottom container-fluid bg-white">
     <!-- Her bliver footer fastgjort til bunden af viewporten -->
     <hr class="topfooter no-margin-top" /> <!-- Dette skaber horisontal linjen på footer - / gør at den skaber en mere, når footeren er foldet ud -->
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-">
             <div id="footer-collapse" class="collapse">
                 <!-- class collapse er en BS, som gør kollapse footeren. ID gør at vi kan sige, hvornår det ene eller andet skal ske -->
                 <div class="row">
@@ -35,7 +35,7 @@
                 <hr />
             </div>
             <div class="row vertical-align">
-                <div class="col-xs-12 col-sm-12 col-lg-2 col-sm-push-8 col-lg-push-10">
+                <div class="col-xs-12 col-sm-4 col-lg-2 col-sm-push-8 col-lg-push-10">
                     <button data-toggle="collapse" data-target="#footer-collapse" class="btn btn-block btn-warning" onclick="this.innerHTML == &quot;Luk&quot; ? this.innerHTML = &quot;Vilk&#xE5;r &amp;  Databeskyttelse&quot; : this.innerHTML = &quot;Luk&quot;;">Vilk&#xE5;r &amp; Databeskyttelse</button>
                 </div>
                 <div class="clearermed visible-xs"></div>

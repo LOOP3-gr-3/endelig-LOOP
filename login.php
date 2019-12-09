@@ -38,10 +38,10 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
 }
 ?>
 
-<div class="container">
-<div class="container" id="nheading">
-    <h2><strong>Log ind</strong></h2>
-</div>
+<div class="container container-yderstomallesider">
+
+<h1><strong>Log ind</strong></h1>
+
 <form class="form-signin" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
     <!-- sikrer at vi sender "ren" data op til databasen -->
     <div class="form-group" id="logmag">
@@ -52,16 +52,13 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
         <label for="pwd">Password:</label>
         <input type="password" class="form-control" name="password" id="p1" placeholder="********" required>
     </div>
-    <button class="btn btn-light" type="submit">Log Ind</button>
+    <button class="btn btn-warning" type="submit">Log Ind</button>
     <br>
     <br>
     <p>Er du ikke registreret som bruger endnu? Tryk her:</p><button href="opretbruger.php" class="btn btn-light" role="button" aria-pressed="true">Opret Bruger</button>
 </form>
 <br>
-</div>  
-
-
-
+</div>
 
 <?php
 require_once("includes/footer.php");
