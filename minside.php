@@ -53,7 +53,6 @@ $user_id = $_SESSION['user_id'];
                 $row1 = mysqli_num_rows($result1);
                     if($row1 > 0){
                     while($row1 = mysqli_fetch_assoc($result1)){
-                        $kontrakttilvidere = $_SESSION['kontrakt'];
                         $afsenderuser_id = $row1['laangiver_user_id'];
                         $dato_underskrift_laangiver = $row1['reg_underskrift_1']; 
                         $beloebforkontrakt = $row1['beloeb_id'];
