@@ -94,11 +94,11 @@ if (!isset($_SESSION)) session_start();
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
                     <h3>Dato for oprettelse</h3>
-                    <p><?php echo $dato_underskrift_laangiver; ?></p>
+                    <p><?php echo $dato_underskrift_laangiver;?></p>
                 </div>
                 <div class="panel-body">
-                    <p><strong>Beløb</strong><?php echo beloebValue; ?></p>
-                    <p><strong>Rente</strong><?php echo renteValue; ?></p>
+                    <p><strong>Beløb</strong><?php echo beloebValue;?></p>
+                    <p><strong>Rente</strong><?php echo renteValue;?></p>
                 </div>
                 <div class="panel-footer">
                     <button class="btn btn-warning btn-lg">Vis kontrakt</button>
@@ -109,12 +109,7 @@ if (!isset($_SESSION)) session_start();
 
     
     
-    
-<!-******************ALT KODE TIL HISTORIK*****************-->
-    
-    
-    
-    
+<!-******************ALT KODE TIL HISTORIK*****************-->    
     
     <div class="row majahistorikaftaler">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
@@ -129,7 +124,7 @@ if (!isset($_SESSION)) session_start();
                     <h3>Dato</h3>
                 </div>
                 <div class="panel-body">
-                    <p><strong>Afsender:</strong>Lorem <strong>Beløb:</strong> Ipsum <strong>Rente:</strong> Sit</p>
+                    <p><strong>Afsender:</strong>Lorem <strong>Beløb:</strong><?php echo beloebValue;?><strong>Rente:</strong> <?php echo renteValue;?></p>
                 </div>
                 <div class="panel-footer">
                     <button class="btn btn-warning btn-lg">Vis kontrakt</button>
@@ -142,7 +137,7 @@ if (!isset($_SESSION)) session_start();
                     <h3>Dato</h3>
                 </div>
                 <div class="panel-body">
-                    <p><strong>Afsender:</strong>Lorem <strong>Beløb:</strong> Ipsum <strong>Rente:</strong> Sit</p>
+                    <p><strong>Afsender:</strong>Lorem <strong>Beløb:</strong><?php echo beloebValue;?><strong>Rente:</strong> <?php echo renteValue;?></p>
                 </div>
                 <div class="panel-footer">
                     <button class="btn btn-warning btn-lg">Vis kontrakt</button>
