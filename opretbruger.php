@@ -69,28 +69,28 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
             <label for="fornavn">Fornavn:</label>
             <input type="text" class="form-control" name="fornavn" placeholder="Fornavn" required>
         </div>
-        <div class="form-group" id="logmag">
+        <div class="form-group">
             <label for="efternavn">Efternavn:</label>
             <input type="text" class="form-control" name="efternavn" placeholder="Efternavn" required>
         </div>
-        <div class="form-group" id="logmag">
+        <div class="form-group">
             <label for="mail">Mail:</label>
             <input type="email" class="form-control" name="mail" placeholder="skriv@mail.dk" required>
         </div>
-        <div class="form-group" id="logmag">
+        <div class="form-group">
             <label for="tf">Telefonnummer:</label>
             <input type="tel" class="form-control" name="telefon" placeholder="00 00 00 00" required>
         </div>
         <hr>
-        <div class="form-group" id="logmag">
+        <div class="form-group">
             <label for="p1">Password:</label>
             <input type="password" class="form-control" name="password1" id="p1" placeholder="********" onkeyup='check();' required>
         </div>
-        <div class="form-group" id="logmag">
+        <div class="form-group">
             <label for="p2">Gentag password:</label>
             <input type="password" class="form-control" name="password2" id="p2" placeholder="********" onkeyup='check();' required>
         </div>
-        <button id="xwknap" type="submit" class="btn btn-primary" id="logmag">Opret Bruger</button>
+        <button type="submit" class="btn btn-primary blaaknap">Opret Bruger</button>
         <!-- Her er der tilføjet et stykke tekst der kan skifte farve. Det knytter sig til vores JS funktion som tjekker in real time, om der er tastet ens i de 2 passwordfelter -->
         <span id="passwordtjek"></span>
     </form>

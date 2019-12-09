@@ -101,11 +101,6 @@ h3 {
 }
 
 /*____________________________GENERELT KNAP______________________ */
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited,
-.btn-primary:focus {
-    background-color: darkblue !important;
-    border-color: darkblue !important;
-}
+.blaaknap {
+  background-color: darkblue;
+  border-color: darkblue; }

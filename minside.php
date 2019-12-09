@@ -15,7 +15,7 @@ if (!isset($_SESSION)) session_start();
 
 
 <div class="container-fluid">
-    <div class="row majaminprofil">
+    <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 minprofilpaaminside">
             <hr>
             <h1>MIN PROFIL</h1>
@@ -36,19 +36,14 @@ if (!isset($_SESSION)) session_start();
             <br><br><br><br><br><br><br><br><br><br>
         </div>
         <!-- Mine aftaler sektionen -->
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 text-center">   
             
-            
-        
-            
-            
- <!-*************ALT KODE TIL DINE AFTALER, kontraktanmodninger-->           
-        
+ <!-*************ALT KODE TIL DINE AFTALER, kontraktanmodninger-->     
             <hr>
             <h1>DINE AFTALER</h1>
             <hr>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-4 col col-lg-4 col-xl-4 majakontraktertildig">
+        <div class="col-xs-12 col-sm-12 col-md-4 col col-lg-4 col-xl-4">
             <h2>Kontrakt anmodninger</h2>
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
@@ -86,10 +81,10 @@ if (!isset($_SESSION)) session_start();
                     $result111 = mysqli_query($con, $query111);
                     $row111 = mysqli_fetch_assoc($result111);
                     $renteValue = $row111['rente'];
-                    }}
+                    
         ?>   
         
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-lx-4 majaoprettet">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-lx-4">
             <h2>Dine kontrakter klar til udlån</h2>
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
@@ -106,12 +101,15 @@ if (!isset($_SESSION)) session_start();
             </div>
         </div>
     </div>
+    <?php
+                        }}
+        ?>
 
     
     
 <!-******************ALT KODE TIL HISTORIK*****************-->    
     
-    <div class="row majahistorikaftaler">
+    <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
             <hr>
             <h1>HISTORIK</h1>
