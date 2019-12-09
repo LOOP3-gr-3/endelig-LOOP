@@ -5,9 +5,9 @@ if(isset($_SESSION['user_id'])) {
 				    <ul class="nav navbar-nav">
                     <li><a href="minside.php">Min Side</a></li>
                     <li><a href="opretkontrakt.php">Opret kontrakt</a></li>
+                    <li><a href="faq.php">FAQ</a></li>
                     <li><a href="raadgivning.php">Økonomisk rådgivning</a></li>
-                    <li><a href="index.php">Forside</a></li>
-                    </ul>
+                    <li><a href="faq.php">Handelsbetingelser</a></li>
                     <ul class="nav navbar-nav navbar-right">
                     <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Log ud</a></li>
                     </ul>';
@@ -17,6 +17,7 @@ if(isset($_SESSION['user_id'])) {
                     <li><a href="index.php">Forside</a></li>
                     <li><a href="omos.php">Om Mutuum</a></li>
                     <li><a href="handelsbetingelser.php">Handelsbetingelser</a></li>
+                    <li><a href="faq.php">FAQ</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Log Ind</a></li>
@@ -42,6 +43,7 @@ if(isset($_SESSION['user_id'])) {
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="includes/styles/overallstyle.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/mutuum.ico">
     <!-- js bootstrap -->
 </head>
