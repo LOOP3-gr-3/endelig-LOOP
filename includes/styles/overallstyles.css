@@ -99,3 +99,8 @@ h3 {
 .topfooter {
     border-color: transparent
 }
+
+/*____________________________GENERELT KNAP______________________ */
+.blaaknap {
+  background-color: darkblue;
+  border-color: darkblue; }

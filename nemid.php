@@ -24,9 +24,15 @@ require_once("includes/header.php");
 <body id="nemIDfake"> 
 </body>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<button id="xwknap" type="submit" class="btn btn-light" id="logmag">Næste</button>
-            <h3>Tryk næste for at underskrive kontrakten</h3>
 
+    <script>
+        function changeElement() {
+        document.getElementById('underskrevet').innerHTML = "Du har nu underskrevet kontrakten";
+        }
+    </script>
+
+    <button onclick="changeElement()" class="btn btn-light" type="button">Underskriv kontrakt</button>
+        <p id='underskrevet'>Kontrakt endnu ikke underskrevt, klik på "underskriv kontrakt"</p>
 
 
 <!--footeren skal HENTES IND HERINDE I STEDET FOR REQUIRE, DA DET LIGE NU KUN ER BAGGRUND OG IKKE NOGET "FYLD"-->
