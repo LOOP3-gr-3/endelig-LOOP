@@ -8,15 +8,15 @@ require_once("includes/header.php");
   .bg-1 { 
     background-color: black;
     color: #ffffff;
-  }
+    }
     .bg-2 { 
     background-color: white;
     color: black;
-  }
-  .bg-4 { 
+    }
+    .bg-4 { 
     background-color: #2f2f2f;
     color: #fff;
-  }
+    }
    .wasfarve {
     border-color: orange;
     background: white;
@@ -42,7 +42,7 @@ require_once("includes/header.php");
   <img src="images/benjamin-sow-CB4z0uTFSYg-unsplash.jpg" class="img-responsive img-circle margin" style="display:inline" width="350" height="350">
     <h3 class="margin"><strong>VÆK MED ALT DET BESVÆRLIGE</strong></h3>
   <p>Med Mutuum kan du investere eller låne fra bare 100 kroner. Det er dine penge, så du bestemmer hvad og hvordan de skal bruges. Med Mutuum kan du løbende se gode bud og dermed tilpasse <br> den til dine ønsker og behov. Mutuum passer på dine penge, så de er i sikre hænder. </p>
-  <button href="#" class="btn btn-warning">OPRET BRUGER</button>
+  <button href="#" class="btn btn-warning btn-lg">OPRET BRUGER</button>
 </div>
 <br>
 <div class="container wasbokserne"> 
