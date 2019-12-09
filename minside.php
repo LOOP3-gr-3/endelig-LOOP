@@ -80,7 +80,7 @@ $user_id = $_SESSION['user_id'];
                             <p><strong>Underskrevet:</strong> Nej</p>
                             <p><strong>Beløb:</strong> <?php echo $beloebValue;?> DKK</p>
                             <p><strong>Rente: </strong> <?php echo $renteValue;?> %</p>
-                            <p><strong>Dato</strong> <?php echo $dato_underskrift_laangiver; ?></p>
+                            <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                         </div>
                         <div class="panel-footer">
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button>
@@ -119,13 +119,14 @@ $user_id = $_SESSION['user_id'];
                         <div class="panel panel-default text-center">
                             <div class="panel-heading">
                                 <h3>Venter på underskrift</h3>
-                                <p><?php echo $dato_underskrift_laangiver;?></p>
+                                <p><br></p>
+                                
                             </div>
                             <div class="panel-body">
                                 <p><strong>Underskrevet:</strong> Nej</p>
-                                <p><strong>Beløb </strong><?php echo $beloebValue;?> DKK</p>
-                                <p><strong>Rente </strong><?php echo $renteValue;?> %</p>
-                                <p><strong>Dato</strong> <?php echo $dato_underskrift_laangiver; ?></p>
+                                <p><strong>Beløb: </strong><?php echo $beloebValue;?> DKK</p>
+                                <p><strong>Rente: </strong><?php echo $renteValue;?> %</p>
+                                <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                             </div>
                             <div class="panel-footer">
                                 <button class="btn btn-warning btn-lg">Vis kontrakt</button>
@@ -188,8 +189,7 @@ $user_id = $_SESSION['user_id'];
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">
-                            <h3>Dato</h3>
-                            <h4><?php echo $dato_underskrift_laantager; ?></h4>
+                            <h3>Din kontrakt</h3>
                         </div>
                         <div class="panel-body">
                             <p><strong>Aftale indgået mellem:</strong></p>
