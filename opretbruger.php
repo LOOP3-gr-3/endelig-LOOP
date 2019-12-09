@@ -8,8 +8,7 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
 	$mail = get_post($con, 'mail');
 	$password1 = get_post($con, 'password1');
     $password2 = get_post($con,'password2');
-	$mobil = get_post($con, 'telefon');	
-    $kredit_id = 1;
+	$mobil = get_post($con, 'telefon');
     
 /*Koden over tjekker om der er blevet sat noget ind i tekstfelterne, og hvis der er, lægges de i nogle variable 
   Koden under sammenligner de 2 indtastede kodeord INDEN de hashes */
@@ -28,7 +27,7 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
 	$token = password_hash($password1, PASSWORD_DEFAULT);
     
     /*Det indsættes i tabellen i databasen */
-    $query = "INSERT INTO users(fornavn, efternavn, mail, password, mobil, kredit_id) VALUES('$fornavn', '$efternavn', '$mail', '$token', '$mobil','$kredit_id')";
+    $query = "INSERT INTO users(fornavn, efternavn, mail, password, mobil) VALUES('$fornavn', '$efternavn', '$mail', '$token', '$mobil')";
 	
     /*Der valideres hvorvidt det lykkedes at lægge oplysniger på databasen*/
     $result = mysqli_query($con, $query);

@@ -71,7 +71,7 @@ if (!isset($_SESSION)) session_start();
         
         <?php
             $user_id = $_SESSION['user_id'];
-                $query1 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2'";
+                $query1 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_user_id = '$user_id'";
                 $result1 = mysqli_query($con, $query1);
                     if($result1){
                     while($row1 = mysqli_fetch_assoc($result1)){
