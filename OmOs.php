@@ -22,7 +22,7 @@ if (!isset($_SESSION)) session_start();
 
 <div class="jumbotron text-center wasoverskrift">
   <h1>Om os</h1> 
-  <p><i>Læs om Mutuum og få indblik i din kommende verden</i></p> 
+  <p>Læs om Mutuum og få indblik i din kommende verden</p> 
 </div>
 
 <!-- Container (About Section) -->
@@ -51,7 +51,7 @@ if (!isset($_SESSION)) session_start();
     </div>
       <br>
     <div class="col-sm-4 waslogo">
-      <img src="images/gruppeen.PNG" style="width:50%" alt="Image">
+      <img src="images/gruppen.PNG" style="width:50%" alt="Image">
       <h4 style="color:#303030;">Teamet</h4>
       <p>Lasse Hvisthule <br> Maja Pallesen <br> Mette Weyergang <br> Mikkel Holt <br> Wasfia Hashemi <br> Business Development studerende på 3. semester</p>
     </div>
@@ -61,7 +61,6 @@ if (!isset($_SESSION)) session_start();
       <p>Universitetet hvor både Morten Refsgaard og de 5 studerende enten har taget sin uddannelse eller er i gang. Universitetet har stået til rådighed under hele forløbet af udviklingen af designet, forretningsmodellen og det videre koncept. Derudover har universitetet været bindeleddet mellem de 5 studerende og opdragsgiveren, Morten Refsgaard.</p>
     </div>
   </div>
-  <br><br>
 </div>
 <?php
 require_once("includes/footer.php");
