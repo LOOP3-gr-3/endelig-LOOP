@@ -50,11 +50,11 @@ $body = $output;
 $subject = "Password Recovery - Your Website";
  
 $email_to = $email;
-$fromserver = "testmail@btechwebtech.com"; 
+$fromserver = "resetpassword@mpw.dk"; 
 require("PHPMailer/PHPMailerAutoload.php");
 $mail = new PHPMailer();
 $mail->IsSMTP();
-$mail->Host = "one.com"; // Enter your host here
+$mail->Host = "smtp.one.com"; // Enter your host here
 $mail->SMTPAuth = true;
 $mail->Username = "resetpassword@mpw.dk"; // Enter your email here
 $mail->Password = "mutuum"; //Enter your password here
@@ -77,12 +77,14 @@ echo "<div class='error'>
    }
 else{
 ?>
+<div class="container" style="text-align:center">
 <form method="post" action="" name="reset"><br /><br />
-<label><strong>Enter Your Email Address:</strong></label><br /><br />
-<input type="email" name="email" placeholder="username@email.com" />
+<label><strong>Indtast din email:</strong></label><br /><br />
+<input type="email" name="email" placeholder="skrivmail@her.dk" />
 <br /><br />
-<input type="submit" value="Reset Password"/>
+<input type="submit" value="Send link"/>
 </form>
+    </div>
 <p> </p>
 <p> </p>
 <p> </p>
