@@ -46,7 +46,6 @@ $user_id = $_SESSION['user_id'];
                     <hr>
             </div>
             
-    <div class="container-fluid"> 
             <div class="col-xs-12 col-sm-12 col-md-6 col col-lg-6 col-xl-6">
                 <h2>Kontrakt anmodninger</h2>
                 <?php
@@ -150,11 +149,13 @@ $user_id = $_SESSION['user_id'];
                     <hr>
                 </div>
             </div>
+    <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <h2>Underskrevne kontrakter</h2>
                 </div>
             </div>
+            <div class="row">
             <?php
             $query3 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '2' AND laantager_user_id = '$user_id' OR laangiver_user_id = '$user_id'";
                 $result3 = mysqli_query($con, $query3);
@@ -180,16 +181,13 @@ $user_id = $_SESSION['user_id'];
                     $row3333 = mysqli_fetch_assoc($result3333);
                     $afsenderfornavn = $row3333['fornavn'];
                     $afsenderefternavn = $row3333['efternavn'];
-                $query33333 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$user_id'";
+                $query33333 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$modtageruser_id'";
                     $result33333 = mysqli_query($con, $query33333);
                     $row33333 = mysqli_fetch_assoc($result33333);
                     $modtagerfornavn = $row33333['fornavn'];
                     $modtagerefternavn = $row33333['efternavn'];
-        ?>
-    <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <div class="panel panel-default text-center">
+        ?>        
+            <div class="panel panel-default text-center">
                         <div class="panel-heading">
                             <h3>Din kontrakt</h3>
                         </div>
@@ -204,14 +202,14 @@ $user_id = $_SESSION['user_id'];
                             <a href="viskontrakt.php"><button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                         </div>
                     </div>
-                </div>
+                
                 <?php
                         }} else {echo 'Du har ikke nogen aktive kontrakter';}
         ?>
             </div>
     </div>
 </div>
-        </div>
+    
 <br>
     <?php
 require_once("includes/footer.php");
