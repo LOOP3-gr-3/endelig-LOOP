@@ -7,11 +7,31 @@ if (!isset($_SESSION['user_id'])) {
         echo 'window.location.href="login.php";';
         echo '</script>' ;
         die();
-
-
     }
 $user_id = $_SESSION['user_id'];
 
+if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil'])) {
+    $fornavnRet = get_post($con, 'fornavn');
+    $efternavnRet = get_post($con, 'efternavn');
+    $mobilRet = get_post($con, 'mobil');
+    
+    $query1 = "UPDATE users 
+    SET fornavn = '$fornavnRet', 
+    efternavn = '$efternavnRet', 
+    mobil = '$mobilRet' 
+    WHERE user_id = '$user_id'"; 
+    $result1 = mysqli_query($con, $query1);
+    if(!$result1) {
+       die(mysqli_error($con));
+    } 
+    else {
+		echo '<script>alert("Dine oplysninger er nu blevet opdateret");';
+        /*Brugeren sendes til minside */
+        echo 'window.location.href="minside.php";';
+        echo '</script>' ;
+        die();
+    }
+}
 $hent = "SELECT * FROM users WHERE user_id = '$user_id'";
 $resulthent = mysqli_query($con, $hent);
 $row1 = mysqli_num_rows($resulthent);
@@ -20,24 +40,8 @@ $row1 = mysqli_num_rows($resulthent);
         $efternavnFyldInd = $row1["efternavn"];
         $mobilFyldInd = $row1["mobil"]; 
 
-if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil'])) {
-    $fornavnRet = get_post($con, 'fornavn');
-    $efternavnRet = get_post($con, 'efternavn');
-    $mobilRet = get_post($con, 'mobil');
-    
-$query1 = "UPDATE users 
-SET fornavn = '$fornavnRet', 
-efternavn = '$efternavnRet', 
-mobil = '$mobilRet' 
-WHERE user_id = '$user_id'"; 
-$result1 = mysqli_query($con, $query1);
-   if(!$result1) {
-       die(mysqli_error($con));
-   } else {
-              
-                echo "<h2 class='text-center'>Dine oplysninger er nu opdateret!</h2>"; }
-
 ?>
+<div class="container-fluid">
 <hr>
 <h1>Ret oplysninger</h1>
 <hr>
@@ -57,12 +61,20 @@ $result1 = mysqli_query($con, $query1);
     </div>
     <hr>
 
-    <button class="btn btn-warning" href="minside.php">Gem ændringer</button>
+    <button class="btn btn-warning" href="minside.php" type="submit">Gem ændringer</button>
+    <br>
+    <br>
+    <button class="float-right btn btn-warning mutuumknap" href="minside.php">Tilbage</button>
+    </form>
+    <br>
+</div>
+
     <?php
+} 
 function get_post($con, $var) {
 	return mysqli_real_escape_string($con, $_POST[$var]);
 }
-   }   }
+  
 ?>
     <?php 
 require_once('includes/footer.php');

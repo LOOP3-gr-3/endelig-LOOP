@@ -4,7 +4,7 @@ require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
 
 if (isset($_SESSION['user_id'])) {
-	header('Location: loggedin_front.php');
+	header('Location: minside.php');
 }
 
 if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail']) && isset($_POST['password1']) && isset($_POST['telefon'])) {
@@ -104,7 +104,7 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
 					</div>
 				</div>
         <hr>
-        <button type="submit" class="btn btn-primary blaaknap">Opret Bruger</button> 
+        <button type="submit" class="btn btn-primary mutuumknap">Opret Bruger</button> 
         <br>
         <br>
         <!-- Her er der tilføjet et stykke tekst der kan skifte farve. Det knytter sig til vores JS funktion som tjekker in real time, om der er tastet ens i de 2 passwordfelter -->

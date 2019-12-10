@@ -76,13 +76,14 @@ if (!isset($_SESSION)) session_start();
 
                             <textarea class="form-control" id="comments" name="comments" placeholder="Besked" rows="5"></textarea><br>
                             <div class="form-group">
-                                <a href="sendtmail.php"><button class="btn btn-warning pull-right" type="submit" id="sendmail">Send</button></a>
+                                <a href="sendtmail.php"><button class="btn btn-warning mutuumknap pull-right" type="submit" id="sendmail">Send</button></a>
                      </div>
                         </div>
                     </div>
                 </div>    
         </div>
 </div>
+    <br>
 </div>
 
 

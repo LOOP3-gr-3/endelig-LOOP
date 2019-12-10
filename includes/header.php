@@ -49,7 +49,7 @@ if(isset($_SESSION['user_id'])) {
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="index.php"><img src="images/logomarkat.png" class="logoheader"></a>
+                <a href="index.php"><img src="images/logomarkat1.png" class="logoheader"></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
