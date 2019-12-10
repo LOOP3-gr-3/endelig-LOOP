@@ -12,7 +12,15 @@ if (!isset($_SESSION['user_id'])) {
     }
 $user_id = $_SESSION['user_id'];
 
-if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil']) && isset($_POST['pwd'])) {
+$hent = "SELECT * FROM users WHERE user_id = '$user_id'";
+$resulthent = mysqli_query($con, $hent);
+$row1 = mysqli_num_rows($resulthent);
+    while ($row1 = mysqli_fetch_assoc($resulthent)){
+        $fornavnFyldInd = $row1["fornavn"];  
+        $efternavnFyldInd = $row1["efternavn"];
+        $mobilFyldInd = $row1["mobil"]; 
+
+if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil'])) {
     $fornavnRet = get_post($con, 'fornavn');
     $efternavnRet = get_post($con, 'efternavn');
     $mobilRet = get_post($con, 'mobil');
@@ -23,24 +31,12 @@ efternavn = '$efternavnRet',
 mobil = '$mobilRet' 
 WHERE user_id = '$user_id'"; 
 $result1 = mysqli_query($con, $query1);
-    if(!$result1) {
-        die();
-    }
-$hent = "SELECT * FROM users WHERE user_id = '$user_id'";
-    $resulthent = mysqli_query($con, $hent);
-    if($resulthent) {
-        $row1 = mysqli_num_rows($resulthent);
-            while ($row1 = mysqli_fetch_assoc($result)){
-               $fornavnFyldInd = $row1["fornavn"];  
-               $efternavnFyldInd = $row1["efternavn"];
-               $mobilFyldInd = $row1["mobil"]; 
-        
-    if(!$result) {
-        die();
-    }
-                        }
-    }
-}
+   if(!$result1) {
+       die(mysqli_error($con));
+   } else {
+              
+                echo "<h2 class='text-center'>Dine oplysninger er nu opdateret!</h2>"; }
+
 ?>
 <hr>
 <h1>Ret oplysninger</h1>
@@ -49,15 +45,15 @@ $hent = "SELECT * FROM users WHERE user_id = '$user_id'";
 
     <div class="form-group">
         <label for="fornavn">Fornavn:</label>
-        <input type="text" class="form-control" name="fornavn" value="<?php echo $fornavnFyldInd;?>" required>
+        <input type="text" class="form-control" name="fornavn" value="<?php echo $fornavnFyldInd; ?>" required>
     </div>
     <div class="form-group">
         <label for="efternavn">Efternavn:</label>
-        <input type="text" class="form-control" name="efternavn" value="<?php echo $efternavnFyldInd;?>" required>
+        <input type="text" class="form-control" name="efternavn" value="<?php echo $efternavnFyldInd; ?>" required>
     </div>
     <div class="form-group">
         <label for="tf">Telefonnummer:</label>
-        <input type="tel" class="form-control" name="mobil" value="<?php echo $mobilFyldInd;?>" required>
+        <input type="tel" class="form-control" name="mobil" value="<?php echo $mobilFyldInd; ?>" required>
     </div>
     <hr>
 
@@ -66,7 +62,7 @@ $hent = "SELECT * FROM users WHERE user_id = '$user_id'";
 function get_post($con, $var) {
 	return mysqli_real_escape_string($con, $_POST[$var]);
 }
-    
+   }   }
 ?>
     <?php 
 require_once('includes/footer.php');
