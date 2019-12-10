@@ -48,7 +48,6 @@
                 <div class="clearermed visible-xs"></div>
                 <div class="col-xs-12 col-sm-8 col-lg-10 col-sm-pull-4 col-lg-pull-2">
                     <p class="no-margin">
-                        <br>
                         Mutuum (CVR 21212121) tilbyder en platform, hvor du kan låne af din familie, venner og bekendte og få en juridisk kontrakt.
                         <br>
                         <br>
