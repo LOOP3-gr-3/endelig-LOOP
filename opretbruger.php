@@ -4,7 +4,7 @@ require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
 
 if (isset($_SESSION['user_id'])) {
-	header('Location: loggedin_front.php');
+	header('Location: minside.php');
 }
 
 if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail']) && isset($_POST['password1']) && isset($_POST['telefon'])) {

@@ -25,15 +25,15 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil
     $efternavnRet = get_post($con, 'efternavn');
     $mobilRet = get_post($con, 'mobil');
     
-$query1 = "UPDATE users 
-SET fornavn = '$fornavnRet', 
-efternavn = '$efternavnRet', 
-mobil = '$mobilRet' 
-WHERE user_id = '$user_id'"; 
-$result1 = mysqli_query($con, $query1);
-   if(!$result1) {
+    $query1 = "UPDATE users 
+    SET fornavn = '$fornavnRet', 
+    efternavn = '$efternavnRet', 
+    mobil = '$mobilRet' 
+    WHERE user_id = '$user_id'"; 
+    $result1 = mysqli_query($con, $query1);
+    if(!$result1) {
        die(mysqli_error($con));
-   } else {
+    } else {
               
                 echo "<h2 class='text-center'>Dine oplysninger er nu opdateret!</h2>"; }
 
@@ -57,7 +57,9 @@ $result1 = mysqli_query($con, $query1);
     </div>
     <hr>
 
-    <button class="btn btn-warning" href="minside.php">Gem ændringer</button>
+    <button class="btn btn-warning" href="minside.php" type="submit">Gem ændringer</button>
+
+
     <?php
 function get_post($con, $var) {
 	return mysqli_real_escape_string($con, $_POST[$var]);
