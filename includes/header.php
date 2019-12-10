@@ -57,7 +57,7 @@ if(isset($_SESSION['user_id'])) {
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="container-fluid collapse navbar-collapse" id="myNavbar">
                 <?php echo $menu; ?>
             </div>
         </div>

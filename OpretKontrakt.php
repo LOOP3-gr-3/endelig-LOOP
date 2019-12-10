@@ -12,17 +12,11 @@
     <div>
         <p><I>Udfyld venligst nedenstående felter til din kontrakt:</I></p><br>
 
-        <div class="container">
             <form method="post" action="opretkontraktaction.php" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
                 <fieldset>
-                    <div name="userid">
-                        <?php 
-                        $user_id;
-                        ?>
-                    </div>
                     <div>
                         <p>Beløb</p>
-                        <select class="btn btn-light dropdown-toggle" id="dropdownbeloeb" data-toggle="dropdown" name="dropdownbeloeb">
+                        <select class="btn btn-light dropdown-toggle" id="dropdownbeloeb" data-toggle="dropdown" name="dropdownbeloeb" required>
                             <option selected value="">Vælg et beløb i DKK</option>
                             <?php
                                 $query1 = "SELECT * FROM beloeb ORDER BY beloeb";    
@@ -46,7 +40,7 @@
 
                     <div>
                         <p>Rente</p>
-                        <select class="btn btn-light dropdown-toggle" id="dropdownrente" data-toggle="dropdown" name="dropdownrente">
+                        <select class="btn btn-light dropdown-toggle" id="dropdownrente" data-toggle="dropdown" name="dropdownrente" required>
                             <option selected value="">Vælg en rente i %</option>
                             <?php 
                                 $query2 = "SELECT * FROM rente ORDER BY rente";    
@@ -69,7 +63,7 @@
 
                     <div>
                         <p>Løbetid</p>
-                        <select class="btn btn-light dropdown-toggle" id="dropdownloebetid" data-toggle="dropdown" name="dropdownloebetid">
+                        <select class="btn btn-light dropdown-toggle" id="dropdownloebetid" data-toggle="dropdown" name="dropdownloebetid" required>
                             <option selected value="">Vælg løbetiden på kontrakten</option>
                             <?php 
                             $query3 = "SELECT * FROM bindingsperiode ORDER BY loebetid"; 
@@ -101,7 +95,7 @@
                     <strong>Kontraktbrud</strong>
                     <div>
                         <p><I>Vælg venligst en konsekvens, ved kontraktbrud</I></p>
-                        <select class="btn btn-light dropdown-toggle" id="dropdownkontraktbrud" data-toggle="dropdown" name="dropdownkontraktbrud">
+                        <select class="btn btn-light dropdown-toggle" id="dropdownkontraktbrud" data-toggle="dropdown" name="dropdownkontraktbrud" required>
                             <option selected value="">Vælg konsekvens ved brud på kontrakt</option>
                             <?php 
                             $query4 = "SELECT * FROM kontraktbrud ORDER BY brud";    
@@ -129,7 +123,7 @@
 
                     <p><I>Indtast E-mail på den person, som er oprettet på MUTUUM, som skal underskrive kontrakten.</I></p>
                     <label for="laantageremail">Mail på låntager</label>
-                    <input type="email" id="laantageremail" name="laantageremail" placeholder="låntager@mail.dk">
+                    <input type="email" id="laantageremail" name="laantageremail" placeholder="låntager@mail.dk" required>
 
                     <br>
                     <br>
@@ -147,7 +141,7 @@
         </div>
 
     </div>
-</div>
+
 <?php
  require_once('includes/footer.php');
 ?>

@@ -17,10 +17,9 @@ if(!isset($_SESSION)){session_start();}
             $rente_id_upload = get_post($con, 'dropdownrente');
             $bindingsperiode_id_upload = get_post($con, 'dropdownloebetid');
             $kontraktbrud_id_upload = get_post($con, 'dropdownkontraktbrud');
-            $mail_laantager_id_upload = get_post($con, 'laantageremail');
             $maanedligafdrag_upload = '1';
          
-             $upload = "INSERT INTO kontrakt (beloeb_id, rente_id, bindingsperiode_id, kontraktbrud_id, laantager_user_id, laangiver_user_id, reg_underskrift_1, laangiver_underskrift_id, reg_underskrift_2, laantager_underskrift_id, maanedlig_afdrag) VALUES('$beloeb_id_upload', '$rente_id_upload', '$bindingsperiode_id_upload', '$kontraktbrud_id_upload', '$mail_laantager_id_upload', '$user_id', CURRENT_TIMESTAMP, '1', CURRENT_TIMESTAMP, '1', '$maanedligafdrag_upload')";
+             $upload = "INSERT INTO kontrakt (beloeb_id, rente_id, bindingsperiode_id, kontraktbrud_id, laantager_user_id, laangiver_user_id, reg_underskrift_1, laangiver_underskrift_id, reg_underskrift_2, laantager_underskrift_id, maanedlig_afdrag) VALUES('$beloeb_id_upload', '$rente_id_upload', '$bindingsperiode_id_upload', '$kontraktbrud_id_upload', '$mail_laantager_id', '$user_id', CURRENT_TIMESTAMP, '1', CURRENT_TIMESTAMP, '1', '$maanedligafdrag_upload')";
              $result6 = mysqli_query($con, $upload);
              if(!$result6) die(mysqli_error($con));
              else {
@@ -32,10 +31,14 @@ if(!isset($_SESSION)){session_start();}
                     </div>
 <?php
             }
-         ?
+         ?>
 
 <?php
-         }    } }
+         } else {
+         echo 'Udfyld alle felterne';
+     }    
+} 
+}
 function get_post($con, $var) {
     return mysqli_real_escape_string($con, $_POST[$var]);
 }
