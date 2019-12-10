@@ -1,55 +1,17 @@
 <?php
 $page = ('MUTUUM');
 require_once("includes/header.php");
+if (!isset($_SESSION)) session_start();
+if(!$_SESSION['user_id']) {  
+        $knappaaforsiden = '<button href="opretbruger.php" class="btn btn-warning btn-lg margin margin wasknap"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPRET BRUGER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button>';
+        } else {
+        $knappaaforsiden = '<button href="minside.php" class="btn btn-warning btn-lg margin margin wasknap"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MIN SIDE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button>';}
 ?>
-<style>
-  p {font-size: 1em;}
-  .margin {margin-bottom: 0.8em;}
-  .bg-1 { 
-    background-color: darkslategrey;
-    color: #ffffff;
-    }
-    .bg-2 { 
-    background-color: white;
-    color: black;
-    }
-   .wasfarve {
-    border-color: orange;
-    background: white;
-    border-radius: 4em;
-    margin-left: 3.5em;
-    margin-right: 3.5em;
-    margin-top: -1em;
-    }
-    .wasfarve p{
-    color: black;
-    }
-    .wasbokse {
-    border-radius: 8em;
-    color: black;
-    background: white;
-    }
-    .wasbokserne {
-    width: 85%;
-    }
-    .wasknap {
-    border-radius: 2em;
-    }
-    .wastekst {
-    color: white;
-    }
-  </style>
-<body>
 
 <!-- First Container -->
-<div class="container-fluid bg-1 text-center wastekst">
+<div class="container-fluid bg-1 text-center wastekst no-margin">
   <h1 class="margin">VELKOMMEN TIL MUTUUM</h1>
-<?php 
-    if(!$_SESSION['user_id']) {
-        echo '<button href="opretbruger.php" class="btn btn-warning btn-lg margin margin wasknap"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPRET BRUGER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button>';
-        } else 
-        echo '<button href="minside.php" class="btn btn-warning btn-lg margin margin wasknap"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MIN SIDE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button>';
-    ?>
+<?php echo $knappaaforsiden; ?>
     <br> <br>
   <img src="images/benjamin-sow-CB4z0uTFSYg-unsplash.jpg" class="img-responsive img-circle margin" style="display:inline" width="350" height="350">
     <h3 class="margin"><strong>VÆK MED ALT DET BESVÆRLIGE</strong></h3>

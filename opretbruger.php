@@ -1,8 +1,11 @@
 <?php
 $page = ('Opret bruger');
 require_once("includes/header.php");
-session_destroy();
-session_start();
+if (!isset($_SESSION)) session_start();
+
+if (isset($_SESSION['user_id'])) {
+	header('Location: loggedin_front.php');
+}
 
 if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail']) && isset($_POST['password1']) && isset($_POST['telefon'])) {
 	$fornavn = get_post($con, 'fornavn');

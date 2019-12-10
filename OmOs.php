@@ -3,26 +3,7 @@ $page = ('Forside');
 require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
 ?>
-  <style>
-  .wasoverskrift {
-    background-color: darkslategrey;
-    color: white;
-  }
-  .bg-grey {
-    background-color: #f6f6f6;
-  }
-  @media screen {
-      .waslogo {
-      text-align: center;
-      margin: 3em 0;
-    }
-  }
-      .wasmargin {
-          margin-top: -2em;
-      }
-  </style>
-<body>
-
+ 
 <div class="jumbotron text-center wasoverskrift">
   <h1>Om os</h1> 
   <p>Læs om Mutuum og få indblik i din kommende verden</p> 

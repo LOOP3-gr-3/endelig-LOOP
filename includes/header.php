@@ -37,17 +37,14 @@ if(isset($_SESSION['user_id'])) {
     <meta name="description" content="">
     <meta name="author" content="Projektgruppe 3">
     <title><?php echo $page;?></title> <!-- Gør siderne dynamiske, så der ændres navn i toppen -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"> <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="includes/overallstyles.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">     
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
-    <link rel="icon" type="image/x-icon" href="images/mutuum.ico">
-</head>
-
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"> <!-- Bootstrap core CSS -->   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" type="text/css"> 
+    <link rel="stylesheet" href="styles/overallstyles.css" type="text/css">    
+</head>          
+  
 <body>
     <!-- Navigation -->
-
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">

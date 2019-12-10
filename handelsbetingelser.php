@@ -1,23 +1,19 @@
 <?php
 $page = ('Handelsbetingelser');
 require_once("includes/header.php");
+if (!isset($_SESSION)) {session_start();}
 ?>
 
 
 <!--Nedenstående kode er implementere fra en template fra Bootstrap. Der er foretaget rettelser mhp. tekst og indhold.-->
 
-<div class="container">
-    <br />
-    <br />
-    <br />
-    <div class="faqHeader" style="text-align:center"><h1>Handelsbetingelser</h1></div>
+        <div class="jumbotron text-center wasoverskrift">
+        <h1>Handelsbetingelser</h1></div>
+<div class="container-fluid">
     <div class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <p>Hvis du ikke finder svaret på dine spørgsmål herinde, så er du velkommen til at kontakte os via mobil eller email. </p> 
     </div>
-
-    <br />
-
     <div class="panel-group" id="accordion">
         <div class="faqHeader"><h2>Generelt</h2></div>
         <div class="panel panel-default">
@@ -30,7 +26,7 @@ require_once("includes/header.php");
                 <div class="panel-body">
                    <p> Mutuum (herefter ”Långiver”) kan bevilge kredit til en fysisk person (herefter ”Låntageren”), som opfylder følgende betingelser</p>
                     <ol>
-                        <li><p>Låntageren er ældre end 19 år,</p></li>
+                        <li><p>Låntageren er ældre end 18 år,</p></li>
                         <li><p>Låntageren er dansk statsborger med CPR-nummer,</p></li>
                         <li><p>Låntageren har folkeregisteradresse i Danmark,</p></li>
                         <li><p>Låntageren har et gyldigt NemID,</p></li>

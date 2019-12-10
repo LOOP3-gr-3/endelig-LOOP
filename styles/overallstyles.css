@@ -104,3 +104,63 @@
  .minprofilpaaminside {
         background-color: whitesmoke !important;
     }
+
+
+/*________________________ FORSIDE _______________________________ WASFIA */ 
+.p {
+     font-size: 1em;
+}
+  .margin {
+      margin-bottom: 0.8em;
+}
+  .bg-1 { 
+    background-color: darkslategrey;
+    color: #ffffff;
+    }
+    .bg-2 { 
+    background-color: white;
+    color: black;
+    }
+   .wasfarve {
+    border-color: orange;
+    background: white;
+    border-radius: 4em;
+    margin-left: 3.5em;
+    margin-right: 3.5em;
+    margin-top: -1em;
+    }
+    .wasfarve p{
+    color: black;
+    }
+    .wasbokse {
+    border-radius: 8em;
+    color: black;
+    background: white;
+    }
+    .wasbokserne {
+    width: 85%;
+    }
+    .wasknap {
+    border-radius: 2em;
+    }
+    .wastekst {
+    color: white;
+    }
+
+/*____________________________ OM OS _____________________ WASFIA */
+  .wasoverskrift {
+    background-color: darkslategrey;
+    color: white;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  @media screen {
+      .waslogo {
+      text-align: center;
+      margin: 3em 0;
+    }
+  }
+      .wasmargin {
+          margin-top: -2em;
+      }
