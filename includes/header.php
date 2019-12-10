@@ -8,6 +8,7 @@ if(isset($_SESSION['user_id'])) {
                     <li><a href="faq.php">FAQ</a></li>
                     <li><a href="raadgivning.php">Økonomisk rådgivning</a></li>
                     <li><a href="faq.php">Handelsbetingelser</a></li>
+                    </ul>
                     <ul class="nav navbar-nav navbar-right">
                     <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Log ud</a></li>
                     </ul>';
