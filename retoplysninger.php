@@ -7,18 +7,8 @@ if (!isset($_SESSION['user_id'])) {
         echo 'window.location.href="login.php";';
         echo '</script>' ;
         die();
-
-
     }
 $user_id = $_SESSION['user_id'];
-
-$hent = "SELECT * FROM users WHERE user_id = '$user_id'";
-$resulthent = mysqli_query($con, $hent);
-$row1 = mysqli_num_rows($resulthent);
-    while ($row1 = mysqli_fetch_assoc($resulthent)){
-        $fornavnFyldInd = $row1["fornavn"];  
-        $efternavnFyldInd = $row1["efternavn"];
-        $mobilFyldInd = $row1["mobil"]; 
 
 if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil'])) {
     $fornavnRet = get_post($con, 'fornavn');
@@ -33,11 +23,25 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil
     $result1 = mysqli_query($con, $query1);
     if(!$result1) {
        die(mysqli_error($con));
-    } else {
-              
-                echo "<h2 class='text-center'>Dine oplysninger er nu opdateret!</h2>"; }
+    } 
+    else {
+		echo '<script>alert("Dine oplysninger er nu blevet opdateret");';
+        /*Brugeren sendes til minside */
+        echo 'window.location.href="minside.php";';
+        echo '</script>' ;
+        die();
+    }
+}
+$hent = "SELECT * FROM users WHERE user_id = '$user_id'";
+$resulthent = mysqli_query($con, $hent);
+$row1 = mysqli_num_rows($resulthent);
+    while ($row1 = mysqli_fetch_assoc($resulthent)){
+        $fornavnFyldInd = $row1["fornavn"];  
+        $efternavnFyldInd = $row1["efternavn"];
+        $mobilFyldInd = $row1["mobil"]; 
 
 ?>
+<div class="container-fluid">
 <hr>
 <h1>Ret oplysninger</h1>
 <hr>
@@ -58,13 +62,19 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil
     <hr>
 
     <button class="btn btn-warning" href="minside.php" type="submit">Gem ændringer</button>
-
+    <br>
+    <br>
+    <button class="float-right btn btn-warning mutuumknap" href="minside.php">Tilbage</button>
+    </form>
+    <br>
+</div>
 
     <?php
+} 
 function get_post($con, $var) {
 	return mysqli_real_escape_string($con, $_POST[$var]);
 }
-   }   }
+  
 ?>
     <?php 
 require_once('includes/footer.php');

@@ -96,9 +96,10 @@
 }
 
 /*____________________________GENERELT KNAP______________________ */
-.blaaknap {
-  background-color: darkblue;
-  border-color: darkblue; }
+.mutuumknap {
+  background-color: rgb(47, 79, 79);
+  border-color: rgb(47, 79, 79); 
+}
 
 /* __________________________MIN SIDE_____________________________MAJA og METTE*/
  .minprofilpaaminside {
