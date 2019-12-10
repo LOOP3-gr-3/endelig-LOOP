@@ -9,9 +9,14 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
+$kontrakt_id = '13';
 ?>
 
 <div class="container-fluid">
+
+    
+    
+
     
 <pre>
 SÆT/HENT KONTRAKT ID!!!!!!!!!!!!!!!!
