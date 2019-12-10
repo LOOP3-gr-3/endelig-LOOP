@@ -50,7 +50,7 @@ $hent = "SELECT * FROM users WHERE user_id = '$user_id'";
         </div>
 <div class="form-group">
             <label for="tf">Telefonnummer:</label>
-            <input type="tel" class="form-control" name="mobil" value="<?php echo $mmobilFyldInd;?>" required>
+            <input type="tel" class="form-control" name="mobil" value="<?php echo $mobilFyldInd;?>" required>
         </div>
         <hr>
         
