@@ -24,7 +24,6 @@ if(isset($_SESSION['user_id'])) {
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Log Ind</a></li>
                     <li><a href="opretbruger.php"><span class="glyphicon glyphicon-user"></span> Opret bruger</a></li>
                     </ul>';
-	
 }
 ?>
 <!-- Dette gør siden dynamisk, så navbaren bliver ændret alt efter om brugerne er logget ind eller ej-->
@@ -46,9 +45,8 @@ if(isset($_SESSION['user_id'])) {
   
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
+    <nav class="navbar navbar-inverse no-buttom-margin">
+        <div class="navbar-header no-buttom-margin">
                 <a href="index.php"><img src="images/logomarkat1.png" class="logoheader"></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
@@ -56,8 +54,8 @@ if(isset($_SESSION['user_id'])) {
                     <span class="icon-bar"></span>
                 </button>
             </div>
-            <div class="container-fluid collapse navbar-collapse" id="myNavbar">
+            <div class="collapse navbar-collapse" id="myNavbar">
                 <?php echo $menu; ?>
             </div>
-        </div>
+        
     </nav>

@@ -45,6 +45,7 @@ $row1 = mysqli_num_rows($resulthent);
 <hr>
 <h1>Ret oplysninger</h1>
 <hr>
+    <div class="container-fluid">
 <form class="needs-validation" novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 
     <div class="form-group">
@@ -62,11 +63,10 @@ $row1 = mysqli_num_rows($resulthent);
     <hr>
 
     <button class="btn btn-warning" href="minside.php" type="submit">Gem ændringer</button>
-    <br>
-    <br>
-    <button class="float-right btn btn-warning mutuumknap" href="minside.php">Tilbage</button>
+    <button class="pull-right btn btn-warning mutuumknap" href="minside.php">Tilbage</button>
     </form>
     <br>
+</div>
 </div>
 
     <?php
