@@ -129,7 +129,7 @@
 
                     <!-- HUSK AT HER SKAL VI SKIFTE URL ADRESSEN UD MED DEN RIGTIGE I STEDET FOR LOCALHOST href="http://localhost/mutuum/mutuum/endelig-LOOP/viskontrakt.php"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! /-->
 
-                    <a role="button" name="submit" type="submit" class="btn btn-primary blaaknap">Gem kontrakt</a>
+                    <a><button role="button" name="submit" type="submit" class="btn btn-primary blaaknap">Gem kontrakt</button></a>
                     
                 </fieldset>
             </form>
@@ -138,6 +138,7 @@
         </div>
 
     </div>
+<br>
 </div>
 <?php
  require_once('includes/footer.php');
