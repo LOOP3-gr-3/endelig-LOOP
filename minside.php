@@ -105,9 +105,9 @@ $user_id = $_SESSION['user_id'];
                 $row2 = mysqli_num_rows($result2);
                     if($row2 > 0){
                     while($row2 = mysqli_fetch_assoc($result2)){
-                        $dato_underskrift_laangiver = $row2["reg_underskrift_1"]; 
-                        $beloebforkontrakt = $row2["beloeb_id"];
-                        $renteforkontrakt = $row2["rente_id"];
+                        $dato_underskrift_laangiver = $row2['reg_underskrift_1']; 
+                        $beloebforkontrakt = $row2['beloeb_id'];
+                        $renteforkontrakt = $row2['rente_id'];
                 $query22 = "SELECT * FROM beloeb WHERE beloeb_id = '$beloebforkontrakt'";
                     $result22 = mysqli_query($con, $query22);
                     $row22 = mysqli_fetch_assoc($result22);
@@ -156,7 +156,7 @@ $user_id = $_SESSION['user_id'];
                 </div>
             </div>
             <?php
-            $query3 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_user_id = '$user_id' AND laantager_underskrift_id = '2'";
+            $query3 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '2' AND laantager_user_id = '$user_id' OR laangiver_user_id = '$user_id'";
                 $result3 = mysqli_query($con, $query3);
                 $row3 = mysqli_num_rows($result3);
                     if($row3 > 0){
