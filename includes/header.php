@@ -37,6 +37,7 @@ if(isset($_SESSION['user_id'])) {
     <meta name="description" content="">
     <meta name="author" content="Projektgruppe 3">
     <title><?php echo $page;?></title> <!-- Gør siderne dynamiske, så der ændres navn i toppen -->
+    <link rel="icon" type="image/x-icon" href="images/logo.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"> <!-- Bootstrap core CSS -->   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" type="text/css"> 
