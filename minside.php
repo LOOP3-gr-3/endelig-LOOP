@@ -1,7 +1,7 @@
 <?php
 $page = ('Din side');
 require_once("includes/header.php");
-if (!isset($_SESSION)) session_start();
+if (!isset($_SESSION)) {session_start();}
 if (!isset($_SESSION['user_id'])) {
         echo '<script>alert("Du er ikke logget ind på MUTUUM - log ind her, eller opret en bruger og få gratis adgang til platformen!");';
         echo 'window.location.href="login.php";';
@@ -28,14 +28,14 @@ $user_id = $_SESSION['user_id'];
                     echo "&nbsp;<strong>Brugernavn:</strong> " . $row['mail'] . "<br>&nbsp;<strong>Fornavn:</strong> " . $row['fornavn'] . "<br>&nbsp;<strong>Efternavn:</strong> " . $row['efternavn'] . "<br>&nbsp;<strong>Telefon nr.:</strong> " . $row['mobil'] . "<br><br>";
                     } 
                     } else {
-                        echo "<br>Data er ikke blevet oplyst. Opret bruger eller oplys manglende data";
+                        echo "";
                         }   
         ?>
                 <a href="retoplysninger.php"><button class="btn btn-warning">Ret oplysninger</button></a>
                 <br>
                 <br>
             </div>
-        </div>
+        </div>   
         <div class="row">
             <!-- Mine aftaler sektionen -->
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
@@ -45,6 +45,8 @@ $user_id = $_SESSION['user_id'];
                     <h1>DINE AFTALER</h1>
                     <hr>
             </div>
+            
+    <div class="container-fluid"> 
             <div class="col-xs-12 col-sm-12 col-md-6 col col-lg-6 col-xl-6">
                 <h2>Kontrakt anmodninger</h2>
                 <?php
@@ -100,7 +102,7 @@ $user_id = $_SESSION['user_id'];
                     <?php
             $query2 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '1' AND laangiver_user_id = '$user_id'";
                 $result2 = mysqli_query($con, $query2);
-                $row2 = mysqli_num_rows($result1);
+                $row2 = mysqli_num_rows($result2);
                     if($row2 > 0){
                     while($row2 = mysqli_fetch_assoc($result2)){
                         $dato_underskrift_laangiver = $row2["reg_underskrift_1"]; 
@@ -133,21 +135,22 @@ $user_id = $_SESSION['user_id'];
                         </div>
                     </div>
                 </div>
+            </div>
 
                 <?php
                         }} else {echo 'Du har endnu ikke oprettet nogle kontrakter';}
         ?>
         </div>
         <!-******************ALT KODE TIL HISTORIK*****************-->
-
-            <div class="row container">
+<div class="container-fluid">
+            <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
                     <hr>
                     <h1>HISTORIK</h1>
                     <hr>
                 </div>
             </div>
-            <div class="row container">
+            <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <h2>Underskrevne kontrakter</h2>
                 </div>
@@ -183,7 +186,8 @@ $user_id = $_SESSION['user_id'];
                     $modtagerfornavn = $row33333['fornavn'];
                     $modtagerefternavn = $row33333['efternavn'];
         ?>
-            <div class="row container">
+    <div class="container-fluid">
+            <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">
@@ -206,8 +210,9 @@ $user_id = $_SESSION['user_id'];
         ?>
             </div>
     </div>
-
-
+</div>
+        </div>
+<br>
     <?php
 require_once("includes/footer.php");
 ?>
