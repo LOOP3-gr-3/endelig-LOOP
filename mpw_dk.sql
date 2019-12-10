@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1:3306
--- Genereringstid: 27. 11 2019 kl. 13:56:15
+-- Genereringstid: 10. 12 2019 kl. 14:25:39
 -- Serverversion: 5.7.26
 -- PHP-version: 7.2.18
 
@@ -32,7 +32,6 @@ DROP TABLE IF EXISTS `beloeb`;
 CREATE TABLE IF NOT EXISTS `beloeb` (
   `beloeb_id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `beloeb` int(10) NOT NULL,
-  `value` varchar(3) NOT NULL DEFAULT 'DKK',
   PRIMARY KEY (`beloeb_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
 
@@ -40,52 +39,37 @@ CREATE TABLE IF NOT EXISTS `beloeb` (
 -- Data dump for tabellen `beloeb`
 --
 
-INSERT INTO `beloeb` (`beloeb_id`, `beloeb`, `value`) VALUES
-(1, 500, 'DKK'),
-(2, 1000, 'DKK'),
-(3, 1500, 'DKK'),
-(4, 2000, 'DKK'),
-(5, 2500, 'DKK'),
-(6, 3000, 'DKK'),
-(7, 3500, 'DKK'),
-(8, 4000, 'DKK'),
-(9, 4500, 'DKK'),
-(10, 5000, 'DKK'),
-(11, 5500, 'DKK'),
-(12, 6000, 'DKK'),
-(13, 6500, 'DKK'),
-(14, 7000, 'DKK'),
-(15, 7500, 'DKK'),
-(16, 8000, 'DKK'),
-(17, 8500, 'DKK'),
-(18, 9000, 'DKK'),
-(19, 9500, 'DKK'),
-(20, 10000, 'DKK'),
-(21, 10500, 'DKK'),
-(22, 11000, 'DKK'),
-(23, 11500, 'DKK'),
-(24, 12000, 'DKK'),
-(25, 12500, 'DKK'),
-(27, 13000, 'DKK'),
-(28, 13500, 'DKK'),
-(29, 14000, 'DKK'),
-(30, 14500, 'DKK'),
-(31, 15000, 'DKK');
-
--- --------------------------------------------------------
-
---
--- Struktur-dump for tabellen `betalings_status`
---
-
-DROP TABLE IF EXISTS `betalings_status`;
-CREATE TABLE IF NOT EXISTS `betalings_status` (
-  `betalings_status_id` int(10) NOT NULL AUTO_INCREMENT,
-  `bindingsperiode_id` tinyint(4) NOT NULL,
-  `status` int(10) NOT NULL,
-  `afviklet` varchar(4) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`betalings_status_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+INSERT INTO `beloeb` (`beloeb_id`, `beloeb`) VALUES
+(1, 500),
+(2, 1000),
+(3, 1500),
+(4, 2000),
+(5, 2500),
+(6, 3000),
+(7, 3500),
+(8, 4000),
+(9, 4500),
+(10, 5000),
+(11, 5500),
+(12, 6000),
+(13, 6500),
+(14, 7000),
+(15, 7500),
+(16, 8000),
+(17, 8500),
+(18, 9000),
+(19, 9500),
+(20, 10000),
+(21, 10500),
+(22, 11000),
+(23, 11500),
+(24, 12000),
+(25, 12500),
+(27, 13000),
+(28, 13500),
+(29, 14000),
+(30, 14500),
+(31, 15000);
 
 -- --------------------------------------------------------
 
@@ -178,7 +162,6 @@ CREATE TABLE IF NOT EXISTS `kontrakt` (
   `kontrakt_id` int(10) NOT NULL AUTO_INCREMENT,
   `laangiver_user_id` int(10) NOT NULL,
   `laantager_user_id` int(10) NOT NULL,
-  `kredit_id` tinyint(4) NOT NULL,
   `kontraktbrud_id` tinyint(4) NOT NULL,
   `rente_id` tinyint(4) NOT NULL,
   `beloeb_id` tinyint(4) NOT NULL,
@@ -188,18 +171,18 @@ CREATE TABLE IF NOT EXISTS `kontrakt` (
   `reg_underskrift_1` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `laantager_underskrift_id` varchar(40) DEFAULT NULL,
   `reg_underskrift_2` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `betalings_status_id` int(10) NOT NULL,
   PRIMARY KEY (`kontrakt_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Data dump for tabellen `kontrakt`
 --
 
-INSERT INTO `kontrakt` (`kontrakt_id`, `laangiver_user_id`, `laantager_user_id`, `kredit_id`, `kontraktbrud_id`, `rente_id`, `beloeb_id`, `bindingsperiode_id`, `maanedlig_afdrag`, `laangiver_underskrift_id`, `reg_underskrift_1`, `laantager_underskrift_id`, `reg_underskrift_2`, `betalings_status_id`) VALUES
-(1, 11, 12, 1, 1, 1, 1, 1, 100, '1', '2019-11-21 16:21:54', NULL, '2019-11-21 16:21:54', 1),
-(2, 13, 11, 1, 1, 1, 1, 1, 100, '1', '2019-11-21 16:22:37', NULL, '2019-11-21 16:22:37', 1),
-(3, 14, 11, 1, 1, 1, 1, 1, 100, '1', '2019-11-21 16:22:37', NULL, '2019-11-21 16:22:37', 1);
+INSERT INTO `kontrakt` (`kontrakt_id`, `laangiver_user_id`, `laantager_user_id`, `kontraktbrud_id`, `rente_id`, `beloeb_id`, `bindingsperiode_id`, `maanedlig_afdrag`, `laangiver_underskrift_id`, `reg_underskrift_1`, `laantager_underskrift_id`, `reg_underskrift_2`) VALUES
+(13, 11, 12, 1, 2, 3, 3, 1, '1', '2019-12-10 11:23:26', '1', '2019-12-10 11:23:26'),
+(14, 11, 12, 1, 2, 3, 3, 1, '1', '2019-12-10 11:23:31', '1', '2019-12-10 11:23:31'),
+(15, 11, 12, 1, 2, 3, 3, 1, '1', '2019-12-10 11:23:54', '1', '2019-12-10 11:23:54'),
+(16, 11, 12, 1, 2, 3, 3, 1, '1', '2019-12-10 11:23:59', '1', '2019-12-10 11:23:59');
 
 -- --------------------------------------------------------
 
@@ -226,26 +209,15 @@ INSERT INTO `kontraktbrud` (`kontraktbrud_id`, `brud`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur-dump for tabellen `kredit`
+-- Struktur-dump for tabellen `password_reset_temp`
 --
 
-DROP TABLE IF EXISTS `kredit`;
-CREATE TABLE IF NOT EXISTS `kredit` (
-  `kredit_id` tinyint(4) NOT NULL AUTO_INCREMENT,
-  `kreditrating` varchar(3) NOT NULL,
-  PRIMARY KEY (`kredit_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
---
--- Data dump for tabellen `kredit`
---
-
-INSERT INTO `kredit` (`kredit_id`, `kreditrating`) VALUES
-(1, 'AAA'),
-(2, 'AA'),
-(3, 'A'),
-(4, 'B'),
-(5, 'C');
+DROP TABLE IF EXISTS `password_reset_temp`;
+CREATE TABLE IF NOT EXISTS `password_reset_temp` (
+  `mail` varchar(250) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `key` varchar(250) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `expDate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -257,7 +229,6 @@ DROP TABLE IF EXISTS `rente`;
 CREATE TABLE IF NOT EXISTS `rente` (
   `rente_id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `rente` float NOT NULL,
-  `value` varchar(1) NOT NULL DEFAULT '%',
   PRIMARY KEY (`rente_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
@@ -265,48 +236,48 @@ CREATE TABLE IF NOT EXISTS `rente` (
 -- Data dump for tabellen `rente`
 --
 
-INSERT INTO `rente` (`rente_id`, `rente`, `value`) VALUES
-(1, 0.5, '%'),
-(2, 1, '%'),
-(3, 1.5, '%'),
-(4, 2, '%'),
-(5, 2.5, '%'),
-(6, 3, '%'),
-(7, 3.5, '%'),
-(8, 4, '%'),
-(9, 4.5, '%'),
-(10, 5, '%'),
-(11, 5.5, '%'),
-(12, 6, '%'),
-(13, 6.5, '%'),
-(14, 7, '%'),
-(15, 7.5, '%'),
-(16, 8, '%'),
-(17, 8.5, '%'),
-(18, 9, '%'),
-(19, 9.5, '%'),
-(20, 10, '%'),
-(21, 10.5, '%'),
-(22, 11, '%'),
-(23, 11.5, '%'),
-(24, 12, '%'),
-(25, 12.5, '%'),
-(26, 13, '%'),
-(27, 13.5, '%'),
-(28, 14, '%'),
-(29, 14.5, '%'),
-(30, 15, '%'),
-(31, 15.5, '%'),
-(32, 16, '%'),
-(33, 16.5, '%'),
-(34, 17, '%'),
-(35, 17.5, '%'),
-(36, 18, '%'),
-(37, 18.5, '%'),
-(38, 19, '%'),
-(39, 19.5, '%'),
-(40, 20, '%'),
-(41, 0, '%');
+INSERT INTO `rente` (`rente_id`, `rente`) VALUES
+(1, 0.5),
+(2, 1),
+(3, 1.5),
+(4, 2),
+(5, 2.5),
+(6, 3),
+(7, 3.5),
+(8, 4),
+(9, 4.5),
+(10, 5),
+(11, 5.5),
+(12, 6),
+(13, 6.5),
+(14, 7),
+(15, 7.5),
+(16, 8),
+(17, 8.5),
+(18, 9),
+(19, 9.5),
+(20, 10),
+(21, 10.5),
+(22, 11),
+(23, 11.5),
+(24, 12),
+(25, 12.5),
+(26, 13),
+(27, 13.5),
+(28, 14),
+(29, 14.5),
+(30, 15),
+(31, 15.5),
+(32, 16),
+(33, 16.5),
+(34, 17),
+(35, 17.5),
+(36, 18),
+(37, 18.5),
+(38, 19),
+(39, 19.5),
+(40, 20),
+(41, 0);
 
 -- --------------------------------------------------------
 
@@ -343,19 +314,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `mobil` int(12) NOT NULL,
   `mail` varchar(80) NOT NULL,
   `password` varchar(200) NOT NULL,
-  `kredit_id` tinyint(4) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `mail` (`mail`),
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Data dump for tabellen `users`
 --
 
-INSERT INTO `users` (`user_id`, `fornavn`, `efternavn`, `mobil`, `mail`, `password`, `kredit_id`) VALUES
-(10, 'Mikkel', 'holt', 22345578, '1', '1', 1),
-(11, 'Mette', 'Weyergang', 21020111, 'lol@lol.dk', '$2y$10$ByXvHDzgHbO1GHwS.ThPP.RVsscB/15LoqPe5Ul2KulRplT8mpYci', 1);
+INSERT INTO `users` (`user_id`, `fornavn`, `efternavn`, `mobil`, `mail`, `password`) VALUES
+(11, 'Poul', 'Hansen', 33443344, 'poul@test.dk', '$2y$10$jyI/GSdisc1ZG77cBfxHO.z8O5W4So2F65klqV9lOHONV.Jr5OJ52'),
+(12, 'Signe', 'Henriksen', 22332233, 'signe@test.dk', '$2y$10$ByXvHDzgHbO1GHwS.ThPP.RVsscB/15LoqPe5Ul2KulRplT8mpYci');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
