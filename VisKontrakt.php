@@ -36,29 +36,6 @@ hent 'reg_underskrift_1' FRA 'kontrakt'
                     $result2 = mysqli_query($con, $query2);
                     $row2 = mysqli_fetch_assoc($result2);
                     $laangiver_underskrift = $row2['reg_underskrift_1'];
-                    
-
-hent 'fornavn' + 'efternavn' FRA 'users' HVOR 'user_id' = 'laantager_user_id' FRA 'kontrakt' 
-                $query3 = "SELECT fornavn, efternavn FROM users WHERE user_id = laantager_user_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result3 = mysqli_query($con, $query3);
-                    $row3 = mysqli_fetch_assoc($result3);
-                    $laantager_fornavn = $row3['fornavn'];
-                    $laantager_efternavn = $row3['efternavn'];
-                    
-
-if(isset[reg_underskrift_2]){
-hent 'reg_underskrift_2' FRA 'kontrakt'
-                $query4 = "SELECT reg_underskrift_2 FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result4 = mysqli_query($con, $query4);
-                    $row4 = mysqli_fetch_assoc($result4);
-                    $laantager_underskrift = $row4['reg_underskrift_2'];}
-
-HVIS ikke sat, OG user_id er LÅNTAGER skal der laves knap til nemid.php
-                else{
-                    if(isset[$user_id == laantager_user_id]){
-                    button href="nemid.php" underskriv kontrakt button
-                    }
-                }
                 
 
 Hent 'beloeb' + 'value' fra 'beloeb' HVOR 'beloeb_id' = 'beloeb_id' FRA 'kontrakt'
@@ -93,6 +70,30 @@ Hent 'brud' FRA 'kontraktbrud' HVOR 'kontraktbrud_id' = 'kontraktbrud_id' FRA 'k
                     $result8 = mysqli_query($con, $query8);
                     $row8 = mysqli_fetch_assoc($result8);
                     $brud = $row8['brud'];
+
+
+hent 'fornavn' + 'efternavn' FRA 'users' HVOR 'user_id' = 'laantager_user_id' FRA 'kontrakt' 
+                $query3 = "SELECT fornavn, efternavn FROM users WHERE user_id = laantager_user_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
+                    $result3 = mysqli_query($con, $query3);
+                    $row3 = mysqli_fetch_assoc($result3);
+                    $laantager_fornavn = $row3['fornavn'];
+                    $laantager_efternavn = $row3['efternavn'];
+                    
+
+if(isset[reg_underskrift_2]){
+hent 'reg_underskrift_2' FRA 'kontrakt'
+                $query4 = "SELECT reg_underskrift_2 FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
+                    $result4 = mysqli_query($con, $query4);
+                    $row4 = mysqli_fetch_assoc($result4);
+                    $laantager_underskrift = $row4['reg_underskrift_2'];}
+
+HVIS ikke sat, OG user_id er LÅNTAGER skal der laves knap til nemid.php
+                else{
+                    if(isset[$user_id == laantager_user_id]){
+                    button href="nemid.php" underskriv kontrakt button
+                    button href="sletkontrakt.php" button
+                    }
+                }
 </pre>
 </div>
 <?php
