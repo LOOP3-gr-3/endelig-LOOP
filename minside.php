@@ -199,15 +199,13 @@ $user_id = $_SESSION['user_id'];
                             <p><strong>Rente: </strong> <?php echo $renteValue;?> %</p>
                         </div>
                         <div class="panel-footer">
-                        <a href="VisKontrakt.php"><button class="btn btn-warning btn-lg" >Vis kontrakt</button></a>
+                        <a href="viskontrakt.php"><button class="btn btn-warning btn-lg" >Vis kontrakt</button></a>
                         </div>
                     </div>
                 </div>
                 <?php
                         }} else {echo 'Du har ikke nogen aktive kontrakter';}
-            
         ?>
-
             </div>
 </div>
 

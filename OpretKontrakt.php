@@ -27,10 +27,8 @@
 
                                 $beloeb_id = $row1['beloeb_id'];
                                 $beloeb = $row1['beloeb'];
-                                $value = $row1['value'];
                             ?>
-                            <option value="<?php echo $beloeb_id;?>"> <?php echo $beloeb;?> <?php echo $value;?>
-
+                            <option value="<?php echo $beloeb_id;?>"> <?php echo $beloeb;?> DKK
                             </option>
                             <?php } ?>
                         </select>
@@ -50,9 +48,8 @@
                                 {
                                 $rente_id = $row2['rente_id'];
                                 $rente = $row2['rente'];
-                                $value = $row2['value'];
                             ?>
-                            <option value="<?php echo $rente_id;?>"> <?php echo $rente;?> <?php echo $value;?>
+                            <option value="<?php echo $rente_id;?>"> <?php echo $rente;?> %
 
                             </option>
                             <?php } ?>
@@ -72,12 +69,10 @@
                             while($row3 = mysqli_fetch_assoc($result3)) 
                             {
                             $bindingsperiode_id = $row3['bindingsperiode_id'];
-                            $loebetid = $row3['loebetid'];
-                            $value = $row3['value'];
-                            
+                            $loebetid = $row3['loebetid'];          
                             ?>
 
-                            <option value="<?php echo $bindingsperiode_id;?>"> <?php echo $loebetid;?> <?php echo $value;?>
+                            <option value="<?php echo $bindingsperiode_id;?>"> <?php echo $loebetid;?> mdr.
                             </option>
                             <?php } ?>
                         </select>
@@ -86,10 +81,11 @@
                     <br>
 
                     <p>Månedligt afdrag</p>
-
-                    <div>
-                    </div>
-
+                    
+                    <!-- Her skal det månedlige afdrag beregnes.-->
+                    <!-- $maanedligafdrag = ($beloeb * (1+($rente/100)))/$bindingsperiode -->
+                    <!-- $maanedligafdrag skal herefter indsættes i tabellen "kontrakt", sammen med alt data -->
+                    
                     <br>
 
                     <strong>Kontraktbrud</strong>
@@ -116,10 +112,11 @@
                     <br>
                     <br>
 
-                    <p><I>Udreget afkast = <U>Some generated value , -</U></I></p>
+                    <p><I>Udreget afkast = </I></p>
+                    <!-- Her skal afkastet udregnes: -->
+                    <!-- $afkast = ($beloeb*(1+(rente/100)))-$beloeb -->
+                    <!-- Denne skal ikke overføres til nogen database -->
                     <br>
-
-
 
                     <p><I>Indtast E-mail på den person, som er oprettet på MUTUUM, som skal underskrive kontrakten.</I></p>
                     <label for="laantageremail">Mail på låntager</label>
@@ -132,7 +129,7 @@
 
                     <!-- HUSK AT HER SKAL VI SKIFTE URL ADRESSEN UD MED DEN RIGTIGE I STEDET FOR LOCALHOST href="http://localhost/mutuum/mutuum/endelig-LOOP/viskontrakt.php"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! /-->
 
-                    <a role="button" name="submit" type="submit" class="btn btn-primary blaaknap">Underskriv og gem</a>
+                    <a role="button" name="submit" type="submit" class="btn btn-primary blaaknap">Gem kontrakt</a>
                     
                 </fieldset>
             </form>
