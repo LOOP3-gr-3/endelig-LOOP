@@ -5,7 +5,7 @@ if (!isset($_SESSION)) session_start();
 ?>
   <style>
   .wasoverskrift {
-    background-color: black;
+    background-color: darkslategrey;
     color: white;
   }
   .bg-grey {
@@ -47,11 +47,11 @@ if (!isset($_SESSION)) session_start();
     <div class="col-sm-4 waslogo">
       <img src="images/Morten.jpg" style="width:50%" alt="Image">
       <h4>Morten Refsgaard</h4>
-      <p>Uddannelse: Cand. Oecon. fra Århus Universitet <br> Erhvervserfaring: <br> Bankpartner, Selvstændig finansiel rådgiver (14-19)<br> Compliance og risikoansvarlig, Skjern Bank (12-13) <br> Stedfortrædende kreditchef, Skjern Bank (10-11) Erhvervsrådgiver, Sydbank (06-10)</p>
+      <p><strong>Uddannelse:</strong> Cand. Oecon. fra Århus Universitet <br> Erhvervserfaring: <br> Bankpartner, Selvstændig finansiel rådgiver (14-19)<br> Compliance og risikoansvarlig, Skjern Bank (12-13) <br> Stedfortrædende kreditchef, Skjern Bank (10-11)<br> Erhvervsrådgiver, Sydbank (06-10)</p>
     </div>
       <br>
     <div class="col-sm-4 waslogo">
-      <img src="images/gruppen.PNG" style="width:50%" alt="Image">
+      <img src="images/gruppeen.PNG" style="width:50%" alt="Image">
       <h4 style="color:#303030;">Teamet</h4>
       <p>Lasse Hvisthule <br> Maja Pallesen <br> Mette Weyergang <br> Mikkel Holt <br> Wasfia Hashemi <br> Business Development studerende på 3. semester</p>
     </div>

@@ -6,21 +6,20 @@ require_once("includes/header.php");
   p {font-size: 1em;}
   .margin {margin-bottom: 0.8em;}
   .bg-1 { 
-    background-color: black;
+    background-color: darkslategrey;
     color: #ffffff;
     }
     .bg-2 { 
     background-color: white;
     color: black;
     }
-    .bg-4 { 
-    background-color: #2f2f2f;
-    color: #fff;
-    }
    .wasfarve {
     border-color: orange;
     background: white;
-    border-radius: 3em;
+    border-radius: 4em;
+    margin-left: 3.5em;
+    margin-right: 3.5em;
+    margin-top: -1em;
     }
     .wasfarve p{
     color: black;
@@ -36,11 +35,14 @@ require_once("includes/header.php");
     .wasknap {
     border-radius: 2em;
     }
+    .wastekst {
+    color: white;
+    }
   </style>
 <body>
 
 <!-- First Container -->
-<div class="container-fluid bg-1 text-center">
+<div class="container-fluid bg-1 text-center wastekst">
   <h1 class="margin">VELKOMMEN TIL MUTUUM</h1>
 <?php 
     if(!$_SESSION['user_id']) {
@@ -60,14 +62,14 @@ require_once("includes/header.php");
     <div class="col-sm-4" align="center">
       <div class="panel panel-white wasbokse">
         <div class="panel-heading wasbokse1"> <strong>STEP 1</strong></div>
-        <div class="panel-body"><img src="images/moneyy.PNG" class="img-responsive" style="width:60%" alt="Image"></div>
+        <div class="panel-body"><img src="images/moneey.PNG" class="img-responsive" style="width:60%" alt="Image"></div>
         <div class="panel-footer wasbokse"><strong>Besvar nogle simple spørgsmål</strong> <br> Fortæl os hvor meget du vil låne eller udlåne, hvor længe, med hvilken rente og lidt om din økonomiske situation</div>
       </div>
     </div>
 <div class="col-sm-4" align="center"> 
     <div class="panel panel-white wasbokse">
         <div class="panel-heading wasbokse1"> <strong>STEP 2</strong></div>
-        <div class="panel-body"><img src="images/waiit.PNG" class="img-responsive" style="width:45%" alt="Image"></div>
+        <div class="panel-body"><img src="images/wait.PNG" class="img-responsive" style="width:40%" alt="Image"></div>
         <div class="panel-footer wasbokse"><strong>Se de diverse bud</strong> <br> På baggrund af dine svar får du som låntager forskellige tilbud, som du enten kan takke ja eller nej til. Som långiver afventer du indtil låntageren har godkendt lånet.</div>
     </div>
 </div>
@@ -86,6 +88,7 @@ require_once("includes/header.php");
       <div class="well wasfarve">
        <p><strong>Er du långiver?</strong> <br> Start din investering med kun ét klik. Med Mutuum behøver du hverken være økonom eller millionær for at have en professionel investering. Opret dig med det samme <br> og indsæt dit beløb  ved, at lave en kontrakt - læn dig tilbage og tjen med god samvittighed. </p>
       </div>
+    <br>
       <div class="well wasfarve">
        <p><strong>Er du låntager?</strong> <br> Start dit lån med kun ét klik. Mutuum står klar til at hjælpe dig. Du kan oprette dig som bruger med det samme og tage et lån på under 5 minutter. <br> Det er et lån mellem dig og långiver, vi blander os ikke.Lån sikkert med nemID. Nem og hurtig ansøgning. Bliv godkendt samme dag, pengene udbetales direkte til din konto</p>
       </div>
