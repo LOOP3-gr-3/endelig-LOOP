@@ -4,7 +4,7 @@ require_once("includes/header.php");
 ?>
 <style>
   p {font-size: 1em;}
-  .margin {margin-bottom: 1.8em;}
+  .margin {margin-bottom: 0.8em;}
   .bg-1 { 
     background-color: black;
     color: #ffffff;
@@ -33,16 +33,25 @@ require_once("includes/header.php");
     .wasbokserne {
     width: 85%;
     }
+    .wasknap {
+    border-radius: 2em;
+    }
   </style>
 <body>
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
   <h1 class="margin">VELKOMMEN TIL MUTUUM</h1>
+<?php 
+    if(!$_SESSION['user_id']) {
+        echo '<button href="opretbruger.php" class="btn btn-warning btn-lg margin margin wasknap"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPRET BRUGER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button>';
+        } else 
+        echo '<button href="minside.php" class="btn btn-warning btn-lg margin margin wasknap"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MIN SIDE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button>';
+    ?>
+    <br> <br>
   <img src="images/benjamin-sow-CB4z0uTFSYg-unsplash.jpg" class="img-responsive img-circle margin" style="display:inline" width="350" height="350">
     <h3 class="margin"><strong>VÆK MED ALT DET BESVÆRLIGE</strong></h3>
   <p>Med Mutuum kan du investere eller låne fra bare 100 kroner. Det er dine penge, så du bestemmer hvad og hvordan de skal bruges. Med Mutuum kan du løbende se gode bud og dermed tilpasse <br> den til dine ønsker og behov. Mutuum passer på dine penge, så de er i sikre hænder. </p>
-  <button href="#" class="btn btn-warning btn-block"> <strong>OPRET BRUGER</strong></button>
     <br>
 </div>
 <br>
