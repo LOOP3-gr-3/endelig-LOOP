@@ -100,7 +100,7 @@
                         <select class="form-control" id="dropdownkontraktbrud" data-toggle="dropdown" name="dropdownkontraktbrud" required>
                             <option selected value="">Vælg konsekvens ved brud på kontrakt</option>
                             <?php 
-                            $query4 = "SELECT * FROM kontraktbrud ORDER BY brud";    
+                            $query4 = "SELECT * FROM kontraktbrud ORDER BY kontraktbrud_id";    
                             $result4 = mysqli_query($con, $query4);
                             $row4 = mysqli_num_rows($result4);                          
                             while($row4 = mysqli_fetch_assoc($result4)) 
