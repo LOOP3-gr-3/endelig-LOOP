@@ -93,6 +93,7 @@ require_once("includes/header.php");
        <p><strong>Er du låntager?</strong> <br> Start dit lån med kun ét klik. Mutuum står klar til at hjælpe dig. Du kan oprette dig som bruger med det samme og tage et lån på under 5 minutter. <br> Det er et lån mellem dig og långiver, vi blander os ikke.Lån sikkert med nemID. Nem og hurtig ansøgning. Bliv godkendt samme dag, pengene udbetales direkte til din konto</p>
       </div>
 </div>
+<br>
 <?php
 require_once("includes/footer.php");
 ?>
