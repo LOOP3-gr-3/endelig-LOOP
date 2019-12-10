@@ -33,6 +33,9 @@ require_once("includes/header.php");
     .wasbokserne {
     width: 85%;
     }
+    .wasknap {
+    border-radius: 2em;
+    }
   </style>
 <body>
 
@@ -41,9 +44,9 @@ require_once("includes/header.php");
   <h1 class="margin">VELKOMMEN TIL MUTUUM</h1>
 <?php 
     if(!$_SESSION['user_id']) {
-        echo '<button href="opretbruger.php" class="btn btn-warning btn-lg margin margin"><h5><strong><br>OPRET BRUGER<br></strong></h5></button>';
+        echo '<button href="opretbruger.php" class="btn btn-warning btn-lg margin margin wasknap"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OPRET BRUGER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button>';
         } else 
-        echo '<button href="minside.php" class="btn btn-warning btn-lg margin margin"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Min side&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button>';
+        echo '<button href="minside.php" class="btn btn-warning btn-lg margin margin wasknap"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MIN SIDE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button>';
     ?>
     <br> <br>
   <img src="images/benjamin-sow-CB4z0uTFSYg-unsplash.jpg" class="img-responsive img-circle margin" style="display:inline" width="350" height="350">
