@@ -26,7 +26,7 @@ $result1 = mysqli_query($con, $query1);
 
 <?php
 $hent = "SELECT * FROM users WHERE user_id = '$user_id'";
-    $reult = mysqli_query($con, $hent);
+    $result = mysqli_query($con, $hent);
     if($result) {
         $row1 = mysqli_num_rows($result);
             while ($row1 = mysqli_fetch_assoc($result)){
