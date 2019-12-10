@@ -11,12 +11,12 @@
     </div>
     <div>
         <p><I>Udfyld venligst nedenstående felter til din kontrakt:</I></p><br>
-
+        <div class="btn-group">
             <form method="post" action="opretkontraktaction.php" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
                 <fieldset>
                     <div>
                         <p>Beløb</p>
-                        <select class="btn btn-light dropdown-toggle" id="dropdownbeloeb" data-toggle="dropdown" name="dropdownbeloeb" required>
+                        <select class="btn btn-secondary dropdown-toggle" id="dropdownbeloeb" data-toggle="dropdown" name="dropdownbeloeb" required>
                             <option selected value="">Vælg et beløb i DKK</option>
                             <?php
                                 $query1 = "SELECT * FROM beloeb ORDER BY beloeb";    
@@ -141,7 +141,7 @@
         </div>
 
     </div>
-
+</div>
 <?php
  require_once('includes/footer.php');
 ?>
