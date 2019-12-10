@@ -38,6 +38,9 @@ $hent = "SELECT * FROM users WHERE user_id = '$user_id'";
     if(!$result) {
         die();
     }
+                        }
+    }
+}
 ?>
 <hr>
 <h1>Ret oplysninger</h1>
@@ -63,9 +66,7 @@ $hent = "SELECT * FROM users WHERE user_id = '$user_id'";
 function get_post($con, $var) {
 	return mysqli_real_escape_string($con, $_POST[$var]);
 }
-            }
-    }
-}
+    
 ?>
     <?php 
 require_once('includes/footer.php');
