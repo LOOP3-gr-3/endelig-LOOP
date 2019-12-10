@@ -56,7 +56,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
     
 </form>
 <br>
-    <a href="glemtpassword.php">Glemt password?</a>
+    <a href="glemt-password.php">Glemt password?</a>
 </div>
 
 <?php
