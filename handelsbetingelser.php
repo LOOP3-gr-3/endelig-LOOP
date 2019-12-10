@@ -1,7 +1,6 @@
 <?php
 $page = ('Handelsbetingelser');
 require_once("includes/header.php");
-if (!isset($_SESSION)) session_start();
 ?>
 
 
@@ -178,8 +177,15 @@ if (!isset($_SESSION)) session_start();
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
+<?php
+    if (isset($_SESSION)){
+    echo '<a href="opretbruger.php">Tilbage til opret bruger</a>';
+}
+?>
+<br>
 </div>
+<br>
 
 
 <style>
