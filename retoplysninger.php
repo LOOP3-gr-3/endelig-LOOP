@@ -12,44 +12,54 @@ if (!isset($_SESSION['user_id'])) {
     }
   }
 
-if(isset($_POST['fornavn']) || isset($_POST['efternavn']) || isset($_POST['mobil']) || isset($_POST['password'])) {
-    $fornavnRet = $get_post($con, 'fornavn');
-    $efternavnRet = $get_post($con, 'efternavn');
-    $mobilRet = $get_post($con, 'mobil');
-    $passwordRet = $get_post($con, 'password');
-
-$token = password_hash($passwordRet, PASSWORD_DEFAULT);
+if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil']) && isset($_POST['pwd'])) {
+    $fornavnRet = get_post($con, 'fornavn');
+    $efternavnRet = get_post($con, 'efternavn');
+    $mobilRet = get_post($con, 'mobil');
     
-$query1 = "UPDATE users SET (fornavn, efternavn, mobil, password) VALUES('$fornavnRet', '$efternavnRet', '$mobilRet', '$token')"; 
+$query1 = "UPDATE users SET fornavn = $fornavnRet, efternavn = $efternavnRet, mobil = $mobilRet WHERE user_id = '$user_id"; 
 $result1 = mysqli_query($con, $query1);
-    if(!$result) {
+    if(!$result1) {
         die();
-    }
-}
+    }}
 ?>
 
+<?php
+$hent = "SELECT * FROM users WHERE user_id = '$user_id'";
+    $result = mysqli_query($con, $hent);
+    if($result) {
+        $row1 = mysqli_num_rows($result);
+            while ($row1 = mysqli_fetch_assoc($result)){
+               $fornavnFyldInd = $row1["fornavn"];  
+               $efternavnFyldInd = $row1["efternavn"];
+               $mobilFyldInd = $row1["mobil"]; 
+        }
+    if(!$result) {
+        die();
+    }}
+?>
 <hr><h1>Ret oplysninger</h1><hr>
     <form class="needs-validation" novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
         <div class="form-group" id="logmag">
             <label for="fornavn">Fornavn:</label>
-            <input type="text" class="form-control" name="fornavn" placeholder="Fornavn" required>
+            <input type="text" class="form-control" name="fornavn" value="<?php echo $fornavnFyldInd;?>" required>
         </div>
         <div class="form-group">
             <label for="efternavn">Efternavn:</label>
-            <input type="text" class="form-control" name="efternavn" placeholder="Efternavn" required>
+            <input type="text" class="form-control" name="efternavn" value="<?php echo $efternavnFyldInd;?>" required>
         </div>
 <div class="form-group">
             <label for="tf">Telefonnummer:</label>
-            <input type="tel" class="form-control" name="telefon" placeholder="00 00 00 00" required>
+            <input type="tel" class="form-control" name="mobil" value="<?php echo $mmobilFyldInd;?>" required>
         </div>
         <hr>
-        <div class="form-group">
-            <label for="p1">Password:</label>
-            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="password1" id="p1" titel="Skal indeholde mindst 1 stort bogstav" placeholder="********" onkeyup='check();' required>
-        </div>
-    
-    <button class="btn btn-warning">Gem ændringer</button>    
-    
+        
+    <button class="btn btn-warning" href="minside.php">Gem ændringer</button>    
+<?php
+function get_post($con, $var) {
+	return mysqli_real_escape_string($con, $_POST[$var]);
+}
+?>
 <?php 
 require_once('includes/footer.php');
 ?>
