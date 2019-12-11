@@ -9,9 +9,8 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
-$kontrakt_id2 = '19';
 
-if (isset($_POST['submit'])){
+if (isset($_POST["submit"])){
     $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
     $result = mysqli_query($con, $query);
              if(!$result) die(mysqli_error($con));
@@ -58,7 +57,7 @@ if (isset($_POST['submit'])){
 </style>
 <body id="nemIDfake"> 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <button onclick="changeElement()" class="btn btn-warning btn-lg mutuumknap" type="submit">Underskriv kontrakt</button>
+    <button onclick="changeElement()" class="btn btn-warning mutuumknap" type="submit">Underskriv kontrakt</button>
 <br><br>
         <p id='underskrevet'>Kontrakten er endnu ikke underskrevet, klik på "Underskriv kontrakt"</p>
 <br>

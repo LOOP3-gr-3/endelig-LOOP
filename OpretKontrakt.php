@@ -2,6 +2,53 @@
     $page = ('Oprettelse af kontrakt');
     require_once('includes/header.php');
     if(!isset($_SESSION)){session_start();}
+<?php
+require_once ('includes/header.php');
+
+if(isset($_POST["laantageremail"]) {
+$sendmail = $_POST['laantageremail'];
+$sendmail = filter_var($sendmail, FILTER_SANITIZE_EMAIL);
+$sendmail = filter_var($sendmail, FILTER_VALIDATE_EMAIL);
+
+$output='<p>Kære bruger,</p>';
+$output.='<p>Klik venligst på nedenstående knap for, at se din nye kontrakt på mutuum.dk:</p>';
+$output.='<p>-------------------------------------------------------------</p>';
+$output.='<a href="https://www.mpw.dk/minside.php" target="_blank">
+<button class="btn btn-warning mutuumknap">Se kontrakt</button></a>';
+$output.='<p>-------------------------------------------------------------</p>';
+$output.='<p>Hvis du ikke har registreret dig som bruger på mutuum. Kan du oprette dig som bruger her: </p>';
+$output.='<p>-------------------------------------------------------------</p>';
+$output.='<a href="https://www.mpw.dk/opretbruger.php" target="_blank">
+<button class="btn btn-warning mutuumknap">Opret bruger</button></a>';
+$output.='<p>Du må have en god dag,</p>';
+$output.='<p>Venlig hilsen</p>' 
+$output.='<p>Mutuum</p>';
+$body = $output; 
+$subject = "Ny kontrakt modtaget - Mutuum";
+ 
+$email_to = $sendmail;
+$fromserver = "nykontrakt@mpw.dk"; 
+require("PHPMailer/PHPMailerAutoload.php");
+$mail = new PHPMailer();
+$mail->IsSMTP();
+$mail->Host = "send.one.com"; // Enter your host here
+$mail->SMTPAuth = true;
+$mail->Username = "nykontrakt@mpw.dk"; // Enter your email here
+$mail->Password = "mutuum"; //Enter your password here
+$mail->Port = 587;
+$mail->IsHTML(true);
+$mail->From = "nykontrakt@mpw.dk";
+$mail->FromName = "Mutuum";
+$mail->Sender = $fromserver; // indicates ReturnPath header
+$mail->Subject = $subject;
+$mail->Body = $body;
+$mail->AddAddress($email_to);
+if(!$mail->Send()){
+echo "Mailer Error: " . $mail->ErrorInfo;
+}
+     } echo '<script>alert("Der er sendt en email til den pågældende låntager")</script>';
+else{} 
+?>
 ?>
     <div class="jumbotron text-center wasoverskrift">
         <h1>Opret Kontrakt</h1>
@@ -12,10 +59,12 @@
                 <fieldset>
                     <div class="row">
                         <div class="col-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
-                        <div>
+                        <div class="row">
+                        <div class="col-6 col-xs-6">
+                          
                             <h4>Beløb</h4>
                             <select class="form-control" id="dropdownbeloeb" data-toggle="dropdown" name="dropdownbeloeb" required>
-                                <option selected value="">Vælg et beløb i DKK</option>
+                                <option selected value="">Vælg beløb i DKK</option>
                                 <?php
                                 $query1 = "SELECT * FROM beloeb ORDER BY beloeb";    
                                 $result1 = mysqli_query($con, $query1);
@@ -31,13 +80,10 @@
                                 <?php } ?>
                             </select>
                         </div>
-
-                        <br>
-
-                        <div>
+                        <div class="col-6 col-xs-6">
                             <h4>Rente</h4>
                             <select class="form-control" id="dropdownrente" data-toggle="dropdown" name="dropdownrente" required>
-                                <option selected value="">Vælg en rente i %</option>
+                                <option selected value="">Vælg rente i %</option>
                                 <?php 
                                 $query2 = "SELECT * FROM rente ORDER BY rente";    
                                 $result2 = mysqli_query($con, $query2);
@@ -53,7 +99,7 @@
                                 <?php } ?>
                             </select>
                         </div>
-
+                        </div>
                         <br>
 
                         <div>
@@ -115,9 +161,7 @@
                         </select>
                     </div>
 
-                    <br>
-                    <br>
-                        
+                    <br>       
                     <label for="laantageremail">
                         <h4>Mail på låntager</h4>
                     </label>
@@ -127,14 +171,13 @@
                     <br>
                     <br>
 
-                        <p> <br><br>
-                            Kontrakten gemmes herefter under Min profil - <strong>Mine aftaler</strong>.
+                        <p> Kontrakten gemmes herefter under Min profil - <strong>Mine aftaler</strong>.
                             <br>Her kan kontrakten underskrives
                         </p>
 
                     
                         <div class="text-center">
-                    <a href="minside.php"><button role="button" name="submit" type="submit" class="btn btn-primary btn-lg mutuumknap">Gem kontrakt</button></a>
+                    <a href="minside.php"><button role="button" type="submit" class="btn btn-primary btn-lg mutuumknap">Gem kontrakt</button></a>
                             </div>
                         </div>
                         </div>
