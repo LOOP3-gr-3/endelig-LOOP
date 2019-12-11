@@ -10,7 +10,7 @@ if (!isset($_SESSION)) session_start();
 </div>
 
 <!-- Container (About Section) -->
-<div class="container-fluid">
+<div class="container-fluid lasseMargin">
   <div class="row">
     <div class="col-sm-8">
       <h2>Tanken bag Mutuum</h2>
