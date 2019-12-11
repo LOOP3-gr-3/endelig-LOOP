@@ -1,7 +1,14 @@
 <?php
  require_once('includes/header.php');
 if(!isset($_SESSION)){session_start();}
-    $user_id = $_SESSION['user_id'];
+if (!isset($_SESSION['user_id'])) {
+        echo '<script>alert("Du er ikke logget ind på MUTUUM - log ind her, eller opret en bruger og få gratis adgang til platformen!");';
+        echo 'window.location.href="login.php";';
+        echo '</script>' ;
+        die();
+  }
+
+$user_id = $_SESSION['user_id'];
  if(isset($_POST['laantageremail'])) {
         $mail = $_POST['laantageremail'];
         $query5 = "SELECT user_id FROM users WHERE mail = '$mail'";
@@ -24,18 +31,10 @@ if(!isset($_SESSION)){session_start();}
              if(!$result6) die(mysqli_error($con));
              else {
               
-                echo "<h2 class='text-center'>Din kontrakt er nu oprettet og klar til underskrift!</h2>";
-                    ?>
-                <div class="container-fluid text-center">
-                <a href="nemid.php"><button class="btn btn-primary btn-lg mutuumknap"><p>Underskriv med nem-ID her</p></button></a>
-                    <br>
-                    <br>
-                    </div>
-<?php
+                echo '<script>alert("Din kontrakt er nu oprettet og klar til underskrift!");
+                window.location.href="minside.php";
+                </script>';
             }
-         ?>
-
-<?php
          } else {
          echo 'Udfyld alle felterne';
      }    
