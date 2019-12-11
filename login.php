@@ -39,7 +39,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
 ?>
 
 
-<div class="text-cener">
+<div class="text-center">
 <h1><strong>Log ind</strong></h1>
 </div>
 <div class="container-fluid lasseMargin">
