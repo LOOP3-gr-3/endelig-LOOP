@@ -8,12 +8,12 @@ require_once("includes/header.php");
 
         <div class="jumbotron text-center wasoverskrift">
         <h1>Handelsbetingelser</h1></div>
-<div class="container-fluid">
-    <div class="alert alert-info alert-dismissible" role="alert" style="margin-left:10em; margin-right:10em;">
+<div class="container-fluid lasseMargin">
+    <div class="alert alert-info alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <p>Hvis du ikke finder svaret på dine spørgsmål herinde, så er du velkommen til at kontakte os via mobil eller email. </p> 
+        <p>Har du ydereligere spørgsmål til de angivne betingelser, så er du velkommen til at kontakte os via mobil eller email. </p> 
     </div>
-    <div class="panel-group" id="accordion" style="margin-left: 10em; margin-right: 10em;">
+    <div class="panel-group" id="accordion">
         <div class="faqHeader"><h2>Generelt</h2></div>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -182,8 +182,8 @@ require_once("includes/header.php");
 ?>
         
 </div> 
-<br>
 </div>
+<br>
 <br>
 
 
