@@ -39,14 +39,61 @@ $user_id = $_SESSION['user_id'];
         <div class="row">
             <!-- Mine aftaler sektionen -->
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
-
-                <!-*************ALT KODE TIL DINE AFTALER, kontraktanmodninger-->
                     <hr>
                     <h1>DINE AFTALER</h1>
                     <hr>
             </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-6 col col-lg-6 col-xl-6">
+            <!-- ________________ ALT KODE TIL MANGLER UNDERSKRIFT -->  
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <h2>Mangler din underskrift</h2>
+                <?php
+            $query1 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '1' AND laangiver_user_id = '$user_id' AND laantager_underskrift_id = '1'";
+                $result1 = mysqli_query($con, $query1);
+                $row1 = mysqli_num_rows($result1);
+                    if($row1 > 0){
+                    while($row1 = mysqli_fetch_assoc($result1)){
+                        $modtageruser_id = $row1['laantager_user_id'];
+                        $dato_underskrift_laangiver = $row1['reg_underskrift_1']; 
+                        $beloebforkontrakt = $row1['beloeb_id'];
+                        $renteforkontrakt = $row1['rente_id'];
+                        $kontrakt_id2 = $row1['kontrakt_id'];
+                $query11 = "SELECT * FROM beloeb WHERE beloeb_id = '$beloebforkontrakt'";
+                    $result11 = mysqli_query($con, $query11);
+                    $row11 = mysqli_fetch_assoc($result11);
+                    $beloebValue = $row11['beloeb'];
+                $query111 = "SELECT * FROM rente WHERE rente_id = '$renteforkontrakt'";
+                    $result111 = mysqli_query($con, $query111);
+                    $row111 = mysqli_fetch_assoc($result111);
+                    $renteValue = $row111['rente'];
+                 $query1111 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$modtageruser_id'";
+                    $result1111 = mysqli_query($con, $query1111);
+                    $row1111 = mysqli_fetch_assoc($result1111);
+                    $modtagerfornavn = $row1111['fornavn'];
+                    $modtagerefternavn = $row1111['efternavn'];    
+        ?>
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h3>Modtager</h3>
+                        <p><?php echo $modtagerfornavn; ?> <?php echo $modtagerefternavn; ?></p>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>Underskrevet:</strong> Nej</p>
+                        <p><strong>Beløb:</strong> <?php echo $beloebValue;?> DKK</p>
+                        <p><strong>Rente: </strong> <?php echo $renteValue;?> %</p>
+                        <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
+                    </div>
+                    <div class="panel-footer">
+                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
+                    </div>
+                </div>
+                <?php
+                        }} else {echo 'Du har endnu ikke modtaget nogle kontrakter';}
+            
+        ?>
+            </div>
+         <!--*************ALT KODE TIL DINE AFTALER, kontraktanmodninger-->  
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <h2>Kontrakt anmodninger</h2>
                 <?php
             $query1 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_user_id = '$user_id' AND laantager_underskrift_id = '1'";
@@ -95,10 +142,8 @@ $user_id = $_SESSION['user_id'];
         ?>
             </div>
 
-
-
             <!-****************ALT KODE TIL DINE KONTRAKTER, klar til udlån->
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <h2>Dine kontrakter klar til udlån</h2>
                     <?php
             $query2 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '1' AND laangiver_user_id = '$user_id'";
@@ -106,6 +151,7 @@ $user_id = $_SESSION['user_id'];
                 $row2 = mysqli_num_rows($result2);
                     if($row2 > 0){
                     while($row2 = mysqli_fetch_assoc($result2)){
+                        $modtageruser_id = $row2['laantager_user_id'];
                         $dato_underskrift_laangiver = $row2['reg_underskrift_1']; 
                         $beloebforkontrakt = $row2['beloeb_id'];
                         $renteforkontrakt = $row2['rente_id'];
@@ -118,12 +164,17 @@ $user_id = $_SESSION['user_id'];
                     $result222 = mysqli_query($con, $query222);
                     $row222 = mysqli_fetch_assoc($result222);
                     $renteValue = $row222['rente'];
+                $query2222 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$modtageruser_id'";
+                    $result2222 = mysqli_query($con, $query2222);
+                    $row2222 = mysqli_fetch_assoc($result2222);
+                    $modtagerfornavn = $row2222['fornavn'];
+                    $modtagerefternavn = $row2222['efternavn']; 
                     
         ?>
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">
                             <h3>Venter på underskrift</h3>
-                            <p><br></p>
+                            <p><?php echo $modtagerfornavn;?> <?php echo $modtagerefternavn; ?> har ikke underskrivet kontrakten endnu</p>
 
                         </div>
                         <div class="panel-body">
@@ -155,13 +206,14 @@ $user_id = $_SESSION['user_id'];
             </div>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 lasse2Margin">
                         <h2>Underskrevne kontrakter</h2>
                     </div>
                 </div>
                 <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 lasse2Margin">      
                     <?php
-            $query3 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '2' AND laantager_user_id = '$user_id' OR laangiver_user_id = '$user_id'";
+            $query3 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '2' + laantager_user_id = '$user_id' OR laangiver_user_id = '$user_id' ORDER BY reg_underskrift_1";
                 $result3 = mysqli_query($con, $query3);
                 $row3 = mysqli_num_rows($result3);
                     if($row3 > 0){

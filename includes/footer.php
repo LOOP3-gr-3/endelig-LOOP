@@ -34,7 +34,7 @@
                         <address>
                             <p><span class="glyphicon glyphicon-map-marker"></span>Birk Centerpark 15, 7400 Herning</p>
                             <p><span class="glyphicon glyphicon-phone"></span> +45 12345678</p>
-                            <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:kontakt@mutuum.dk" target="_blank"> kontakt@mutuum.dk</a></p>
+                            <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:kontakt@mpw.dk" target="_blank"> kontakt@mutuum.dk</a></p>
                              <!-- Det er her forsøgt at lave en mailfunktion, så når brugerne klikker på mailen, vil de komme ind i en ny  -->
                         </address>
                     </div>
