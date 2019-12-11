@@ -11,11 +11,11 @@ if (!isset($_SESSION)) {session_start();}
     <div class="jumbotron text-center wasoverskrift">
         <h1>FAQ</h1></div>
 <div class="container-fluid">
-    <div class="alert alert-warning alert-dismissible" role="alert">
+    <div class="alert alert-info alert-dismissible" role="alert" style="margin-left:10em; margin-right:10em;">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         Hvis du ikke finder svaret på dine spørgsmål herinde, så er du velkommen til at kontakte os via mobil eller email.  
     </div>
-    <div class="panel-group" id="accordion">
+    <div class="panel-group" id="accordion" style="margin-left: 10em; margin-right: 10em;">
         <div class="faqHeader"><h2>Generelle spørgsmål</h2></div>
         <div class="panel panel-default">
             <div class="panel-heading">

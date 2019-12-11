@@ -9,149 +9,63 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
-$kontrakt_id = '13';
+$kontrakt_id = $_GET['kontrakt_id2'];
 ?>
 
 <div class="container-fluid">
 
     <?php
-                    $query1 = "SELECT fornavn, efternavn FROM users WHERE user_id = laangiver_user_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
+$query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
+    $result = mysqli_query($con, $query);
+    $row = mysqli_num_rows($result);
+        if($row > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $laangiver_user_id = $row['laangiver_user_id'];   
+                $laangiver_underskrift = $row['reg_underskrift_1'];
+                $beloeb = $row['beloeb_id'];
+                $rente = $row['rente_id'];
+                $maanedlig_afdrag = $row['maanedlig_afdrag'];
+                $brud = $row['kontraktbrud_id'];
+                $laantager_user_id = $row['laantager_user_id'];
+                $laantager_underskrift = $row['reg_underskrift_2'];
+            }
+        }
+    $query1 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laangiver_user_id'";
                     $result1 = mysqli_query($con, $query1);
                     $row1 = mysqli_fetch_assoc($result1);
                     $laangiver_fornavn = $row1['fornavn'];
-                    $laangiver_efternavn = $row1['efternavn']; 
-    echo $laangiver_fornavn . $laangiver_efternavn;
-                    $query2 = "SELECT reg_underskrift_1 FROM kontrakt WHERE kontrakt_id = $kontrakt_id";
+                    $laangiver_efternavn = $row1['efternavn'];
+        echo $laangiver_fornavn . ' ' . $laangiver_efternavn . '<br>Tidspunkt for underskrift: ' . $laangiver_underskrift . '<br>';
+    $query2 = "SELECT beloeb FROM beloeb WHERE beloeb_id = '$beloeb'";
                     $result2 = mysqli_query($con, $query2);
                     $row2 = mysqli_fetch_assoc($result2);
-                    $laangiver_underskrift = $row2['reg_underskrift_1'];
-    echo $laangiver_underskrift;
-                    $query5 = "SELECT beloeb, value FROM beloeb WHERE beloeb_id = beloeb_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result5 = mysqli_query($con, $query5);
-                    $row5 = mysqli_fetch_assoc($result5);
-                    $beloeb = $row5['beloeb'];
-                    $beloeb_value = $row5['value'];
-    echo $beloeb . $beloeb_value;
-                    $query6 = "SELECT rente, value FROM rente WHERE rente_id = beloeb_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result6 = mysqli_query($con, $query6);
-                    $row6 = mysqli_fetch_assoc($result6);
-                    $rente = $row6['rente'];
-                    $rente_value = $row6['value'];
-    echo $rente . $rente_value;
-                    $query7 = "SELECT maanedlig_afdrag FROM kontrakt WHERE kontrakt_id = $kontrakt_id";
-                    $result7 = mysqli_query($con, $query7);
-                    $row7 = mysqli_fetch_assoc($result7);
-                    $maanedlig_afdrag = $row7['maanedlig_afdrag'];
-    echo $maanedlig_afdrag;
-                    $query8 = "SELECT brud FROM kontraktbrud WHERE kontraktbrud_id = kontraktbrud_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result8 = mysqli_query($con, $query8);
-                    $row8 = mysqli_fetch_assoc($result8);
-                    $brud = $row8['brud'];
-    echo $brud;
-                    $query3 = "SELECT fornavn, efternavn FROM users WHERE user_id = laantager_user_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
+                    $beloeb = $row2['beloeb'];
+        echo $beloeb . ' DKK<br>';
+    $query3 = "SELECT rente FROM rente WHERE rente_id = '$rente'";
                     $result3 = mysqli_query($con, $query3);
                     $row3 = mysqli_fetch_assoc($result3);
-                    $laantager_fornavn = $row3['fornavn'];
-                    $laantager_efternavn = $row3['efternavn'];
-    echo $laantager_fornavn . $laantager_efternavn;
-
+                    $rente = $row3['rente'];
+        echo $rente . ' %<br>';
+        echo 'Månedlig afdrag: ' . $maanedlig_afdrag . '<br>';
+        echo 'Afkast: indsæt Evas AJAX' . '<br>';
+    $query4 = "SELECT brud FROM kontraktbrud WHERE kontraktbrud_id = '$brud'";
+                    $result4 = mysqli_query($con, $query4);
+                    $row4 = mysqli_fetch_assoc($result4);
+                    $brud = $row4['brud'];
+        echo $brud . '<br>';
+    $query5 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laantager_user_id'";
+                    $result5 = mysqli_query($con, $query5);
+                    $row5 = mysqli_fetch_assoc($result5);
+                    $laantager_fornavn = $row5['fornavn'];
+                    $laantager_efternavn = $row5['efternavn'];
+        echo $laantager_fornavn . ' ' . $laantager_efternavn . '<br>Tidspunkt for underskrift: ' . $laantager_underskrift . '<br>';
     
+    if($laantager_user_id=='1' && $user_id == $laantager_user_id){
+    ?>  <a href="nemid.php">Underskriv kontrakt </a>   <?php }
+    if($laantager_user_id=='1' && $user_id == $laangiver_user_id){
+    ?>  <a href="sletkontrakt.php">Slet kontrakt </a>  <?php
+        }
 ?>
-    
-<pre>
-
-input id="var" type='hidden' name='country' value='' 
-button id="joinBoardButton" onclick="this.document.getElementById('var').value=var"  button
-
-- på minside kan vi lægge kontrakt_id som en skjult input, og med onclick sende værdien videre til viskontrakt
-
-
-
-hent 'fornavn' + 'efternavn' FRA 'users' HVOR 'user_id' = 'laangiver_user_id' FRA 'kontrakt'  
-                $query1 = "SELECT fornavn, efternavn FROM users WHERE user_id = laangiver_user_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result1 = mysqli_query($con, $query1);
-                    $row1 = mysqli_fetch_assoc($result1);
-                    $laangiver_fornavn = $row1['fornavn'];
-                    $laangiver_efternavn = $row1['efternavn']; 
-                    
-                    
-hent 'reg_underskrift_1' FRA 'kontrakt'
-                $query2 = "SELECT reg_underskrift_1 FROM kontrakt WHERE kontrakt_id = $kontrakt_id";
-                    $result2 = mysqli_query($con, $query2);
-                    $row2 = mysqli_fetch_assoc($result2);
-                    $laangiver_underskrift = $row2['reg_underskrift_1'];
-                
-
-Hent 'beloeb' + 'value' fra 'beloeb' HVOR 'beloeb_id' = 'beloeb_id' FRA 'kontrakt'
-                $query5 = "SELECT beloeb, value FROM beloeb WHERE beloeb_id = beloeb_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result5 = mysqli_query($con, $query5);
-                    $row5 = mysqli_fetch_assoc($result5);
-                    $beloeb = $row5['beloeb'];
-                    $beloeb_value = $row5['value'];
-
-
-
-Hent 'rente' + 'value' fra 'rente' HVOR 'rente_id' = 'rente_id' FRA 'kontrakt'
-                $query6 = "SELECT rente, value FROM rente WHERE rente_id = beloeb_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result6 = mysqli_query($con, $query6);
-                    $row6 = mysqli_fetch_assoc($result6);
-                    $rente = $row6['rente'];
-                    $rente_value = $row6['value'];
-                    
-
-Hent 'maanedlig_afdrag' FRA 'kontrakt'
-                $query7 = "SELECT maanedlig_afdrag FROM kontrakt WHERE kontrakt_id = $kontrakt_id";
-                    $result7 = mysqli_query($con, $query7);
-                    $row7 = mysqli_fetch_assoc($result7);
-                    $maanedlig_afdrag = $row7['maanedlig_afdrag'];
-                    
-
-Lav en beregning: 'beløb' * 1 + 'rente' = fulde tilbagebetalingsbeløb / omkostninger
-
-
-Hent 'brud' FRA 'kontraktbrud' HVOR 'kontraktbrud_id' = 'kontraktbrud_id' FRA 'kontrakt'
-                $query8 = "SELECT brud FROM kontraktbrud WHERE kontraktbrud_id = kontraktbrud_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result8 = mysqli_query($con, $query8);
-                    $row8 = mysqli_fetch_assoc($result8);
-                    $brud = $row8['brud'];
-
-
-hent 'fornavn' + 'efternavn' FRA 'users' HVOR 'user_id' = 'laantager_user_id' FRA 'kontrakt' 
-                $query3 = "SELECT fornavn, efternavn FROM users WHERE user_id = laantager_user_id FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result3 = mysqli_query($con, $query3);
-                    $row3 = mysqli_fetch_assoc($result3);
-                    $laantager_fornavn = $row3['fornavn'];
-                    $laantager_efternavn = $row3['efternavn'];
-                    
-
-if(isset[reg_underskrift_2]){
-hent 'reg_underskrift_2' FRA 'kontrakt'
-                $query4 = "SELECT reg_underskrift_2 FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result4 = mysqli_query($con, $query4);
-                    $row4 = mysqli_fetch_assoc($result4);
-                    $laantager_underskrift = $row4['reg_underskrift_2'];}
-
-HVIS ikke sat, OG user_id er LÅNTAGER skal der laves knap til nemid.php
-                else{
-                    if(isset[$user_id == laantager_user_id]){
-                    button href="nemid.php" underskriv kontrakt button
-                    button href="sletkontrakt.php" button
-                    }
-                }
-                
-                
-                            if(isset(reg_underskrift_2)){
-                    $query4 = "SELECT reg_underskrift_2 FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
-                    $result4 = mysqli_query($con, $query4);
-                    $row4 = mysqli_fetch_assoc($result4);
-                    $laantager_underskrift = $row4['reg_underskrift_2'];}
-                    else{
-                    if(isset($user_id == laantager_user_id)){
-                   button href="nemid.php"> underskriv kontrakt /button
-                    button href="sletkontrakt.php">Slet Kontrakt /button 
-                    }
-                }
-</pre>
 </div>
 <?php
 require_once("includes/footer.php");

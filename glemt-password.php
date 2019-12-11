@@ -31,21 +31,19 @@ if (!$email) {
      if (!$result) die(mysqli_error($con));
      else {
  
-$output='<p>Dear user,</p>';
-$output.='<p>Please click on the following link to reset your password.</p>';
+$output='<p>Kære bruger,</p>';
+$output.='<p>Klik venligst på det følgende link for, at resette dit password.</p>';
 $output.='<p>-------------------------------------------------------------</p>';
 $output.='<p><a href="https://www.mpw.dk/reset-password.php?key='.$final_key.'&email='.$email.'&action=reset" target="_blank">
 https://www.mpw.dk/reset-password.php?key='.$final_key.'&email='.$email.'&action=reset</a></p>'; 
 $output.='<p>-------------------------------------------------------------</p>';
-$output.='<p>Please be sure to copy the entire link into your browser.
-The link will expire after 1 day for security reason.</p>';
-$output.='<p>If you did not request this forgotten password email, no action 
-is needed, your password will not be reset. However, you may want to log into 
-your account and change your security password as someone may have guessed it.</p>';   
-$output.='<p>Thanks,</p>';
-$output.='<p>Your Website</p>';
+$output.='<p>Husk at kopiere hele linket ind i din browser.
+Dette link vil udløbe efter 1 dag af sikkerhedsmæssige årsager.</p>';
+$output.='<p>Hvis du ikke har anmodet om, at resette dit password så skal du ikke gøre yderligere. Du burde dog overveje, at logge ind på Mutuum og ændre dit password eftersom nogen måske har gættet dette.</p>';   
+$output.='<p>Tak,</p>';
+$output.='<p>Mutuum</p>';
 $body = $output; 
-$subject = "Password Recovery - Your Website";
+$subject = "Password Recovery - Mutuum";
  
 $email_to = $email;
 $fromserver = "resetpassword@mpw.dk"; 
@@ -77,10 +75,10 @@ else{
 ?>
 <div class="container" style="text-align:center">
 <form method="post" action="" name="reset"><br /><br />
-<label><strong>Indtast din email:</strong></label><br /><br />
-<input type="email" name="email" placeholder="skrivmail@her.dk" />
+    <label><strong><h4>Indtast din email:</h4></strong></label><br /><br />
+<input class="form-control"type="email" name="email" placeholder="skrivmail@her.dk" />
 <br /><br />
-<input type="submit" value="Send link"/>
+<input type="submit" class="mutuumknap btn-warning btn" value="Send link"/>
 </form>
     </div>
 <p> </p>
