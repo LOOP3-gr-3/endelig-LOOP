@@ -4,15 +4,19 @@ require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
 ?>
 
+
+    <div class="jumbotron text-center wasoverskrift">
+            <h1>Økonomisk Rådgivning</h1>
+            </div> 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-lg-6">
-            <h1>Økonomisk Rådgivning</h1>
+        <div class="col-xs-12 col-sm-4 col-lg-4">   
             <h3>Step by step guide</h3>
             <h4><strong>1) Få et overblik af dit budget</strong></h4>
             <p>Første step til at få styr på din økonomi er ved at danne et overblik på dit nuværende budget. Dette kan med fordel laves i excel, så er det nemmere at rette til løbende.</p>
             <div class=text-center>
-            <button data-toggle="collapse" data-target="#step1" class="btn btn-warning text-center">Læs mere</button>
+            <button data-toggle="collapse" data-target="#step1" class="btn btn-warning text-center pull-left">Læs mere</button>
+                <br>
             </div>
             <div id="step1" class="collapse">
             <br>
@@ -26,7 +30,8 @@ if (!isset($_SESSION)) session_start();
             <h4><strong>2) Læg et nyt realistisk budget, som du kan overholde</strong></h4>
             <p>Efter step 1 vil du nu have et overblik på dine nuværende indtægter og udgifter. Det vil nu være muligt at lave et nyt budget, som kan hjælpe dig til at holde dine udgifter under din indtægt.</p>
             <div class=text-center>
-            <button data-toggle="collapse" data-target="#step2" class="btn btn-warning text-center">Læs mere</button>
+            <button data-toggle="collapse" data-target="#step2" class="btn btn-warning text-center pull-left">Læs mere</button>
+                <br>
             </div>
             <div id="step2" class="collapse">
             <br>
@@ -55,33 +60,36 @@ if (!isset($_SESSION)) session_start();
             
             
         </div>
-            <div class="col-xs-12 col-sm-6 col-lg-6">
+            <div class="col-xs-12 col-sm-4 col-lg-4">
                 <!-- Container (Contact Section) -->
                 <h1>Spørgsmål?</h1>
                 <p>Har du flere spørgsmål, så er du meget velkommen til at kontakte os</p>
                     <div id="contact">
                     <div class="text-center">
-                        <button data-toggle="collapse" data-target="#kontaktformular" class="btn btn-warning btn-lg" onclick="this.innerHTML == &quot;Luk&quot; ? this.innerHTML = &quot;Kontakt os via email&quot; : this.innerHTML = &quot;Luk&quot;;">Kontakt os via email</button>
+                        <button data-toggle="collapse" data-target="#kontaktformular" class="btn btn-warning mutuumknap btn-lg" onclick="this.innerHTML == &quot;Luk&quot; ? this.innerHTML = &quot;Kontakt os via email&quot; : this.innerHTML = &quot;Luk&quot;;">Kontakt os via email</button>
                     </div>
                     <div id="kontaktformular" class="collapse">
                         <div class="slideanim">
 
                             <br>
                             <div class="form-group">
-                                <input class="form-control" id="name" name="name" placeholder="Navn" type="text" required>
+                                <input class="form-control" name="name" placeholder="Navn" type="text" required>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="email" name="email" placeholder="Indtast din email her" type="email" required>
+                                <input class="form-control" name="email" placeholder="Indtast din email her" type="email" required>
                             </div>
 
-                            <textarea class="form-control" id="comments" name="comments" placeholder="Besked" rows="5"></textarea><br>
+                            <textarea class="form-control" name="comments" placeholder="Besked" rows="5"></textarea><br>
                             <div class="form-group">
-                                <a href="sendtmail.php"><button class="btn btn-warning mutuumknap pull-right" type="submit" id="sendmail">Send</button></a>
+                                <a href="sendtmail.php"><button class="btn btn-warning mutuumknap pull-right" type="submit">Send</button></a>
                      </div>
                         </div>
                     </div>
                 </div>    
         </div>
+        <div class="col-xs-12 col-sm-4 col-lg-4">
+            
+        </div>    
 </div>
     <br>
 </div>

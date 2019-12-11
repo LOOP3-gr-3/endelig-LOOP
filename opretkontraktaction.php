@@ -26,8 +26,10 @@ if(!isset($_SESSION)){session_start();}
               
                 echo "<h2 class='text-center'>Din kontrakt er nu oprettet og klar til underskrift!</h2>";
                     ?>
-                <div class="container-fluid">
-                <button class="btn btn-primary blaaknap"><p>Underskriv med nem-ID her</p></button>
+                <div class="container-fluid text-center">
+                <a href="nemid.php"><button class="btn btn-primary btn-lg mutuumknap"><p>Underskriv med nem-ID her</p></button></a>
+                    <br>
+                    <br>
                     </div>
 <?php
             }
