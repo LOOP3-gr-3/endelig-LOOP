@@ -204,14 +204,14 @@ $user_id = $_SESSION['user_id'];
                     <hr>
                 </div>
             </div>
-            <div class="container-fluid">
+            <div class="container-fluid lasse3Margin">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 lasse2Margin">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <h2>Underskrevne kontrakter</h2>
                     </div>
                 </div>
                 <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 lasse2Margin">      
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">      
                     <?php
             $query3 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '2' + laantager_user_id = '$user_id' OR laangiver_user_id = '$user_id' ORDER BY reg_underskrift_1";
                 $result3 = mysqli_query($con, $query3);
