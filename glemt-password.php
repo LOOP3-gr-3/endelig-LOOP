@@ -57,7 +57,7 @@ $mail->Username = "resetpassword@mpw.dk"; // Enter your email here
 $mail->Password = "mutuum"; //Enter your password here
 $mail->Port = 587;
 $mail->IsHTML(true);
-$mail->From = "restpassword@mpw.dk";
+$mail->From = "resetpassword@mpw.dk";
 $mail->FromName = "Mutuum";
 $mail->Sender = $fromserver; // indicates ReturnPath header
 $mail->Subject = $subject;

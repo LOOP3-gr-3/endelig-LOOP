@@ -38,6 +38,12 @@
 @media(max-width:767px) {
     .visible-xs {
         display: block !important
+            
+    }
+    
+    .lasseMargin{
+        margin-left:0em;
+        margin-right:0em;
     }
 }
 
@@ -170,3 +176,10 @@
       .wasmargin {
           margin-top: -2em;
       }
+
+
+.lasseMargin{
+    margin-left:15em;
+    margin-right:15em;
+    
+}
