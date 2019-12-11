@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 ?>
 
-<!-******************ALT KODE TIL MIN PROFIL*****************-->
+<!--******************ALT KODE TIL MIN PROFIL*****************-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 minprofilpaaminside">
@@ -31,7 +31,7 @@ $user_id = $_SESSION['user_id'];
                         echo "";
                         }   
         ?>
-                <a href="retoplysninger.php"><button class="btn btn-warning">Ret oplysninger</button></a>
+                <a href="retoplysninger.php"><button class="btn btn-warning mutuumknap">Ret oplysninger</button></a>
                 <br>
                 <br>
             </div>
@@ -142,7 +142,7 @@ $user_id = $_SESSION['user_id'];
         ?>
             </div>
 
-            <!-****************ALT KODE TIL DINE KONTRAKTER, klar til udlån->
+            <!--****************ALT KODE TIL DINE KONTRAKTER, klar til udlån-->
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <h2>Dine kontrakter klar til udlån</h2>
                     <?php
@@ -195,7 +195,7 @@ $user_id = $_SESSION['user_id'];
                         }} else {echo 'Du har endnu ikke oprettet nogle kontrakter';}
         ?>
     </div>
-    <!-******************ALT KODE TIL HISTORIK*****************-->
+    <!--******************ALT KODE TIL HISTORIK*****************-->
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
