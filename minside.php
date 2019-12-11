@@ -35,7 +35,7 @@ $user_id = $_SESSION['user_id'];
                 <br>
                 <br>
             </div>
-        </div>   
+        </div>
         <div class="row">
             <!-- Mine aftaler sektionen -->
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
@@ -45,7 +45,7 @@ $user_id = $_SESSION['user_id'];
                     <h1>DINE AFTALER</h1>
                     <hr>
             </div>
-            
+
             <div class="col-xs-12 col-sm-12 col-md-6 col col-lg-6 col-xl-6">
                 <h2>Kontrakt anmodninger</h2>
                 <?php
@@ -58,6 +58,7 @@ $user_id = $_SESSION['user_id'];
                         $dato_underskrift_laangiver = $row1['reg_underskrift_1']; 
                         $beloebforkontrakt = $row1['beloeb_id'];
                         $renteforkontrakt = $row1['rente_id'];
+                        $kontrakt_id2 = $row1['kontrakt_id'];
                 $query11 = "SELECT * FROM beloeb WHERE beloeb_id = '$beloebforkontrakt'";
                     $result11 = mysqli_query($con, $query11);
                     $row11 = mysqli_fetch_assoc($result11);
@@ -84,7 +85,8 @@ $user_id = $_SESSION['user_id'];
                         <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                     </div>
                     <div class="panel-footer">
-                        <button class="btn btn-warning btn-lg">Vis kontrakt</button>
+                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                     </div>
                 </div>
                 <?php
@@ -107,6 +109,7 @@ $user_id = $_SESSION['user_id'];
                         $dato_underskrift_laangiver = $row2['reg_underskrift_1']; 
                         $beloebforkontrakt = $row2['beloeb_id'];
                         $renteforkontrakt = $row2['rente_id'];
+                        $kontrakt_id2 = $row2['kontrakt_id'];
                 $query22 = "SELECT * FROM beloeb WHERE beloeb_id = '$beloebforkontrakt'";
                     $result22 = mysqli_query($con, $query22);
                     $row22 = mysqli_fetch_assoc($result22);
@@ -130,18 +133,19 @@ $user_id = $_SESSION['user_id'];
                             <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                         </div>
                         <div class="panel-footer">
-                            <button class="btn btn-warning btn-lg">Vis kontrakt</button>
+                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
 
-                <?php
+        <?php
                         }} else {echo 'Du har endnu ikke oprettet nogle kontrakter';}
         ?>
-        </div>
-        <!-******************ALT KODE TIL HISTORIK*****************-->
-<div class="container-fluid">
+    </div>
+    <!-******************ALT KODE TIL HISTORIK*****************-->
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
                     <hr>
@@ -149,14 +153,14 @@ $user_id = $_SESSION['user_id'];
                     <hr>
                 </div>
             </div>
-    <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <h2>Underskrevne kontrakter</h2>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h2>Underskrevne kontrakter</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-            <?php
+                <div class="row">
+                    <?php
             $query3 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '2' AND laantager_user_id = '$user_id' OR laangiver_user_id = '$user_id'";
                 $result3 = mysqli_query($con, $query3);
                 $row3 = mysqli_num_rows($result3);
@@ -168,6 +172,7 @@ $user_id = $_SESSION['user_id'];
                         $dato_underskrift_laantager = $row3['reg_underskrift_2'];
                         $beloebforkontrakt = $row3['beloeb_id'];
                         $renteforkontrakt = $row3['rente_id'];
+                        $kontrakt_id2 = $row3['kontrakt_id'];
                 $query33 = "SELECT * FROM beloeb WHERE beloeb_id = '$beloebforkontrakt'";
                     $result33 = mysqli_query($con, $query33);
                     $row33 = mysqli_fetch_assoc($result33);
@@ -186,8 +191,8 @@ $user_id = $_SESSION['user_id'];
                     $row33333 = mysqli_fetch_assoc($result33333);
                     $modtagerfornavn = $row33333['fornavn'];
                     $modtagerefternavn = $row33333['efternavn'];
-        ?>        
-            <div class="panel panel-default text-center">
+        ?>
+                    <div class="panel panel-default text-center">
                         <div class="panel-heading">
                             <h3>Din kontrakt</h3>
                         </div>
@@ -199,18 +204,18 @@ $user_id = $_SESSION['user_id'];
                             <p><strong>Rente: </strong> <?php echo $renteValue;?> %</p>
                         </div>
                         <div class="panel-footer">
-                            <a href="viskontrakt.php"><button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
+                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                         </div>
                     </div>
-                
-                <?php
+                    <?php
                         }} else {echo 'Du har ikke nogen aktive kontrakter';}
         ?>
+                </div>
             </div>
-    </div>
-</div>
-    
-<br>
-    <?php
+        </div>
+
+        <br>
+        <?php
 require_once("includes/footer.php");
 ?>
