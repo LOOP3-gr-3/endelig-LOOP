@@ -12,10 +12,12 @@
                 <fieldset>
                     <div class="row">
                         <div class="col-12 col-xs-12 col-sm-12 col-lg-6 col-xl-6">
-                        <div>
+                        <div class="row">
+                        <div class="col-6 col-xs-6">
+                          
                             <h4>Beløb</h4>
                             <select class="form-control" id="dropdownbeloeb" data-toggle="dropdown" name="dropdownbeloeb" required>
-                                <option selected value="">Vælg et beløb i DKK</option>
+                                <option selected value="">Vælg beløb i DKK</option>
                                 <?php
                                 $query1 = "SELECT * FROM beloeb ORDER BY beloeb";    
                                 $result1 = mysqli_query($con, $query1);
@@ -31,13 +33,10 @@
                                 <?php } ?>
                             </select>
                         </div>
-
-                        <br>
-
-                        <div>
+                        <div class="col-6 col-xs-6">
                             <h4>Rente</h4>
                             <select class="form-control" id="dropdownrente" data-toggle="dropdown" name="dropdownrente" required>
-                                <option selected value="">Vælg en rente i %</option>
+                                <option selected value="">Vælg rente i %</option>
                                 <?php 
                                 $query2 = "SELECT * FROM rente ORDER BY rente";    
                                 $result2 = mysqli_query($con, $query2);
@@ -53,7 +52,7 @@
                                 <?php } ?>
                             </select>
                         </div>
-
+                        </div>
                         <br>
 
                         <div>
@@ -115,9 +114,7 @@
                         </select>
                     </div>
 
-                    <br>
-                    <br>
-                        
+                    <br>       
                     <label for="laantageremail">
                         <h4>Mail på låntager</h4>
                     </label>
@@ -127,14 +124,13 @@
                     <br>
                     <br>
 
-                        <p> <br><br>
-                            Kontrakten gemmes herefter under Min profil - <strong>Mine aftaler</strong>.
+                        <p> Kontrakten gemmes herefter under Min profil - <strong>Mine aftaler</strong>.
                             <br>Her kan kontrakten underskrives
                         </p>
 
                     
                         <div class="text-center">
-                    <a href="minside.php"><button role="button" name="submit" type="submit" class="btn btn-primary btn-lg mutuumknap">Gem kontrakt</button></a>
+                    <a href="minside.php"><button role="button" type="submit" class="btn btn-primary btn-lg mutuumknap">Gem kontrakt</button></a>
                             </div>
                         </div>
                         </div>

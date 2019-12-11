@@ -1,10 +1,10 @@
 <?php
  require_once('includes/header.php');
 if(!isset($_SESSION)){session_start();}
-    $user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
  if(isset($_POST['laantageremail'])) {
-        $mail = $_POST['laantageremail'];
-        $query5 = "SELECT user_id FROM users WHERE mail = '$mail'";
+        $laanmail = $_POST['laantageremail'];
+        $query5 = "SELECT user_id FROM users WHERE mail = '$laanmail'";
         $result5 = mysqli_query($con, $query5);
         $row5 = mysqli_num_rows($result5);
         if($row5 > 0){
@@ -26,11 +26,13 @@ if(!isset($_SESSION)){session_start();}
               
                 echo "<h2 class='text-center'>Din kontrakt er nu oprettet og klar til underskrift!</h2>";
                     ?>
-                <div class="container-fluid text-center">
-                <a href="nemid.php"><button class="btn btn-primary btn-lg mutuumknap"><p>Underskriv med nem-ID her</p></button></a>
-                    <br>
-                    <br>
-                    </div>
+<div class="container-fluid text-center">
+    <a href="nemid.php"><button class="btn btn-primary btn-lg mutuumknap">
+            <p>Underskriv med nem-ID her</p>
+        </button></a>
+    <br>
+    <br>
+</div>
 <?php
             }
          ?>
@@ -40,7 +42,9 @@ if(!isset($_SESSION)){session_start();}
          echo 'Udfyld alle felterne';
      }    
 } 
+ 
 }
+   
 function get_post($con, $var) {
     return mysqli_real_escape_string($con, $_POST[$var]);
 }
