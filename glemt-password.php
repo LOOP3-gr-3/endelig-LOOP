@@ -1,4 +1,5 @@
 <?php
+$page = ('Glemt password');
 require_once ('includes/header.php');
 if(isset($_POST["email"]) && (!empty($_POST["email"]))){
 $email = $_POST["email"];
@@ -73,7 +74,7 @@ echo "<div class='error'>
    }
 else{
 ?>
-<div class="container" style="text-align:center">
+<div class="container text-center">
 <form method="post" action="" name="reset"><br /><br />
     <label><strong><h4>Indtast din email:</h4></strong></label><br /><br />
 <input class="form-control"type="email" name="email" placeholder="skrivmail@her.dk" />
