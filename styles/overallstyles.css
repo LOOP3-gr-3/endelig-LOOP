@@ -40,16 +40,6 @@
         display: block !important
             
     }
-    
-    .lasseMargin{
-        margin-left:0em;
-        margin-right:0em;
-    }
-    
-    .lasse2Margin{
-    margin-left: 5em;
-    margin-right: 5em;
-}
 }
 
 @media(max-width:767px) {
@@ -186,10 +176,21 @@
 .lasseMargin{
     margin-left:15em;
     margin-right:15em;
-    
 }
 
 .lasse2Margin{
     margin-left: 20em;
     margin-right: 20em;
+}
+
+@media(max-width:767px) {
+    .lasseMargin{
+        margin-left:0em;
+        margin-right:0em;
+    }
+    
+    .lasse2Margin{
+    margin-left: 5em;
+    margin-right: 5em;
+}
 }
