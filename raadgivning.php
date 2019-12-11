@@ -8,7 +8,7 @@ if (!isset($_SESSION)) session_start();
     <div class="jumbotron text-center wasoverskrift">
             <h1>Økonomisk Rådgivning</h1>
             </div> 
-<div class="container-fluid">
+<div class="container-fluid lasseMargin">
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-lg-4">   
             <h3>Step by step guide</h3>

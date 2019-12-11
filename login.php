@@ -38,9 +38,11 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
 }
 ?>
 
-<div class="container container-yderstomallesider">
 
+<div class="text-cener">
 <h1><strong>Log ind</strong></h1>
+</div>
+<div class="container-fluid lasseMargin">
 
 <form class="form-signin" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
     <!-- sikrer at vi sender "ren" data op til databasen -->
@@ -52,12 +54,12 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
         <label for="pwd">Password:</label>
         <input type="password" class="form-control" name="password" id="p1" placeholder="********" required>
     </div>
-    <button class="btn btn-warning" type="submit">Log Ind</button>
+    <button class="btn btn-warning mutuumknap" type="submit">Log Ind</button>
     
 </form>
+</div>
 <br>
     <a href="glemt-password.php">Glemt password?</a>
-</div>
 
 <?php
 require_once("includes/footer.php");
