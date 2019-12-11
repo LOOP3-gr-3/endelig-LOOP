@@ -1,17 +1,18 @@
 <?php
+$page = ('Glemt password');
 require_once ('includes/header.php');
 if(isset($_POST["email"]) && (!empty($_POST["email"]))){
 $email = $_POST["email"];
 $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 if (!$email) {
-   $error .="<p>Invalid email address please type a valid email address!</p>";
+   $error .="<p>Denne email findes ikke i vores system, indtast venligst en anden!</p>";
    }else{
    $sel_query = "SELECT * FROM `users` WHERE mail='".$email."'";
    $results = mysqli_query($con,$sel_query);
    $row = mysqli_num_rows($results);
    if ($row==""){
-   $error .= "<p>No user is registered with this email address!</p>";
+   $error .= "<p>Ingen bruger er registreret med denne mail!</p>";
    }
   }
    if($error!=""){
@@ -43,7 +44,7 @@ $output.='<p>Hvis du ikke har anmodet om, at resette dit password så skal du ik
 $output.='<p>Tak,</p>';
 $output.='<p>Mutuum</p>';
 $body = $output; 
-$subject = "Password Recovery - Mutuum";
+$subject = "Nustil password - Mutuum";
  
 $email_to = $email;
 $fromserver = "resetpassword@mpw.dk"; 
@@ -67,13 +68,13 @@ echo "Mailer Error: " . $mail->ErrorInfo;
 }
      }
 echo "<div class='error'>
-<p>An email has been sent to you with instructions on how to reset your password.</p>
+<p>En email er blevet sendt til din indbakke med instruktioner om hvordan du nulstiller dit password.</p>
 </div><br /><br /><br />";
  }
    }
 else{
 ?>
-<div class="container" style="text-align:center">
+<div class="container text-center">
 <form method="post" action="" name="reset"><br /><br />
     <label><strong><h4>Indtast din email:</h4></strong></label><br /><br />
 <input class="form-control"type="email" name="email" placeholder="skrivmail@her.dk" />
