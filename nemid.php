@@ -8,11 +8,35 @@ if (!isset($_SESSION['user_id'])) {
         echo '</script>' ;
         die();
   }
+$user_id = $_SESSION['user_id'];
+$kontrakt_id2 = '19';
 
-$kontrakt_id = '17';
-
-$updateunderskrift = "UPDATE kontrakt "
-
+if (isset($_POST['submit'])){
+    $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
+    $result = mysqli_query($con, $query);
+             if(!$result) die(mysqli_error($con));
+             else {
+                 if($row > 0){
+                    while($row = mysqli_fetch_assoc($result1)) {
+                        $laangiver_user_id_hent = $row['laangiver_user_id'];
+                        $laantager_user_id_hent = $row['laangiver_user_id'];
+                        
+                        if ($laangiver_user_id_hent == $user_id){
+                            $query1 = "UPDATE kontrakt SET laangiver_underskrift_id = '2' WHERE kontrakt_id = '$kontrakt_id2'";
+                            $result1 = mysqli_query($con, $query1);
+                            if(!$result1) {die(mysqli_error($con)); } else {                           
+                            echo '<script>("Kontrakten er nu underskrevet.") window.location.href="index.php";</script>';}
+                        } else if ($laantager_user_id_hent == $user_id){
+                            $query2 = "UPDATE kontrakt SET laantager_underskrift_id = '2' WHERE kontrakt_id = '$kontrakt_id2'";
+                            $result2 = mysqli_query($con, $query2);
+                            if(!$result2) { die(mysqli_error($con)); } else {                           
+                            echo '<script>("Kontrakten er nu underskrevet.") window.location.href="index.php";</script>';}
+                        } else die(mysqli_error($con));}
+                    }
+    
+}  
+} else { 
+                     echo '<script>("Hvis du forlader denne side, så vil din kontrakt blive slettet.")</script>';}               
 ?>
 <style>
 #nemIDfake {
@@ -33,10 +57,10 @@ $updateunderskrift = "UPDATE kontrakt "
 
 </style>
 <body id="nemIDfake"> 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <button onclick="changeElement()" class="btn btn-warning btn-lg mutuumknap" type="button" value="<?php $laangiver_underskrift_2; ?>">Underskriv kontrakt</button>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <button onclick="changeElement()" class="btn btn-warning btn-lg mutuumknap" type="submit">Underskriv kontrakt</button>
 <br><br>
-        <p id='underskrevet'>Kontrakt endnu ikke underskrevt, klik på "underskriv kontrakt"</p>
+        <p id='underskrevet'>Kontrakten er endnu ikke underskrevet, klik på "Underskriv kontrakt"</p>
 <br>
 
     <script>

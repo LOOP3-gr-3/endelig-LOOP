@@ -127,14 +127,14 @@
                     <br>
                     <br>
 
-                        <p> "Gem kontrakt" sender dig direkte videre til underskrivning med       nem-ID
-                            <br><br>
-                            Kontrakten gemmes herefter under Min profil - <strong>Mine aftaler</strong>
+                        <p> <br><br>
+                            Kontrakten gemmes herefter under Min profil - <strong>Mine aftaler</strong>.
+                            <br>Her kan kontrakten underskrives
                         </p>
 
-                    <!-- HUSK AT HER SKAL VI SKIFTE URL ADRESSEN UD MED DEN RIGTIGE I STEDET FOR LOCALHOST href="http://localhost/mutuum/mutuum/endelig-LOOP/viskontrakt.php"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! /-->
+                    
                         <div class="text-center">
-                    <a><button role="button" name="submit" type="submit" class="btn btn-primary btn-lg mutuumknap">Gem kontrakt og underskriv</button></a>
+                    <a href="minside.php"><button role="button" name="submit" type="submit" class="btn btn-primary btn-lg mutuumknap">Gem kontrakt</button></a>
                             </div>
                         </div>
                         </div>
