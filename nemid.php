@@ -9,9 +9,10 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
+$kontrakt_id = $_GET['kontrakt_id2'];
 
 if (isset($_POST["submit"])){
-    $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
+    $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
     $result = mysqli_query($con, $query);
              if(!$result) die(mysqli_error($con));
              else {
@@ -35,7 +36,7 @@ if (isset($_POST["submit"])){
     
 }  
 } else { 
-                     echo '<script>("Hvis du forlader denne side, så vil din kontrakt blive slettet.")</script>';}               
+                     echo '<script>("Hvis du forlader denne side, så vil din kontrakt ikke blive underskrevet.")</script>';}               
 ?>
 <style>
 #nemIDfake {
