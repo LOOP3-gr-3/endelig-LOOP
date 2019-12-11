@@ -9,11 +9,27 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
+$kontrakt_id = $_GET['kontrakt_id1'];
 ?>
 <div class="container-fluid">
 <h1>Er du sikker på du vil slette kontrakten?</h1>
-    <a action="sletkontraktaction.php">Slet</a>
+
+    <form novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+        <a  href="minside.php"><button type="submit" class="btn btn-warning btn-lg">Slet</button></a>
+    </form>
 </div>
+
 <?php
+         if(isset($_POST['submit'])){   
+            $query = "DELETE FROM kontrakt WHERE $kontrakt_id = 'kontrakt_id';";
+            $result = mysqli_query($con, $query);
+            if(!$result) {
+                die(mysqli_error($con));}
+            else {
+		echo '<script>alert("Kontrakten er nu slettet");';
+        echo 'window.location.href="minside.php";';
+        echo '</script>' ;
+        die();
+            }}
 require_once("includes/footer.php");
 ?>

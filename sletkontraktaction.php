@@ -10,9 +10,7 @@ if (!isset($_SESSION['user_id'])) {
   }
 $user_id = $_SESSION['user_id'];
 ?>
-
-
-
+$query = DELETE FROM kontrakt WHERE $kontrakt_id = 'kontrakt_id';
 <?PHP
 require_once("includes/footer.php");
 ?>
