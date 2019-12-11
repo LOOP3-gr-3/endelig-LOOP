@@ -77,7 +77,7 @@ else{
 <div class="container text-center">
 <form method="post" action="" name="reset"><br /><br />
     <label><strong><h4>Indtast din email:</h4></strong></label><br /><br />
-<input class="form-control"type="email" name="email" placeholder="skrivmail@her.dk" />
+<input class="form-control" type="email" name="email" placeholder="skrivmail@her.dk" />
 <br /><br />
 <input type="submit" class="mutuumknap btn-warning btn" value="Send link"/>
 </form>

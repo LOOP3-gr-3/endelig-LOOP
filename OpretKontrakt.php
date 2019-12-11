@@ -2,53 +2,6 @@
     $page = ('Oprettelse af kontrakt');
     require_once('includes/header.php');
     if(!isset($_SESSION)){session_start();}
-<?php
-require_once ('includes/header.php');
-
-if(isset($_POST["laantageremail"]) {
-$sendmail = $_POST['laantageremail'];
-$sendmail = filter_var($sendmail, FILTER_SANITIZE_EMAIL);
-$sendmail = filter_var($sendmail, FILTER_VALIDATE_EMAIL);
-
-$output='<p>Kære bruger,</p>';
-$output.='<p>Klik venligst på nedenstående knap for, at se din nye kontrakt på mutuum.dk:</p>';
-$output.='<p>-------------------------------------------------------------</p>';
-$output.='<a href="https://www.mpw.dk/minside.php" target="_blank">
-<button class="btn btn-warning mutuumknap">Se kontrakt</button></a>';
-$output.='<p>-------------------------------------------------------------</p>';
-$output.='<p>Hvis du ikke har registreret dig som bruger på mutuum. Kan du oprette dig som bruger her: </p>';
-$output.='<p>-------------------------------------------------------------</p>';
-$output.='<a href="https://www.mpw.dk/opretbruger.php" target="_blank">
-<button class="btn btn-warning mutuumknap">Opret bruger</button></a>';
-$output.='<p>Du må have en god dag,</p>';
-$output.='<p>Venlig hilsen</p>' 
-$output.='<p>Mutuum</p>';
-$body = $output; 
-$subject = "Ny kontrakt modtaget - Mutuum";
- 
-$email_to = $sendmail;
-$fromserver = "nykontrakt@mpw.dk"; 
-require("PHPMailer/PHPMailerAutoload.php");
-$mail = new PHPMailer();
-$mail->IsSMTP();
-$mail->Host = "send.one.com"; // Enter your host here
-$mail->SMTPAuth = true;
-$mail->Username = "nykontrakt@mpw.dk"; // Enter your email here
-$mail->Password = "mutuum"; //Enter your password here
-$mail->Port = 587;
-$mail->IsHTML(true);
-$mail->From = "nykontrakt@mpw.dk";
-$mail->FromName = "Mutuum";
-$mail->Sender = $fromserver; // indicates ReturnPath header
-$mail->Subject = $subject;
-$mail->Body = $body;
-$mail->AddAddress($email_to);
-if(!$mail->Send()){
-echo "Mailer Error: " . $mail->ErrorInfo;
-}
-     } echo '<script>alert("Der er sendt en email til den pågældende låntager")</script>';
-else{} 
-?>
 ?>
     <div class="jumbotron text-center wasoverskrift">
         <h1>Opret Kontrakt</h1>
