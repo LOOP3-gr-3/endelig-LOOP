@@ -57,10 +57,12 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
     <button class="btn btn-warning mutuumknap" type="submit">Log Ind</button>
     
 </form>
-</div>
+
 <br>
     <a href="glemt-password.php">Glemt password?</a>
-
+<br>
+<br>    
+    </div>
 <?php
 require_once("includes/footer.php");
 ?>
