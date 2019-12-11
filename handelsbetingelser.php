@@ -1,7 +1,6 @@
 <?php
 $page = ('Handelsbetingelser');
 require_once("includes/header.php");
-if (!isset($_SESSION)) {session_start();}
 ?>
 
 
@@ -10,11 +9,11 @@ if (!isset($_SESSION)) {session_start();}
         <div class="jumbotron text-center wasoverskrift">
         <h1>Handelsbetingelser</h1></div>
 <div class="container-fluid">
-    <div class="alert alert-warning alert-dismissible" role="alert">
+    <div class="alert alert-info alert-dismissible" role="alert" style="margin-left:10em; margin-right:10em;">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <p>Hvis du ikke finder svaret på dine spørgsmål herinde, så er du velkommen til at kontakte os via mobil eller email. </p> 
     </div>
-    <div class="panel-group" id="accordion">
+    <div class="panel-group" id="accordion" style="margin-left: 10em; margin-right: 10em;">
         <div class="faqHeader"><h2>Generelt</h2></div>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -173,12 +172,16 @@ if (!isset($_SESSION)) {session_start();}
                 </div>
             </div>
         </div>
-    </div> 
+        <br>
+    
+   
 <?php
     if (isset($_SESSION)){
     echo '<a href="opretbruger.php">Tilbage til opret bruger</a>';
 }
 ?>
+        
+</div> 
 <br>
 </div>
 <br>
