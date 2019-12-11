@@ -15,7 +15,7 @@ if (!isset($_SESSION)) session_start();
     <div class="col-sm-8">
       <h2>Tanken bag Mutuum</h2>
       <h4> <br> MUTUUM startede på baggrund af et ønske fra Morten Refsgaard, Jens Eriksen og Sander Dyrvig om at hjælpe dem, der havde brug for lidt ekstra penge til indskud til diverse efter nødssituationer - men også ønsket om at gøre det lettere for to bekendte at låne penge til hinanden og samtidig sikre, at den økonomiske situation ikke kommer mellem dem vha. af en juridisk kontrakt, der skal holde begge parter ansvarlige.</h4> <br>      
-      <p>Designet, foretningsmodellen og det videre koncept er udarbejdet af en gruppe 3. semester studerende fra Aarhus Universitet. Teamet har arbejdet ud fra konceptet og ønsket om, at man skal kunne lån direkte mellem hinanden og undgå bankerne. Visionen for de tre samarbejdspartnere er at lave en app, der er professionel med sikkerhed i højsædet vha. samarbejdspartnere såsom nemID, Likvido etc.</p>
+      <p>Designet og det videre koncept er udarbejdet af en gruppe 3. semester studerende fra Aarhus Universitet. Teamet har arbejdet ud fra konceptet og ønsket om, at man skal kunne lån direkte mellem hinanden og undgå bankerne. Visionen for de tre samarbejdspartnere er at lave en app, der er professionel med sikkerhed i højsædet vha. samarbejdspartnere såsom nemID, Likvido etc.</p>
     </div>
 <div class="col-sm-4 waslogo"> <br>
     <img src="images/logo.png" style="width:70%" alt="Image">
