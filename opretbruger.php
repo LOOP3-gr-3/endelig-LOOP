@@ -64,56 +64,70 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
 ?>
 
 <!-- Her er formen som skal udfyldes. Fieldset tagget er fordi denne gruppe af data er relaterede. Legend tagget er overskrift for fireldset tagget -->
-    <div class="text-center">
+<div class="text-center">
     <h2><strong>Opret bruger</strong></h2>
-    </div>
-    <div class="container-fluid lasse2Margin">
-        <fieldset>
-    <!-- Under action tagget er der redirectet til en php funktion, som skal sikre at serveren forstår den information der sendes til vores 'users'-tabel -->
-    <form class="needs-validation" novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
-        <div class="form-group" id="logmag">
-            <label for="fornavn">Fornavn:</label>
-            <input type="text" class="form-control" name="fornavn" placeholder="Fornavn" required>
-        </div>
-        <div class="form-group">
-            <label for="efternavn">Efternavn:</label>
-            <input type="text" class="form-control" name="efternavn" placeholder="Efternavn" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="mail">Mail:</label>
-            <input type="email" class="form-control" name="mail" placeholder="skriv@mail.dk" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="tf">Telefonnummer:</label>
-            <input type="tel" class="form-control" name="telefon" placeholder="00 00 00 00" required>
-        </div>
-        <hr>
-        <div class="form-group">
-            <label for="p1">Password:</label>
-            <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="password1" id="p1" titel="Skal indeholde mindst 1 stort bogstav" placeholder="********" onkeyup='check();' required>
-        </div>
-        <div class="form-group">
-            <label for="p2">Gentag password:</label>
-            <input type="password" class="form-control" name="password2" id="p2" placeholder="********" onkeyup='check();' required>
-        </div>
-        <div class="form-group">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                        <label class="form-check-label" for="invalidCheck"> Accepter betingelserne </label>
-						<div class="invalid-feedback"> Du skal acceptere betingelserne for, at kunne oprette en bruger. </div>
-                        <a href="handelsbetingelser.php">Se betingelserne her!</a>
-					</div>
-				</div>
-        <hr>
-        <button type="submit" class="btn btn-primary mutuumknap">Opret Bruger</button> 
-        <br>
-        <br>
-        <!-- Her er der tilføjet et stykke tekst der kan skifte farve. Det knytter sig til vores JS funktion som tjekker in real time, om der er tastet ens i de 2 passwordfelter -->
-        <span id="passwordtjek"></span>
-    </form>
-</fieldset>
+</div>
+<div class="container-fluid lasseMargin">
+    <fieldset>
+        <!-- Under action tagget er der redirectet til en php funktion, som skal sikre at serveren forstår den information der sendes til vores 'users'-tabel -->
+
+        <form class="needs-validation" novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+        <div class="row"> 
+            <div class="col-12 col-xs-12 col-sm-6 col-lg-6 col-xl-6">
+            <div class="form-group" id="logmag">
+                <label for="fornavn">Fornavn:</label>
+                <input type="text" class="form-control" name="fornavn" placeholder="Fornavn" required>
+            </div>
+            </div>
+            <div class="col-12 col-xs-12 col-sm-6 col-lg-6 col-xl-6">
+            <div class="form-group">
+                <label for="efternavn">Efternavn:</label>
+                <input type="text" class="form-control" name="efternavn" placeholder="Efternavn" required>
+            </div>
+            </div>
+        </div>  
+        <div class="row"> 
+        <div class="col-12 col-xs-12 col-sm-6 col-lg-6 col-xl-6">
+            <div class="form-group">
+                <label for="mail">Mail:</label>
+                <input type="email" class="form-control" name="mail" placeholder="skriv@mail.dk" required>
+            </div>
+            </div>
+        <div class="col-12 col-xs-12 col-sm-6 col-lg-6 col-xl-6">    
+            <div class="form-group">
+                <label for="tf">Telefonnummer:</label>
+                <input type="tel" class="form-control" name="telefon" placeholder="00 00 00 00" required>
+            </div>
+            </div>
+            </div>    
+            <hr>
+            <div class="row"> 
+            <div class="col-12 col-xs-12 col-sm-6 col-lg-6 col-xl-6">    
+            <div class="form-group">
+                <label for="p1">Password:</label>
+                <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control" name="password1" id="p1" titel="Skal indeholde mindst 1 stort bogstav" placeholder="********" onkeyup='check();' required>
+            </div>
+            <div class="form-group">
+                <label for="p2">Gentag password:</label>
+                <input type="password" class="form-control" name="password2" id="p2" placeholder="********" onkeyup='check();' required>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck"> Accepter betingelserne </label>
+                    <div class="invalid-feedback"> Du skal acceptere betingelserne for, at kunne oprette en bruger. </div>
+                    <a href="handelsbetingelser.php">Se betingelserne her!</a>
+                </div>
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-primary mutuumknap">Opret Bruger</button>
+            <br>
+            <br>
+            <!-- Her er der tilføjet et stykke tekst der kan skifte farve. Det knytter sig til vores JS funktion som tjekker in real time, om der er tastet ens i de 2 passwordfelter -->
+            <span id="passwordtjek"></span>
+            </div>    
+        </form>
+    </fieldset>
 
 </div>
 

@@ -183,7 +183,12 @@
     margin-right: 20em;
 }
 
-@media(max-width:767px) {
+.lasse3Margin {
+    margin-left: 20em;
+    margin-right: 20em;
+}
+
+@media(max-width:768px) {
     .lasseMargin{
         margin-left:0em;
         margin-right:0em;
@@ -192,5 +197,17 @@
     .lasse2Margin{
     margin-left: 5em;
     margin-right: 5em;
+}
+}
+@media(max-width:768px) {
+    .lasse3Margin {
+    margin-left: 10em;
+    margin-right: 10em;
+}
+}
+@media(max-width:380px) {
+    .lasse3Margin {
+    margin-left: 0em;
+    margin-right: 0em;
 }
 }

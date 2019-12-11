@@ -42,7 +42,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
 <div class="text-center">
 <h1><strong>Log ind</strong></h1>
 </div>
-<div class="container-fluid lasse2Margin">
+<div class="container-fluid lasse3Margin">
 
 <form class="form-signin" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
     <!-- sikrer at vi sender "ren" data op til databasen -->
