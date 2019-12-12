@@ -14,8 +14,7 @@ if (!isset($_GET['kontrakt_id2'])) {
 } else {
 	$kontrakt_id2 = $_GET['kontrakt_id2'];
 	$user_id = $_SESSION['user_id'];
-	echo $user_id;
-}
+	}
 if (isset($_POST['kontrakt_id'])) {
 	$kontrakt_id2 = $_POST['kontrakt_id'];
 	$user_id = $_SESSION['user_id'];

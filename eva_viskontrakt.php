@@ -33,46 +33,6 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
         }
 ?>
 <div class="container-fluid">
-    <?php  
-    $query1 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laangiver_user_id'";
-                    $result1 = mysqli_query($con, $query1);
-                    $row1 = mysqli_fetch_assoc($result1);
-                    $laangiver_fornavn = $row1['fornavn'];
-                    $laangiver_efternavn = $row1['efternavn'];
-        echo $laangiver_fornavn . ' ' . $laangiver_efternavn . '<br>Tidspunkt for underskrift: ' . $laangiver_underskrift . '<br>';
-    $query2 = "SELECT beloeb FROM beloeb WHERE beloeb_id = '$beloeb'";
-                    $result2 = mysqli_query($con, $query2);
-                    $row2 = mysqli_fetch_assoc($result2);
-                    $beloeb = $row2['beloeb'];
-        echo $beloeb . ' DKK<br>';
-    $query3 = "SELECT rente FROM rente WHERE rente_id = '$rente'";
-                    $result3 = mysqli_query($con, $query3);
-                    $row3 = mysqli_fetch_assoc($result3);
-                    $rente = $row3['rente'];
-        echo $rente . ' %<br>';
-        echo 'Månedlig afdrag: ' . $maanedlig_afdrag . '<br>';
-        echo 'Afkast: ' . $maanedlig_afdrag . '<br>';
-    $query4 = "SELECT brud FROM kontraktbrud WHERE kontraktbrud_id = '$brud'";
-                    $result4 = mysqli_query($con, $query4);
-                    $row4 = mysqli_fetch_assoc($result4);
-                    $brud = $row4['brud'];
-        echo $brud . '<br>';
-    $query5 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laantager_user_id'";
-                    $result5 = mysqli_query($con, $query5);
-                    $row5 = mysqli_fetch_assoc($result5);
-                    $laantager_fornavn = $row5['fornavn'];
-                    $laantager_efternavn = $row5['efternavn'];
-        echo $laantager_fornavn . ' ' . $laantager_efternavn . '<br>Tidspunkt for underskrift: ' . $laantager_underskrift . '<br>';
-   $query6 = "SELECT * FROM bindingsperiode WHERE bindingsperiode_id = '$bindings_id'";
-                    $result6 = mysqli_query($con, $query6);
-                    $row6 = mysqli_fetch_assoc($result6);
-                    $loebetid = $row6['loebetid'];
-                    $loebeenhed = $row6['enhed_key'];
-    $query7 = "SELECT enhed FROM enhedstabel WHERE enhed_key = '$loebeenhed'";
-                    $result7 = mysqli_query($con, $query7);
-                    $row7 = mysqli_fetch_assoc($result7);
-                    $enhedloebtid = $row7['enhed']; 
-?>
     <div class="panel panel-default lasseMargin">
         <div class="panel-heading text-center">
             <h3>Din kontrakt</h3>
