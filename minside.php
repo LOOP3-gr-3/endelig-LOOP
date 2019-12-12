@@ -31,7 +31,8 @@ $user_id = $_SESSION['user_id'];
                         echo "";
                         }   
         ?>
-                <a href="retoplysninger.php"><button class="btn btn-warning mutuumknap">Ret oplysninger</button></a>
+                <a href="retoplysninger.php" id="vispamobil" ><button class="btn btn-warning mutuumknap">Ret oplysninger</button></a>
+                <a href="opretkontrakt.php"><button class="btn btn-warning pull-right">Opret kontrakt</button></a>
                 <br>
                 <br>
             </div>
@@ -44,7 +45,7 @@ $user_id = $_SESSION['user_id'];
                     <hr>
             </div>
             <!-- ________________ ALT KODE TIL MANGLER UNDERSKRIFT -->  
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <h2>Mangler din underskrift</h2>
                 <?php
             $query1 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '1' AND laangiver_user_id = '$user_id' AND laantager_underskrift_id = '1'";
@@ -93,7 +94,7 @@ $user_id = $_SESSION['user_id'];
         ?>
             </div>
          <!--*************ALT KODE TIL DINE AFTALER, kontraktanmodninger-->  
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <h2>Kontrakt anmodninger</h2>
                 <?php
             $query1 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_user_id = '$user_id' AND laantager_underskrift_id = '1'";
@@ -143,7 +144,7 @@ $user_id = $_SESSION['user_id'];
             </div>
 
             <!--****************ALT KODE TIL DINE KONTRAKTER, klar til udlån-->
-                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                     <h2>Dine kontrakter klar til udlån</h2>
                     <?php
             $query2 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '1' AND laangiver_user_id = '$user_id'";
@@ -173,12 +174,12 @@ $user_id = $_SESSION['user_id'];
         ?>
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">
-                            <h3>Venter på underskrift</h3>
+                            <h3>Venter</h3>
                             <p><?php echo $modtagerfornavn;?> <?php echo $modtagerefternavn; ?> har ikke underskrivet kontrakten endnu</p>
 
                         </div>
                         <div class="panel-body">
-                            <p><strong>Underskrevet:</strong> Nej</p>
+                            <p><strong>Underskrevet af dig:</strong> Ja</p>
                             <p><strong>Beløb: </strong><?php echo $beloebValue;?> DKK</p>
                             <p><strong>Rente: </strong><?php echo $renteValue;?> %</p>
                             <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
