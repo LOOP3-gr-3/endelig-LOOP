@@ -2,7 +2,6 @@
 $page = ('Nulstil password');
 require_once('includes/header.php');
 if(!isset($_SESSION)){session_start();}
-require_once("conn.php");
 if (!isset($_GET['email']) && !isset($_GET['key'])) {
   echo "<script>alert('Du har ikke adgang til denne side');
   window.location.href='index.php';</script>";
