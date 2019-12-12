@@ -83,7 +83,7 @@ if (isset($_POST['btnsubmit'])) {
                         <div class="col-6 col-xs-6">
                           
                             <h4>Beløb</h4>
-                            <select class="form-control" id="dropdownbeloeb" data-toggle="dropdown" name="dropdownbeloeb" required>
+                            <select class="form-control" id="dropdownbeloeb" data-toggle="dropdown" name="dropdownbeloeb" required onchange="this.form.submit()">
                             <option selected value="">Vælg beløb i DKK</option>
                                 <?php
                                 $query1 = "SELECT * FROM beloeb ORDER BY beloeb";    
@@ -101,7 +101,7 @@ if (isset($_POST['btnsubmit'])) {
                         </div>
                         <div class="col-6 col-xs-6">
                             <h4>Fortjeneste på hele beløbet</h4>
-                            <select class="form-control" id="dropdownrente" data-toggle="dropdown" name="dropdownrente" required>
+                            <select class="form-control" id="dropdownrente" data-toggle="dropdown" name="dropdownrente" required onchange="this.form.submit()">
                                 <option selected value="">Vælg rente i %</option>
                                 <?php 
                                 $query2 = "SELECT * FROM rente ORDER BY rente";    

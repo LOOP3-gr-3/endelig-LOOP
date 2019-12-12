@@ -14,9 +14,9 @@ if (!isset($_SESSION['user_id'])) {
     <div class="jumbotron text-center wasoverskrift">
             <h1>Økonomisk Rådgivning</h1>
             </div> 
-<div class="container-fluid lasseMargin">
+<div class="container-fluid lasse4Margin">
     <div class="row">
-        <div class="col-xs-12 col-sm-4 col-lg-4">   
+        <div class="col-xs-12 col-sm-6 col-lg-6">   
             <h3>Step by step guide</h3>
             <h4><strong>1) Få et overblik af dit budget</strong></h4>
             <p>Første step til at få styr på din økonomi er ved at danne et overblik på dit nuværende budget. Dette kan med fordel laves i excel, så er det nemmere at rette til løbende.</p>
@@ -66,7 +66,7 @@ if (!isset($_SESSION['user_id'])) {
             
             
         </div>
-            <div class="col-xs-12 col-sm-4 col-lg-4">
+            <div class="col-xs-12 col-sm-6 col-lg-6">
                 <!-- Container (Contact Section) -->
                 <h1>Spørgsmål?</h1>
                 <p>Har du flere spørgsmål, så er du meget velkommen til at kontakte os</p>

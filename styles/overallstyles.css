@@ -177,7 +177,7 @@
           margin-top: -2em;
       }
 
-
+/*_________________ TILPASNING AF MARGIN PÅ FAQ, ØKO RÅDGIVNING OG HANDELSBETINGELSER, SAMT LOGIN OG OPRET BRUGER _________*/
 .lasseMargin{
     margin-left:15em;
     margin-right:15em;
@@ -216,5 +216,11 @@
     .lasse3Margin {
     margin-left: 0em;
     margin-right: 0em;
+}
+}
+@media(min-width:850px) {
+.lasse4Margin{
+    margin-left:15em;
+    margin-right:15em;
 }
 }
