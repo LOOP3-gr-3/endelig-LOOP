@@ -3,18 +3,18 @@ $page = ('Handelsbetingelser');
 require_once("includes/header.php");
 ?>
 
-
 <!--Nedenstående kode er implementere fra en template fra Bootstrap. Der er foretaget rettelser mhp. tekst og indhold.-->
 
         <div class="jumbotron text-center wasoverskrift">
         <h1>Handelsbetingelser</h1></div>
-<div class="container-fluid lasseMargin">
+<div class="container-fluid">
+        <div class="lasseMargin">
     <div class="alert alert-info alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <p>Har du ydereligere spørgsmål til de angivne betingelser, så er du velkommen til at kontakte os via mobil eller email. </p> 
     </div>
     <div class="panel-group" id="accordion">
-        <div class="faqHeader"><h2>Generelt</h2></div>
+        <div><h2>Generelt</h2></div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -64,8 +64,8 @@ require_once("includes/header.php");
                 </div>
             </div>
         </div>
-
-        <div class="faqHeader"><h2>Behandling af persondataoplysninger</h2></div>
+        <div class="container-fluid">
+        <h2>Behandling af persondataoplysninger</h2>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -115,7 +115,7 @@ require_once("includes/header.php");
             </div>
         </div>
 
-        <div class="faqHeader"><h2>Låntagers fortrydelsesret</h2></div>
+        <h2>Låntagers fortrydelsesret</h2>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
@@ -173,8 +173,6 @@ require_once("includes/header.php");
             </div>
         </div>
         <br>
-    
-   
 <?php
     if (isset($_SESSION)){
     echo '<a href="opretbruger.php">Tilbage til opret bruger</a>';
@@ -183,18 +181,10 @@ require_once("includes/header.php");
         
 </div> 
 </div>
+    </div>
 <br>
 <br>
 
-
-<style>
-    .faqHeader {
-        font-size: 27px;
-        margin: 20px;
-    
-    }
-
-</style>
 
 <?php
 require_once("includes/footer.php");

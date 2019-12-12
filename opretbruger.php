@@ -67,7 +67,8 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
 <div class="text-center">
     <h2><strong>Opret bruger</strong></h2>
 </div>
-<div class="container-fluid lasseMargin">
+<div class="container-fluid">
+    <div class="lasseMargin">
     <fieldset>
         <!-- Under action tagget er der redirectet til en php funktion, som skal sikre at serveren forstår den information der sendes til vores 'users'-tabel -->
 
@@ -125,10 +126,11 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mail'
             <br>
             <!-- Her er der tilføjet et stykke tekst der kan skifte farve. Det knytter sig til vores JS funktion som tjekker in real time, om der er tastet ens i de 2 passwordfelter -->
             <span id="passwordtjek"></span>
-            </div>    
+            </div></div>    
         </form>
     </fieldset>
 
+</div>
 </div>
 
 <!-- Her er en lille kode som tjekker "in real time" om man taster rigtig med sine adgangskoder, det displayes i span tagget i formen -->

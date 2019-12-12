@@ -73,7 +73,8 @@ if (isset($_POST['btnsubmit'])) {
     <div class="jumbotron text-center wasoverskrift">
         <h1>Opret Kontrakt</h1>
     </div>
-<div class="container-fluid lasseMargin">
+<div class="container-fluid">
+    <div class="lasseMargin">
         <p><I>Udfyld venligst nedenstående felter til din kontrakt</I></p><br>
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
                 <fieldset>
@@ -254,6 +255,7 @@ if (isset($_POST['btnsubmit'])) {
 
             <br>
     </div>
+    </div> 
     <br>
 
 <?php
