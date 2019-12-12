@@ -10,6 +10,7 @@ if (!isset($_SESSION['user_id'])) {
   }
 $user_id = $_SESSION['user_id'];
 $kontrakt_id = $_GET['kontrakt_id2'];
+echo $kontrakt_id;
 
 if (isset($_POST["submit"])){
     $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
@@ -21,12 +22,12 @@ if (isset($_POST["submit"])){
                         $laangiver_user_id_hent = $row['laangiver_user_id'];
                         $laantager_user_id_hent = $row['laangiver_user_id'];
                         
-                        if ($laangiver_user_id_hent == $user_id){
+                        if ($laangiver_user_id_hent = $user_id){
                             $query1 = "UPDATE kontrakt SET laangiver_underskrift_id = '2' WHERE kontrakt_id = '$kontrakt_id2'";
                             $result1 = mysqli_query($con, $query1);
                             if(!$result1) {die(mysqli_error($con)); } else {                           
                             echo '<script>("Kontrakten er nu underskrevet.") window.location.href="index.php";</script>';}
-                        } else if ($laantager_user_id_hent == $user_id){
+                        } else if ($laantager_user_id_hent = $user_id){
                             $query2 = "UPDATE kontrakt SET laantager_underskrift_id = '2' WHERE kontrakt_id = '$kontrakt_id2'";
                             $result2 = mysqli_query($con, $query2);
                             if(!$result2) { die(mysqli_error($con)); } else {                           
@@ -58,7 +59,7 @@ if (isset($_POST["submit"])){
 </style>
 <body id="nemIDfake"> 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <button onclick="changeElement()" class="btn btn-warning mutuumknap" type="submit">Underskriv kontrakt</button>
+    <a href="minside.php"><button onclick="changeElement()" class="btn btn-warning mutuumknap" type="submit">Underskriv kontrakt</button></a>
 <br><br>
         <p id='underskrevet'>Kontrakten er endnu ikke underskrevet, klik på "Underskriv kontrakt"</p>
 <br>

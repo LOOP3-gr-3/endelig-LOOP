@@ -10,11 +10,8 @@ if (!isset($_SESSION['user_id'])) {
   }
 $user_id = $_SESSION['user_id'];
 $kontrakt_id2 = $_GET['kontrakt_id2'];
-?>
 
-<div class="container-fluid">
 
-    <?php
 $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
     $result = mysqli_query($con, $query);
     $row = mysqli_num_rows($result);
@@ -28,8 +25,13 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                 $brud = $row['kontraktbrud_id'];
                 $laantager_user_id = $row['laantager_user_id'];
                 $laantager_underskrift = $row['reg_underskrift_2'];
+                $laantager_underskrift_id = $row['laantager_underskrift_id'];
+                $laangiver_underskrift_id = $row['laangiver_underskrift_id'];
             }
         }
+?>
+<div class="container-fluid">    
+<?php  
     $query1 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laangiver_user_id'";
                     $result1 = mysqli_query($con, $query1);
                     $row1 = mysqli_fetch_assoc($result1);
@@ -59,16 +61,61 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                     $laantager_fornavn = $row5['fornavn'];
                     $laantager_efternavn = $row5['efternavn'];
         echo $laantager_fornavn . ' ' . $laantager_efternavn . '<br>Tidspunkt for underskrift: ' . $laantager_underskrift . '<br>';
+?>    
+    <div class="panel panel-default lasseMargin">
+                        <div class="panel-heading text-center">
+                            <h3>Din kontrakt</h3>
+                        </div>
+                        <div class="panel-body">
+                           <div class="row">
+                            <div class="">   
+                            <p><strong>Aftale indgået mellem:</strong></p>
+                            </div>    
+                                <div class="form-control"><?php echo $laangiver_fornavn; ?> <?php echo $laangiver_efternavn; ?> &amp; <?php echo $laantager_fornavn; ?> <?php echo $laantager_efternavn; ?></div>
+                            </div>   
+                            <p><strong>Underskrevet den:</strong> <?php  echo $laantager_underskrift ?></p>
+                            <p><strong>Beløb: </strong><?php echo $beloeb;?> DKK</p>
+                            <p><strong>Rente: </strong> <?php echo $rente;?> %</p>
+                        </div>
+                        <div class="panel-footer">
+                          
+                        </div>
+                    </div>
+  <?php
+    if($laantager_underskrift_id = 1 AND $laangiver_underskrift_id = 1 AND $user_id == $laangiver_user_id){
+    ?>      <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+            <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a> 
+            <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+            <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>   
+            <br><br>
     
-    if($laantager_user_id='1' && $user_id == $laantager_user_id){
-    ?>      <a href="nemid.php?kontrakt_id1=<?php echo $kontrakt_id1 ?>">
-            <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>   <?php }
-    if($laantager_user_id='1' && $user_id == $laangiver_user_id){
-    ?>      <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
-            <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>  <?php
+    <?php }
+    elseif($laantager_underskrift_id = 1 && $laangiver_underskrift_id = 2 && $user_id == $laangiver_user_id){
+    ?>      <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+            <button class="btn btn-warning btn-lg">Slet kontrakt</button></a> 
+            <br><br>
+    <?php
         }
+    elseif($laantager_underskrift_id = 1 && $user_id == $laantager_user_id){
+    ?>      <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+            <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a> 
+            <br><br>
+     <?php
+        }
+    elseif($laantager_underskrift_id = 2 && $laangiver_underskrift_id = 2){
+    ?>      <a href="minside.php">
+            <button class="btn btn-warning btn-lg">Tilbage til min side</button></a> <p>Aftalen ér afviklet, eller under afvikling.</p> 
+            <br><br>
+     <?php
+        }
+    else{
+        echo '<p>Aftalen ér afviklet, eller under afvikling.</p>';
+    }
+        
+    
 ?>
 </div>
+
 <?php
 require_once("includes/footer.php");
 ?>
