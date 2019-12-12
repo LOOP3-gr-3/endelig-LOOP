@@ -23,7 +23,7 @@ if (isset($_POST['kontrakt_id'])) {
 	$result = mysqli_query($con, $query);
 	if (!$result) die (mysqli_error($con));
 	else {
-		echo "<script>alert('The contract has been deleted');</script>";
+		echo "<script>alert('Kontrakten er blevet slettet!');</script>";
 		echo "<script>window.location.href = 'minside.php';</script>";
 	}
 }
