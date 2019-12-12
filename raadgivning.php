@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_id'])) {
     <div class="jumbotron text-center wasoverskrift">
             <h1>Økonomisk Rådgivning</h1>
             </div> 
-<div class="container-fluid lasse4Margin">
+<div class="container-fluid lasseMargin">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-lg-6">   
             <h3>Step by step guide</h3>
