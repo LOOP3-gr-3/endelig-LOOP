@@ -14,13 +14,12 @@ $kontrakt_id2 = $_GET['kontrakt_id2'];
 <div class="container-fluid">
 <h1>Er du sikker på du vil slette kontrakten?</h1>
 
-    <form novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+    <form novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF?kontrakt_id2=$kontrakt_id2']);?>">
         <?php        
         
          if(isset($_POST['submit'])){   
-            $query = "DELETE * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
+            $query = "DELETE FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             $result = mysqli_query($con, $query);
-            $row3 = mysqli_fetch_assoc($result3);
             if(!$result) {
                 die(mysqli_error($con));
             }
