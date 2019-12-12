@@ -36,7 +36,7 @@ if (!isset($_SESSION['user_id'])) {
 
 <body id="nemIDfake"> 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<form method="post" action="eva_signkontrakt.php">
+	<form method="post" action="nemidaction.php">
 		<input type="hidden" name="kontrakt_id2" value="<?php echo $kontrakt_id;?>">
     <button class="btn btn-warning mutuumknap" name="submit">Underskriv kontrakt</button>
 		</form>

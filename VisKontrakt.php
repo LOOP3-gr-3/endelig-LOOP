@@ -32,24 +32,21 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             }
         }
 ?>
-
-<?php  
+<div class="container-fluid">
+    <?php  
     $query1 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laangiver_user_id'";
                     $result1 = mysqli_query($con, $query1);
                     $row1 = mysqli_fetch_assoc($result1);
                     $laangiver_fornavn = $row1['fornavn'];
                     $laangiver_efternavn = $row1['efternavn'];
-
     $query2 = "SELECT beloeb FROM beloeb WHERE beloeb_id = '$beloeb'";
                     $result2 = mysqli_query($con, $query2);
                     $row2 = mysqli_fetch_assoc($result2);
                     $beloeb = $row2['beloeb'];
-
     $query3 = "SELECT rente FROM rente WHERE rente_id = '$rente'";
                     $result3 = mysqli_query($con, $query3);
                     $row3 = mysqli_fetch_assoc($result3);
                     $rente = $row3['rente'];
-
     $query4 = "SELECT brud FROM kontraktbrud WHERE kontraktbrud_id = '$brud'";
                     $result4 = mysqli_query($con, $query4);
                     $row4 = mysqli_fetch_assoc($result4);
@@ -59,7 +56,6 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                     $row5 = mysqli_fetch_assoc($result5);
                     $laantager_fornavn = $row5['fornavn'];
                     $laantager_efternavn = $row5['efternavn'];
-    
    $query6 = "SELECT * FROM bindingsperiode WHERE bindingsperiode_id = '$bindings_id'";
                     $result6 = mysqli_query($con, $query6);
                     $row6 = mysqli_fetch_assoc($result6);
@@ -70,242 +66,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                     $row7 = mysqli_fetch_assoc($result7);
                     $enhedloebtid = $row7['enhed']; 
 ?>
-<?php
-    if($laantager_underskrift_id = 1 && $laangiver_underskrift_id = 1 && $user_id == $laangiver_user_id){
-    ?>
-<div class="container-fluid">
-    <br>
-    <div class="panel panel-default">
-        <div class="panel-heading text-center">
-            <h3>Din kontrakt</h3>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Aftale mellem:</strong></p>
-                </div>
-                <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-                    <div><?php echo $laangiver_fornavn; ?> <?php echo $laangiver_efternavn; ?> &amp; <?php echo $laantager_fornavn; ?> <?php echo $laantager_efternavn; ?></div>
-                    <br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Kontraktbrud:</strong></p>
-                </div>
-                <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-                    <div><?php echo $brud;?></div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <p><strong>Beløb:</strong></p>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <div><?php echo $beloeb;?> DKK</div>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <p><strong>Rente:</strong></p>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <div><?php echo $rente;?> %</div>
-
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <p><strong>Løbetid:</strong></p>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <div><?php echo $loebetid;?> <?php echo $enhedloebtid; ?></div>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <p><strong>Månedlig afdrag:</strong></p>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <div><?php echo $maanedlig_afdrag;?> DKK</div>
-                </div>
-            </div>
-            <br>
-        </div>
-        <div class="panel-footer text-center">
-            <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
-                <button class="btn btn-warning btn pull-left">Underskriv kontrakt</button></a>
-            <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
-                <button class="btn btn-warning mutuumknap btn pull-right">Slet kontrakt</button></a>
-            <br><br>
-        </div>
-    </div>
-    <div class="text-center">
-        <a href="minside.php">
-            <button class="btn btn-warning mutuumknap ">Tilbage til Min side</button></a>
-        <br><br>
-    </div>
-</div>
-<?php }
-    elseif($laantager_underskrift_id = 1 && $laangiver_underskrift_id = 2 && $user_id == $laangiver_user_id){
-    ?>
-<div class="container-fluid">
-    <br>
-    <div class="panel panel-default">
-        <div class="panel-heading text-center">
-            <h3>Din kontrakt</h3>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Aftale mellem:</strong></p>
-                </div>
-                <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-                    <div><?php echo $laangiver_fornavn; ?> <?php echo $laangiver_efternavn; ?> &amp; <?php echo $laantager_fornavn; ?> <?php echo $laantager_efternavn; ?></div>
-                    <br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Underskrevet af</strong> <?php echo $laangiver_fornavn; ?> </p>
-                </div>
-                <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-                    <div><?php  echo $laangiver_underskrift; ?>
-                    </div><br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Kontraktbrud:</strong></p>
-                </div>
-                <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-                    <div><?php echo $brud;?></div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <p><strong>Beløb:</strong></p>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <div><?php echo $beloeb;?> DKK</div>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <p><strong>Rente:</strong></p>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <div><?php echo $rente;?> %</div>
-
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <p><strong>Løbetid:</strong></p>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <div><?php echo $loebetid;?> <?php echo $enhedloebtid; ?></div>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <p><strong>Månedlig afdrag:</strong></p>
-                </div>
-                <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                    <div><?php echo $maanedlig_afdrag;?> DKK</div>
-                </div>
-            </div>
-            <br>
-        </div>
-        <div class="panel-footer text-center">
-            <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>"><button class="btn btn-warning btn pull-left">Slet kontrakt</button></a>
-            
-        </div>
-    </div>
-
-    <br><br>
-    <?php
-        }
-    elseif($laantager_underskrift_id = 1 && $user_id == $laantager_user_id){
-    ?> <div class="container-fluid">
-        <br>
-        <div class="panel panel-default">
-            <div class="panel-heading text-center">
-                <h3>Din kontrakt</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                        <p><strong>Aftale indgået mellem:</strong></p>
-                    </div>
-                    <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-                        <div><?php echo $laangiver_fornavn; ?> <?php echo $laangiver_efternavn; ?> &amp; <?php echo $laantager_fornavn; ?> <?php echo $laantager_efternavn; ?></div>
-                        <br>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                        <p><strong>Underskrevet af</strong> <?php echo $laangiver_fornavn; ?> </p>
-                    </div>
-                    <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-                        <div><?php  echo $laangiver_underskrift; ?>
-                        </div><br>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                        <p><strong>Kontraktbrud:</strong></p>
-                    </div>
-                    <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-                        <div><?php echo $brud;?></div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                        <p><strong>Beløb:</strong></p>
-                    </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                        <div><?php echo $beloeb;?> DKK</div>
-                    </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                        <p><strong>Rente:</strong></p>
-                    </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                        <div><?php echo $rente;?> %</div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                        <p><strong>Løbetid:</strong></p>
-                    </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                        <div><?php echo $loebetid;?> <?php echo $enhedloebtid; ?></div>
-                    </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                        <p><strong>Månedlig afdrag:</strong></p>
-                    </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
-                        <div><?php echo $maanedlig_afdrag;?> DKK</div>
-                    </div>
-                </div>
-                <br>
-            </div>
-            <div class="panel-footer text-center">
-                <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
-                    <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>
-            </div>
-        </div>
-        <div class="text-center">
-            <a href="minside.php">
-                <button class="btn btn-warning mutuumknap ">Tilbage til Min side</button></a>
-            <br><br>
-        </div>
-    </div>
-</div>
-<?php
-        }
-    elseif($laantager_underskrift_id = 2 && $laangiver_underskrift_id = 2){
-    ?> <div class="container-fluid">
-    <br>
-    <div class="panel panel-default">
+    <div class="panel panel-default lasseMargin">
         <div class="panel-heading text-center">
             <h3>Din kontrakt</h3>
         </div>
@@ -321,7 +82,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             </div>
             <div class="row">
                 <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Underskrevet af</strong> <?php echo $laangiver_fornavn; ?> </p>
+                    <p><strong>Underskrevet af</strong> <?php echo $laangiver_fornavn; ?> den: </p>
                 </div>
                 <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                     <div><?php  echo $laangiver_underskrift; ?>
@@ -330,22 +91,13 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             </div>
             <div class="row">
                 <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Underskrevet af</strong> <?php echo $laantager_fornavn; ?> </p>
+                    <p><strong>Underskrevet af</strong> <?php echo $laantager_fornavn; ?> den: </p>
                 </div>
                 <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                     <div><?php  echo $laantager_underskrift; ?>
                     </div><br>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Kontraktbrud:</strong></p>
-                </div>
-                <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-                    <div><?php echo $brud;?></div>
-                </div>
-            </div>
-            <br>
+            
             <div class="row">
                 <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
                     <p><strong>Beløb:</strong></p>
@@ -358,6 +110,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                 </div>
                 <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
                     <div><?php echo $rente;?> %</div>
+
                 </div>
             </div>
             <br>
@@ -376,13 +129,46 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                 </div>
             </div>
             <br>
+            <div class="row">
+                <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
+                    <p><strong>Kontraktbrud:</strong></p>
+                </div>
+                <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
+                    <div><?php echo $brud;?></div>
+                </div>
+            </div>
         </div>
-        <div class="panel-footer text-center">
-            <a href="minside.php">
-                <button class="btn btn-warning">Tilbage til min side</button></a>
-            <p>Aftalen ér afviklet, eller under afvikling.</p>
+        </div>
+        <div class="panel-footer">
+
         </div>
     </div>
+    <?php
+    if($laantager_underskrift_id = 1 AND $laangiver_underskrift_id = 1 AND $user_id == $laangiver_user_id){
+    ?> <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+        <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>
+    <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+        <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>
+    <br><br>
+
+    <?php }
+    elseif($laantager_underskrift_id = 1 && $laangiver_underskrift_id = 2 && $user_id == $laangiver_user_id){
+    ?> <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+        <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>
+    <br><br>
+    <?php
+        }
+    elseif($laantager_underskrift_id = 1 && $user_id == $laantager_user_id){
+    ?> <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+        <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>
+    <br><br>
+    <?php
+        }
+    elseif($laantager_underskrift_id = 2 && $laangiver_underskrift_id = 2){
+    ?> <a href="minside.php">
+        <button class="btn btn-warning btn-lg">Tilbage til min side</button></a>
+    <p>Aftalen ér afviklet, eller under afvikling.</p>
+    <br><br>
     <?php
         }
     else{

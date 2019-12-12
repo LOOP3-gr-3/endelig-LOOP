@@ -84,7 +84,7 @@ $user_id = $_SESSION['user_id'];
                         <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                     </div>
                     <div class="panel-footer">
-                            <a href="eva_viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ $user_id = $_SESSION['user_id'];
                         <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                     </div>
                     <div class="panel-footer">
-                            <a href="eva_viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                     </div>
                 </div>
@@ -185,7 +185,7 @@ $user_id = $_SESSION['user_id'];
                             <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                         </div>
                         <div class="panel-footer">
-                            <a href="eva_viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                         </div>
                     </div>
@@ -248,6 +248,7 @@ $user_id = $_SESSION['user_id'];
                     <div class="panel panel-default text-center">
                         <div class="panel-heading">
                             <h3>Din kontrakt</h3>
+                            <h3>Din kontrakt</h3>
                         </div>
                         <div class="panel-body">
                             <p><strong>Aftale indgået mellem:</strong></p>
@@ -257,7 +258,7 @@ $user_id = $_SESSION['user_id'];
                             <p><strong>Rente: </strong> <?php echo $renteValue;?> %</p>
                         </div>
                         <div class="panel-footer">
-                            <a href="eva_viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                         </div>
                     </div>
