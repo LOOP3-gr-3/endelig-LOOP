@@ -152,21 +152,21 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
     </div>
     <?php
     if($laantager_underskrift_id = 1 && $laangiver_underskrift_id = 1 && $user_id == $laangiver_user_id){
-    ?> <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+    ?> <a href="eva_nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
         <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>
-    <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+    <a href="eva_sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
         <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>
     <br><br>
 
     <?php }
     elseif($laantager_underskrift_id = 1 && $laangiver_underskrift_id = 2 && $user_id == $laangiver_user_id){
-    ?> <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+    ?> <a href="eva_sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
         <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>
     <br><br>
     <?php
         }
     elseif($laantager_underskrift_id = 1 && $user_id == $laantager_user_id){
-    ?> <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+    ?> <a href="eva_nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
         <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>
     <br><br>
     <?php
