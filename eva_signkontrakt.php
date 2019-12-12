@@ -22,14 +22,14 @@ if (isset($_POST['submit']) && isset($_POST['kontrakt_id2'])) {
 					$query1 = "UPDATE kontrakt SET laangiver_underskrift_id = '2' WHERE kontrakt_id = '$kontrakt_id'";
 					$result1 = mysqli_query($con, $query1);
 					if(!$result1) {die(mysqli_error($con)); } else {
-					echo "<script>alert('The contract has been signed by the GIVER');</script>";
+					echo "<script>alert('Kontrakten er nu underskrevet af långiver!');</script>";
 					echo "<script>window.location.href = 'minside.php';</script>";
 					}
 				} else if ($laantager_user_id_hent == $user_id){
 					$query2 = "UPDATE kontrakt SET laantager_underskrift_id = '2' WHERE kontrakt_id = '$kontrakt_id'";
 					$result2 = mysqli_query($con, $query2);
 					if(!$result2) { die(mysqli_error($con)); } else {                           
-					echo "<script>alert('The contract has been signed by the TAKER');</script>";
+					echo "<script>alert('Kontrakten er nu underskrevet af låntager!');</script>";
 					echo "<script>window.location.href = 'minside.php';</script>";
 					}
 				} else die(mysqli_error($con));}
