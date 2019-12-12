@@ -9,13 +9,13 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
-$kontrakt_id1 = $_GET['kontrakt_id2'];
+$kontrakt_id2 = $_GET['kontrakt_id2'];
 ?>
 
 <div class="container-fluid">
 
     <?php
-$query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id1'";
+$query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
     $result = mysqli_query($con, $query);
     $row = mysqli_num_rows($result);
         if($row > 0){
@@ -64,7 +64,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id1'";
     ?>      <a href="nemid.php?kontrakt_id1=<?php echo $kontrakt_id1 ?>">
             <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>   <?php }
     if($laantager_user_id='1' && $user_id == $laangiver_user_id){
-    ?>      <a href="sletkontrakt.php?kontrakt_id1=<?php echo $kontrakt_id1 ?>">
+    ?>      <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
             <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>  <?php
         }
 ?>
