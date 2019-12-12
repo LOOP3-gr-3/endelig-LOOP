@@ -30,7 +30,7 @@ $kontrakt_id2 = $_GET['kontrakt_id2'];
         die();
             }} ?>
     
-        <a  href="minside.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>"><button type="submit" class="btn btn-warning btn-lg">Slet</button></a>
+        <a  href="minside.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>"><button name="submit" type="submit" class="btn btn-warning btn-lg">Slet</button></a>
     </form>
 </div>
 <?php
