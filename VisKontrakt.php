@@ -32,7 +32,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             }
         }
 ?>
-<div class="container-fluid">
+
     <?php  
     $query1 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laangiver_user_id'";
                     $result1 = mysqli_query($con, $query1);
@@ -49,20 +49,18 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                     $result3 = mysqli_query($con, $query3);
                     $row3 = mysqli_fetch_assoc($result3);
                     $rente = $row3['rente'];
-        echo $rente . ' %<br>';
-        echo 'Månedlig afdrag: ' . $maanedlig_afdrag . '<br>';
+
         echo 'Afkast: indsæt Evas AJAX' . '<br>';
     $query4 = "SELECT brud FROM kontraktbrud WHERE kontraktbrud_id = '$brud'";
                     $result4 = mysqli_query($con, $query4);
                     $row4 = mysqli_fetch_assoc($result4);
                     $brud = $row4['brud'];
-        echo $brud . '<br>';
     $query5 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laantager_user_id'";
                     $result5 = mysqli_query($con, $query5);
                     $row5 = mysqli_fetch_assoc($result5);
                     $laantager_fornavn = $row5['fornavn'];
                     $laantager_efternavn = $row5['efternavn'];
-        echo $laantager_fornavn . ' ' . $laantager_efternavn . '<br>Tidspunkt for underskrift: ' . $laantager_underskrift . '<br>';
+    
    $query6 = "SELECT * FROM bindingsperiode WHERE bindingsperiode_id = '$bindings_id'";
                     $result6 = mysqli_query($con, $query6);
                     $row6 = mysqli_fetch_assoc($result6);
@@ -73,7 +71,8 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                     $row7 = mysqli_fetch_assoc($result7);
                     $enhedloebtid = $row7['enhed']; 
 ?>
-    <div class="panel panel-default lasseMargin">
+<div class="container-fluid">
+    <div class="panel panel-default">
         <div class="panel-heading text-center">
             <h3>Din kontrakt</h3>
         </div>
@@ -89,7 +88,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             </div>
             <div class="row">
                 <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Underskrevet af</strong> <?php echo $laangiver_fornavn; ?> den: </p>
+                    <p><strong>Underskrevet af</strong> <?php echo $laangiver_fornavn; ?> </p>
                 </div>
                 <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                     <div><?php  echo $laangiver_underskrift; ?>
@@ -98,13 +97,13 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             </div>
             <div class="row">
                 <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                    <p><strong>Underskrevet af</strong> <?php echo $laantager_fornavn; ?> den: </p>
+                    <p><strong>Underskrevet af</strong> <?php echo $laantager_fornavn; ?> </p>
                 </div>
                 <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                     <div><?php  echo $laantager_underskrift; ?>
                     </div><br>
                 </div>
-            
+            </div>
             <div class="row">
                 <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
                     <p><strong>Beløb:</strong></p>
