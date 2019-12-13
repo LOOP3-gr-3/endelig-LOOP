@@ -41,7 +41,7 @@ $user_id = $_SESSION['user_id'];
             <!-- Mine aftaler sektionen -->
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-center">
                     <hr>
-                    <h1>DINE AFTALER</h1>
+                    <h1>MINE AFTALER</h1>
                     <hr>
             </div>
             <!-- ________________ ALT KODE TIL MANGLER UNDERSKRIFT -->  

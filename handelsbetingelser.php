@@ -64,7 +64,7 @@ require_once("includes/header.php");
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
+       
         <h2>Behandling af persondataoplysninger</h2>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -179,7 +179,7 @@ require_once("includes/header.php");
 }
 ?>
         
-</div> 
+
 </div>
     </div>
 <br>

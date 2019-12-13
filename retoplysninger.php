@@ -10,7 +10,9 @@ if (!isset($_SESSION['user_id'])) {
     }
 $user_id = $_SESSION['user_id'];
 
-if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil'])) {
+
+if(isset($_POST['btnupdate'])) {
+    if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil'])) {
     $fornavnRet = get_post($con, 'fornavn');
     $efternavnRet = get_post($con, 'efternavn');
     $mobilRet = get_post($con, 'mobil');
@@ -31,7 +33,8 @@ if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil
         echo '</script>' ;
         die();
     }
-}
+}}         
+
 $hent = "SELECT * FROM users WHERE user_id = '$user_id'";
 $resulthent = mysqli_query($con, $hent);
 $row1 = mysqli_num_rows($resulthent);
@@ -41,11 +44,11 @@ $row1 = mysqli_num_rows($resulthent);
         $mobilFyldInd = $row1["mobil"]; 
 
 ?>
-<div class="container-fluid">
-<hr>
-<h1>Ret oplysninger</h1>
-<hr>
+<div class="text-center">
+<h1><strong>Log ind</strong></h1>
+</div>
     <div class="container-fluid">
+    <div class="lasseMargin">    
 <form class="needs-validation" novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
 
     <div class="form-group">
@@ -62,11 +65,12 @@ $row1 = mysqli_num_rows($resulthent);
     </div>
     <hr>
 
-    <button class="btn btn-warning" href="minside.php" type="submit">Gem ændringer</button>
-    <button class="pull-right btn btn-warning mutuumknap" href="minside.php">Tilbage</button>
+    <a href="minside.php"><button class="btn btn-warning" name="btnupdate" type="submit">Gem ændringer</button></a>
+    
+    
     </form>
     <br>
-</div>
+        </div>
 </div>
 
     <?php
