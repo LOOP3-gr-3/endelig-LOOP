@@ -1,5 +1,5 @@
 <?php 
-$page = ('Vis Kontrakt');
+$page = ('Slet kontrakt');
 require_once("includes/header.php");
 if (!isset($_SESSION)) session_start();
 if (!isset($_SESSION['user_id'])) {
@@ -8,14 +8,21 @@ if (!isset($_SESSION['user_id'])) {
         echo '</script>' ;
         die();
   }
-$user_id = $_SESSION['user_id'];
-$kontrakt_id2 = $_GET['kontrakt_id2'];
+
+if (!isset($_GET['kontrakt_id2'])) {
+	echo '<script>alert("Vælg venligst en kontrakt");</script>';
+	echo '<script>window.location.href = "minside.php";</script>';
+} else {
+	$kontrakt_id2 = $_GET['kontrakt_id2'];
+	$user_id = $_SESSION['user_id'];
+	echo $user_id;
+}
 ?>
 <div class="container-fluid">
-<h1>Er du sikker på du vil slette kontrakten?</h1>
-
-    <form novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF?kontrakt_id2=$kontrakt_id2']);?>">
-        <?php        
+    <h1>Er du sikker på du vil slette kontrakten?</h1>
+    <div class="text-center">
+        <form novalidate method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF?kontrakt_id2=$kontrakt_id2']);?>">
+            <?php        
         
          if(isset($_POST['submit'])){   
             $query = "DELETE FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
@@ -25,14 +32,17 @@ $kontrakt_id2 = $_GET['kontrakt_id2'];
             }
             else {
 		echo '<script>alert("Kontrakten er nu slettet");';
+        /*Brugeren sendes til minside */
+        echo 'window.location.href="minside.php";';
         echo '</script>' ;
         die();
             }} ?>
-    
-        <a  href="minside.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>"><button name="submit" type="submit" class="btn btn-warning btn-lg">Slet</button></a>
-    </form>
+
+            <a href="minside.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>"><button name="submit" type="submit" class="btn btn-warning btn-lg mutuumknap"> Slet </button></a>
+        </form>
+        <br><br>
+    </div>
 </div>
 <?php
-
 require_once("includes/footer.php");
 ?>

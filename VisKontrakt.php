@@ -12,6 +12,7 @@ $user_id = $_SESSION['user_id'];
 $kontrakt_id2 = $_GET['kontrakt_id2'];
 
 
+
 $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
     $result = mysqli_query($con, $query);
     $row = mysqli_num_rows($result);
@@ -32,7 +33,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             }
         }
 ?>
-
+<div class="container-fluid">
 <?php  
     $query1 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laangiver_user_id'";
                     $result1 = mysqli_query($con, $query1);
@@ -131,7 +132,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             <br>
         </div>
         <div class="panel-footer text-center">
-            <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+            <a href="eva_nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
                 <button class="btn btn-warning btn pull-left">Underskriv kontrakt</button></a>
             <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
                 <button class="btn btn-warning mutuumknap btn pull-right">Slet kontrakt</button></a>
@@ -289,7 +290,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                 <br>
             </div>
             <div class="panel-footer text-center">
-                <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+                <a href="eva_nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
                     <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>
             </div>
         </div>

@@ -32,7 +32,7 @@ $user_id = $_SESSION['user_id'];
                         }   
         ?>
                 <a href="retoplysninger.php" id="vispamobil" ><button class="btn btn-warning mutuumknap">Ret oplysninger</button></a>
-                <a href="opretkontrakt.php"><button class="btn btn-warning pull-right">Opret kontrakt</button></a>
+                <a href="opretkontrakt.php"><button class="btn btn-warning pull-right">Opret udlån</button></a>
                 <br>
                 <br>
             </div>
@@ -84,7 +84,7 @@ $user_id = $_SESSION['user_id'];
                         <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                     </div>
                     <div class="panel-footer">
-                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <a href="eva_viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                     </div>
                 </div>
@@ -133,7 +133,7 @@ $user_id = $_SESSION['user_id'];
                         <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                     </div>
                     <div class="panel-footer">
-                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <a href="eva_viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                     </div>
                 </div>
@@ -185,7 +185,7 @@ $user_id = $_SESSION['user_id'];
                             <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
                         </div>
                         <div class="panel-footer">
-                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <a href="eva_viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                         </div>
                     </div>
@@ -257,7 +257,7 @@ $user_id = $_SESSION['user_id'];
                             <p><strong>Rente: </strong> <?php echo $renteValue;?> %</p>
                         </div>
                         <div class="panel-footer">
-                            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
+                            <a href="eva_viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                         </div>
                     </div>

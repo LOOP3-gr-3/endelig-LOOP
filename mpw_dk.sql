@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1:3306
--- Genereringstid: 11. 12 2019 kl. 12:32:41
+-- Genereringstid: 13. 12 2019 kl. 10:12:49
 -- Serverversion: 5.7.26
 -- PHP-version: 7.2.18
 
@@ -195,21 +195,26 @@ CREATE TABLE IF NOT EXISTS `kontrakt` (
   `reg_underskrift_1` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `laantager_underskrift_id` varchar(40) DEFAULT NULL,
   `reg_underskrift_2` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `gebyr_id` tinyint(4) NOT NULL,
   PRIMARY KEY (`kontrakt_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 --
 -- Data dump for tabellen `kontrakt`
 --
 
-INSERT INTO `kontrakt` (`kontrakt_id`, `laangiver_user_id`, `laantager_user_id`, `kontraktbrud_id`, `rente_id`, `beloeb_id`, `bindingsperiode_id`, `maanedlig_afdrag`, `laangiver_underskrift_id`, `reg_underskrift_1`, `laantager_underskrift_id`, `reg_underskrift_2`) VALUES
-(13, 11, 12, 1, 2, 3, 3, 1, '1', '2019-12-10 11:23:26', '1', '2019-12-10 11:23:26'),
-(14, 12, 11, 1, 2, 3, 3, 1, '2', '2019-12-10 17:32:58', '1', '2019-12-10 17:32:58'),
-(15, 11, 12, 1, 2, 3, 3, 1, '2', '2019-12-10 16:03:33', '2', '2019-12-10 16:03:33'),
-(16, 12, 11, 1, 2, 3, 3, 1, '2', '2019-12-11 12:29:35', '2', '2019-12-11 12:29:35'),
-(17, 11, 12, 3, 14, 3, 15, 1, '2', '2019-12-10 16:02:11', '1', '2019-12-10 16:02:11'),
-(18, 11, 12, 3, 2, 2, 16, 1, '2', '2019-12-10 17:25:39', '2', '2019-12-10 17:25:39'),
-(19, 12, 11, 1, 14, 1, 14, 1, '1', '2019-12-11 12:30:16', '1', '2019-12-11 12:30:16');
+INSERT INTO `kontrakt` (`kontrakt_id`, `laangiver_user_id`, `laantager_user_id`, `kontraktbrud_id`, `rente_id`, `beloeb_id`, `bindingsperiode_id`, `maanedlig_afdrag`, `laangiver_underskrift_id`, `reg_underskrift_1`, `laantager_underskrift_id`, `reg_underskrift_2`, `gebyr_id`) VALUES
+(14, 12, 11, 1, 2, 3, 3, 1, '2', '2019-12-10 17:32:58', '1', '2019-12-10 17:32:58', 0),
+(15, 11, 12, 1, 2, 3, 3, 1, '2', '2019-12-10 16:03:33', '2', '2019-12-10 16:03:33', 0),
+(16, 12, 11, 1, 2, 3, 3, 1, '2', '2019-12-11 12:29:35', '2', '2019-12-11 12:29:35', 0),
+(17, 11, 12, 3, 14, 3, 15, 1, '2', '2019-12-13 08:54:24', '2', '2019-12-13 08:54:24', 0),
+(18, 11, 12, 3, 2, 2, 16, 1, '2', '2019-12-10 17:25:39', '2', '2019-12-10 17:25:39', 0),
+(19, 12, 11, 1, 14, 1, 14, 1, '2', '2019-12-13 09:32:35', '1', '2019-12-13 09:32:35', 0),
+(31, 11, 12, 1, 2, 3, 3, 1, '1', '2019-12-10 11:23:26', '1', '2019-12-10 11:23:26', 0),
+(38, 12, 11, 1, 4, 2, 25, 40.07, '1', '2019-12-12 13:43:42', '1', '2019-12-12 13:43:42', 0),
+(39, 12, 11, 1, 4, 2, 25, 40.07, '1', '2019-12-12 13:43:49', '1', '2019-12-12 13:43:49', 0),
+(40, 12, 11, 1, 4, 2, 25, 40.07, '1', '2019-12-12 13:46:24', '1', '2019-12-12 13:46:24', 0),
+(41, 12, 11, 2, 1, 4, 3, 666.94, '1', '2019-12-12 14:39:08', '1', '2019-12-12 14:39:08', 0);
 
 -- --------------------------------------------------------
 
@@ -306,6 +311,34 @@ INSERT INTO `rente` (`rente_id`, `rente`, `enhed_key`) VALUES
 (39, 19.5, '2'),
 (40, 20, '2'),
 (41, 0, '2');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur-dump for tabellen `stiftelsesgebyr`
+--
+
+DROP TABLE IF EXISTS `stiftelsesgebyr`;
+CREATE TABLE IF NOT EXISTS `stiftelsesgebyr` (
+  `gebyr_id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `minlaan` int(10) NOT NULL,
+  `maxlaan` int(10) NOT NULL,
+  `gebyr` int(10) NOT NULL,
+  PRIMARY KEY (`gebyr_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `stiftelsesgebyr`
+--
+
+INSERT INTO `stiftelsesgebyr` (`gebyr_id`, `minlaan`, `maxlaan`, `gebyr`) VALUES
+(1, 1, 1000, 50),
+(2, 1001, 5000, 70),
+(3, 5001, 10000, 200),
+(4, 10001, 20000, 400),
+(5, 20001, 50000, 900),
+(6, 50001, 10000, 2000),
+(7, 50001, 10000, 2000);
 
 -- --------------------------------------------------------
 

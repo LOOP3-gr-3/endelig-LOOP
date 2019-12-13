@@ -26,6 +26,7 @@ if (isset($_POST['btnsubmit'])) {
 	$beloeb = $_POST['dropdownbeloeb'];
 	$rente = $_POST['dropdownrente'];
 	$bindingsperiode = $_POST['dropdownloebetid'];
+    $gebyr = '1';        
 	
     $qb = "SELECT * FROM beloeb WHERE beloeb_id = '$beloeb'";
 	$rb = mysqli_query($con, $qb);
@@ -55,7 +56,7 @@ if (isset($_POST['btnsubmit'])) {
 	$maanedligafdrag = ($amount +($amount * ($interest/100)/12))/$bindingsperiode;
 	$maanedlig_afdrag = number_format(round($maanedligafdrag, 2), 2);
 	
-	$qkontrakt = "INSERT INTO kontrakt(laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, reg_underskrift_1, laantager_underskrift_id, reg_underskrift_2) VALUES('$laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', NOW(), '1', NOW())";
+	$qkontrakt = "INSERT INTO kontrakt(laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, reg_underskrift_1, laantager_underskrift_id, reg_underskrift_2, gebyr_id) VALUES('$laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', NOW(), '1', NOW(), '$gebyr_id')";
 			$rkontrakt = mysqli_query($con, $qkontrakt);
 			if (!$rkontrakt) die(mysqli_error($con));
 			else {
@@ -71,7 +72,7 @@ if (isset($_POST['btnsubmit'])) {
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <div class="jumbotron text-center wasoverskrift">
-        <h1>Opret Kontrakt</h1>
+        <h1>Opret udlån</h1>
     </div>
 <div class="container-fluid">
     <div class="lasseMargin">
@@ -183,14 +184,8 @@ if (isset($_POST['btnsubmit'])) {
 		echo "<div>";
 	}
                             ?>                          
-
-                        <!-- Her skal det månedlige afdrag beregnes.-->
-                        <!-- $maanedligafdrag = ($beloeb * (1+($rente/100)))/$bindingsperiode -->
-                        <!-- $maanedligafdrag skal herefter indsættes i tabellen "kontrakt", sammen med alt data -->
-
                         <br>
-                        
-                       
+                                              
                         <h4>Fortjeneste </h4>
                     <?php
 					if (!isset($_POST['dropdownbeloeb']) && !isset($_POST['dropdownrente']) && !isset($_POST['dropdownloebetid'])) {
@@ -203,9 +198,7 @@ if (isset($_POST['btnsubmit'])) {
 						}
 					
                             ?>     </div></div>   
-                    <!-- Her skal afkastet udregnes: -->
-                    <!-- $afkast = ($beloeb*(1+(rente/100)))-$beloeb -->
-                    <!-- Denne skal ikke overføres til nogen database -->
+                   
                     <br>
                     </div>
                     <div class="col-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12"> 
