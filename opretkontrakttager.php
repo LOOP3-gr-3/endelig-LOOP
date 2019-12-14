@@ -273,17 +273,18 @@ if (isset($_POST['btnsubmit'])) {
 					
                             ?>
 
-                    </div></div>
-                    <br><br>
+                    </div>
+                </div>
+                <br><br>
 
-                    <div class="row">
-                        <div class="col-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12">
-                            <h4>Kontraktbrud</h4>
-                            <div>
-                                <p><I>Vælg venligst en konsekvens, ved kontraktbrud</I></p>
-                                <select class="form-control" id="dropdownkontraktbrud" data-toggle="dropdown" name="dropdownkontraktbrud" required>
-                                    <option selected value="">Vælg konsekvens ved brud på kontrakt</option>
-                                    <?php 
+                <div class="row">
+                    <div class="col-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12">
+                        <h4>Kontraktbrud</h4>
+                        <div>
+                            <p><I>Vælg venligst en konsekvens, ved kontraktbrud</I></p>
+                            <select class="form-control" id="dropdownkontraktbrud" data-toggle="dropdown" name="dropdownkontraktbrud" required>
+                                <option selected value="">Vælg konsekvens ved brud på kontrakt</option>
+                                <?php 
                             $query4 = "SELECT * FROM kontraktbrud ORDER BY kontraktbrud_id";    
                             $result4 = mysqli_query($con, $query4);
                             $row4 = mysqli_num_rows($result4);                          
@@ -293,32 +294,32 @@ if (isset($_POST['btnsubmit'])) {
                             $brud = $row4['brud'];
                             
                             ?>
-                                    <option value="<?php echo $kontraktbrud_id;?>"> <?php echo $brud;?>
-                                    </option>
-                                    <?php } ?>
-                                </select>
-                            </div>
+                                <option value="<?php echo $kontraktbrud_id;?>"> <?php echo $brud;?>
+                                </option>
+                                <?php } ?>
+                            </select>
+                        </div>
 
-                            <br>
-                            <label for="laangiveremail">
-                                <h4>Mail på långiver</h4>
-                            </label>
-                            <p><I>Indtast E-mail på den person, som er oprettet på MUTUUM, som skal underskrive kontrakten.</I></p>
-                            <input class="form-control" type="email" id="laangiveremail" name="laangiveremail" placeholder="långiver@mail.dk" required>
+                        <br>
+                        <label for="laangiveremail">
+                            <h4>Mail på långiver</h4>
+                        </label>
+                        <p><I>Indtast E-mail på den person, som er oprettet på MUTUUM, som skal underskrive kontrakten.</I></p>
+                        <input class="form-control" type="email" id="laangiveremail" name="laangiveremail" placeholder="långiver@mail.dk" required>
 
-                            <br>
-                            <br>
+                        <br>
+                        <br>
 
-                            <p> Kontrakten gemmes herefter under Min profil - <strong>Mine aftaler</strong>.
-                                <br>Her kan kontrakten underskrives
-                            </p>
+                        <p> Kontrakten gemmes herefter under Min profil - <strong>Mine aftaler</strong>.
+                            <br>Her kan kontrakten underskrives
+                        </p>
 
 
-                            <div class="text-center">
-                                <a href="minside.php"><button role="button" name="btnsubmit" type="submit" class="btn btn-primary mutuumknap">Gem kontrakt</button></a>
-                            </div>
+                        <div class="text-center">
+                            <a href="minside.php"><button role="button" name="btnsubmit" type="submit" class="btn btn-primary mutuumknap">Gem kontrakt</button></a>
                         </div>
                     </div>
+                </div>
             </fieldset>
         </form>
 
