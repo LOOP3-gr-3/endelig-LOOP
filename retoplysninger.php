@@ -66,7 +66,7 @@ $row1 = mysqli_num_rows($resulthent);
     <hr>
 
     <a href="minside.php"><button class="btn btn-warning" name="btnupdate" type="submit">Gem ændringer</button></a>
-    
+
     
     </form>
     <br>

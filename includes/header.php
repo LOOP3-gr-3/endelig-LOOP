@@ -4,7 +4,7 @@ if(isset($_SESSION['user_id'])) {
 	$menu = '
 				    <ul class="nav navbar-nav">
                     <li><a href="minside.php">Min Side</a></li>
-                    <li><a href="opretkontrakt.php">Opret udlån</a></li>
+                    <li><a href="opretkontraktstep1.php">Opret kontrakt</a></li>
                     <li><a href="faq.php">FAQ</a></li>
                     <li><a href="raadgivning.php">Økonomisk rådgivning</a></li>
                     <li><a href="handelsbetingelser.php">Handelsbetingelser</a></li>

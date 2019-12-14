@@ -51,9 +51,37 @@ if (isset($_POST['btnsubmit'])) {
 		while($rowl = mysqli_fetch_assoc($rl)) {
 			$length = $rowl['loebetid'];
 		}
+    	$qb1 = "SELECT * FROM beloeb WHERE beloeb_id = '$beloeb_id'";
+		$rb1 = mysqli_query($con, $qb1);
+		if (!$rb1) die (mysqli_error($con));
+		else {
+			while($rowb1 = mysqli_fetch_assoc($rb1)) {
+				$amount1 = $rowb1['beloeb'];
+            
+            if($amount1 < "1001") {
+                $gebyr_id = '1';
+            } else if ($amount1 < "5001") {
+                $gebyr_id = '2';
+            } else if ($amount1 < "10001") {
+                $gebyr_id = '3';
+            } else if ($amount1 < "20001") {
+                $gebyr_id = '4';     
+            }else {
+                $gebyr_id = '1';
+            }
+		}
+        
+        $qstif = "SELECT * FROM stiftelsesgebyr WHERE gebyr_id = '$gebyr_id'";
+        $rstif = mysqli_query($con, $qstif); 
+        if (!$rstif) die (mysqli_error($con));
+		else {
+			while($rowstif = mysqli_fetch_assoc($rstif)) {
+				$gebyrberegn = $rowstif['gebyr'];
+			}
+    }    
 	}
 			//I am assumming that the selected interest rate is simple, per year and based on the borrowed amount. If you need complex interest rate calculation then you need to revise the formula.
-	$maanedligafdrag = ($amount +($amount * ($interest/100)/12))/$bindingsperiode;
+	$maanedligafdrag = (($amount)*(1+($interest/100))/($length))+($gebyrberegn/$length);
 	$maanedlig_afdrag = number_format(round($maanedligafdrag, 2), 2);
 	
 	$qkontrakt = "INSERT INTO kontrakt(laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, reg_underskrift_1, laantager_underskrift_id, reg_underskrift_2, gebyr_id) VALUES('$laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', NOW(), '1', NOW(), '$gebyr_id')";
@@ -67,7 +95,7 @@ if (isset($_POST['btnsubmit'])) {
 			}
 		}
 	}
-}
+} }
 	
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -102,7 +130,7 @@ if (isset($_POST['btnsubmit'])) {
                             </select>
                         </div>
                         <div class="col-6 col-xs-6">
-                            <h4>Fortjeneste på hele beløbet</h4>
+                            <h4>Fortjeneste i %</h4>
                             <select class="form-control" id="dropdownrente" data-toggle="dropdown" name="dropdownrente" required onchange="this.form.submit()">
                                 <option selected value="">Vælg rente i %</option>
                                 <?php 
@@ -139,10 +167,54 @@ if (isset($_POST['btnsubmit'])) {
                                 <?php } ?>
                             </select>
                         </div>
-                        
+                            </div>
                             
                         <br>
-                        <div class="col-12 col-xs-12">    
+                                         <h4>Stiftelsesgebyr </h4>
+                        <?php 
+	if (!isset($_POST['dropdownbeloeb'])) {
+	echo "";
+	}
+	else {
+		$beloebID = $_POST['dropdownbeloeb'];
+		$qb1 = "SELECT * FROM beloeb WHERE beloeb_id = '$beloebID'";
+		$rb1 = mysqli_query($con, $qb1);
+		if (!$rb1) die (mysqli_error($con));
+		else {
+			while($rowb1 = mysqli_fetch_assoc($rb1)) {
+				$amount1 = $rowb1['beloeb'];
+            
+            if($amount1 < "1001") {
+                $gebyr_id = '1';
+            } else if ($amount1 < "5001") {
+                $gebyr_id = '2';
+            } else if ($amount1 < "10001") {
+                $gebyr_id = '3';
+            } else if ($amount1 < "20001") {
+                $gebyr_id = '4';   
+            } else if ($amount1 < "50001") {
+                $gebyr_id = '5';
+            } else if ($amount1 < "10001") {
+                $gebyr_id = '6';      
+            }else {
+                $gebyr_id = '1';
+            }
+		}
+        
+        $qstif = "SELECT * FROM stiftelsesgebyr WHERE gebyr_id = '$gebyr_id'";
+        $rstif = mysqli_query($con, $qstif); 
+        if (!$rstif) die (mysqli_error($con));
+		else {
+			while($rowstif = mysqli_fetch_assoc($rstif)) {
+				$gebyr = $rowstif['gebyr'];
+			}
+		
+		echo "<div class='calc'>"; 
+		echo "<h5> ". $gebyr . " DKK</h5>";
+		echo "<div>";
+	} }}
+                                ?>
+                        <br>    
                         <h4>Månedligt afdrag </h4>
 <?php
 	if (!isset($_POST['dropdownbeloeb']) && !isset($_POST['dropdownrente']) && !isset($_POST['dropdownloebetid'])) {
@@ -178,7 +250,7 @@ if (isset($_POST['btnsubmit'])) {
 		}
 		echo "<div class='calc'>";
 		
-		$maanedligafdrag = ($amount*(1+($interest/100))/($length));
+		$maanedligafdrag = (($amount)*(1+($interest/100))/($length))+($gebyr/$length);
 		$maanedligafdrag = number_format(round($maanedligafdrag, 2), 2); 
 		echo "<h3> ". $maanedligafdrag . " DKK</h3>";
 		echo "<div>";
@@ -200,7 +272,7 @@ if (isset($_POST['btnsubmit'])) {
                             ?>     </div></div>   
                    
                     <br>
-                    </div>
+                   <div class="row">
                     <div class="col-12 col-xs-12 col-sm-12 col-lg-12 col-xl-12"> 
                     <h4>Kontraktbrud</h4>
                     <div>
@@ -242,10 +314,9 @@ if (isset($_POST['btnsubmit'])) {
                     <a href="minside.php"><button role="button" name="btnsubmit" type="submit" class="btn btn-primary mutuumknap">Gem kontrakt</button></a>
                             </div>
                         </div>
-                        </div>
+                    </div>    
                 </fieldset>
             </form>
-
             <br>
     </div>
     </div> 

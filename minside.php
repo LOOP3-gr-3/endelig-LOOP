@@ -32,7 +32,7 @@ $user_id = $_SESSION['user_id'];
                         }   
         ?>
                 <a href="retoplysninger.php" id="vispamobil" ><button class="btn btn-warning mutuumknap">Ret oplysninger</button></a>
-                <a href="opretkontrakt.php"><button class="btn btn-warning pull-right">Opret udlån</button></a>
+                <a href="opretkontraktstep1.php"><button class="btn btn-warning pull-right">Opret kontrakt</button></a>
                 <br>
                 <br>
             </div>
@@ -48,7 +48,7 @@ $user_id = $_SESSION['user_id'];
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                 <h2>Mangler din underskrift</h2>
                 <?php
-            $query1 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '1' AND laangiver_user_id = '$user_id' AND laantager_underskrift_id = '1'";
+            $query1 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '1' AND laangiver_user_id = '$user_id' OR laantager_underskrift_id = '1' AND laantager_user_id = '$user_id'";
                 $result1 = mysqli_query($con, $query1);
                 $row1 = mysqli_num_rows($result1);
                     if($row1 > 0){
@@ -74,7 +74,7 @@ $user_id = $_SESSION['user_id'];
         ?>
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
-                        <h3>Modtager</h3>
+                        <h3>Låntager</h3>
                         <p><?php echo $modtagerfornavn; ?> <?php echo $modtagerefternavn; ?></p>
                     </div>
                     <div class="panel-body">
@@ -89,60 +89,10 @@ $user_id = $_SESSION['user_id'];
                     </div>
                 </div>
                 <?php
-                        }} else {echo 'Du har endnu ikke modtaget nogle kontrakter';}
+                        }} else {echo 'Du har ikke nogle kontrakter til underskrift';}
             
         ?>
             </div>
-         <!--*************ALT KODE TIL DINE AFTALER, kontraktanmodninger-->  
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                <h2>Kontrakt anmodninger</h2>
-                <?php
-            $query1 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_user_id = '$user_id' AND laantager_underskrift_id = '1'";
-                $result1 = mysqli_query($con, $query1);
-                $row1 = mysqli_num_rows($result1);
-                    if($row1 > 0){
-                    while($row1 = mysqli_fetch_assoc($result1)){
-                        $afsenderuser_id = $row1['laangiver_user_id'];
-                        $dato_underskrift_laangiver = $row1['reg_underskrift_1']; 
-                        $beloebforkontrakt = $row1['beloeb_id'];
-                        $renteforkontrakt = $row1['rente_id'];
-                        $kontrakt_id2 = $row1['kontrakt_id'];
-                $query11 = "SELECT * FROM beloeb WHERE beloeb_id = '$beloebforkontrakt'";
-                    $result11 = mysqli_query($con, $query11);
-                    $row11 = mysqli_fetch_assoc($result11);
-                    $beloebValue = $row11['beloeb'];
-                $query111 = "SELECT * FROM rente WHERE rente_id = '$renteforkontrakt'";
-                    $result111 = mysqli_query($con, $query111);
-                    $row111 = mysqli_fetch_assoc($result111);
-                    $renteValue = $row111['rente'];
-                $query1111 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$afsenderuser_id'";
-                    $result1111 = mysqli_query($con, $query1111);
-                    $row1111 = mysqli_fetch_assoc($result1111);
-                    $afsenderfornavn = $row1111['fornavn'];
-                    $afsenderefternavn = $row1111['efternavn'];   
-        ?>
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <h3>Afsender</h3>
-                        <h4><?php echo $afsenderfornavn; ?> <?php echo $afsenderefternavn; ?></h4>
-                    </div>
-                    <div class="panel-body">
-                        <p><strong>Underskrevet:</strong> Nej</p>
-                        <p><strong>Beløb:</strong> <?php echo $beloebValue;?> DKK</p>
-                        <p><strong>Rente: </strong> <?php echo $renteValue;?> %</p>
-                        <p><strong>Oprettet:</strong> <?php echo $dato_underskrift_laangiver; ?></p>
-                    </div>
-                    <div class="panel-footer">
-                            <a href="eva_viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>">
-                            <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
-                    </div>
-                </div>
-                <?php
-                        }} else {echo 'Du har endnu ikke modtaget nogle kontrakter';}
-            
-        ?>
-            </div>
-
             <!--****************ALT KODE TIL DINE KONTRAKTER, klar til udlån-->
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                     <h2>Dine kontrakter klar til udlån</h2>
@@ -189,12 +139,14 @@ $user_id = $_SESSION['user_id'];
                             <button class="btn btn-warning btn-lg">Vis kontrakt</button></a>
                         </div>
                     </div>
-                </div>
-        </div>
+              
+       
 
         <?php
                         }} else {echo 'Du har endnu ikke oprettet nogle kontrakter';}
         ?>
+             </div>
+              </div>
     </div>
     <!--******************ALT KODE TIL HISTORIK*****************-->
         <div class="container-fluid">
