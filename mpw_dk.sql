@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1:3306
--- Genereringstid: 13. 12 2019 kl. 10:12:49
+-- Genereringstid: 14. 12 2019 kl. 15:41:13
 -- Serverversion: 5.7.26
 -- PHP-version: 7.2.18
 
@@ -184,6 +184,7 @@ INSERT INTO `enhedstabel` (`enhed_key`, `enhed`) VALUES
 DROP TABLE IF EXISTS `kontrakt`;
 CREATE TABLE IF NOT EXISTS `kontrakt` (
   `kontrakt_id` int(10) NOT NULL AUTO_INCREMENT,
+  `oprettetaf` int(10) NOT NULL,
   `laangiver_user_id` int(10) NOT NULL,
   `laantager_user_id` int(10) NOT NULL,
   `kontraktbrud_id` tinyint(4) NOT NULL,
@@ -197,24 +198,20 @@ CREATE TABLE IF NOT EXISTS `kontrakt` (
   `reg_underskrift_2` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `gebyr_id` tinyint(4) NOT NULL,
   PRIMARY KEY (`kontrakt_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 --
 -- Data dump for tabellen `kontrakt`
 --
 
-INSERT INTO `kontrakt` (`kontrakt_id`, `laangiver_user_id`, `laantager_user_id`, `kontraktbrud_id`, `rente_id`, `beloeb_id`, `bindingsperiode_id`, `maanedlig_afdrag`, `laangiver_underskrift_id`, `reg_underskrift_1`, `laantager_underskrift_id`, `reg_underskrift_2`, `gebyr_id`) VALUES
-(14, 12, 11, 1, 2, 3, 3, 1, '2', '2019-12-10 17:32:58', '1', '2019-12-10 17:32:58', 0),
-(15, 11, 12, 1, 2, 3, 3, 1, '2', '2019-12-10 16:03:33', '2', '2019-12-10 16:03:33', 0),
-(16, 12, 11, 1, 2, 3, 3, 1, '2', '2019-12-11 12:29:35', '2', '2019-12-11 12:29:35', 0),
-(17, 11, 12, 3, 14, 3, 15, 1, '2', '2019-12-13 08:54:24', '2', '2019-12-13 08:54:24', 0),
-(18, 11, 12, 3, 2, 2, 16, 1, '2', '2019-12-10 17:25:39', '2', '2019-12-10 17:25:39', 0),
-(19, 12, 11, 1, 14, 1, 14, 1, '2', '2019-12-13 09:32:35', '1', '2019-12-13 09:32:35', 0),
-(31, 11, 12, 1, 2, 3, 3, 1, '1', '2019-12-10 11:23:26', '1', '2019-12-10 11:23:26', 0),
-(38, 12, 11, 1, 4, 2, 25, 40.07, '1', '2019-12-12 13:43:42', '1', '2019-12-12 13:43:42', 0),
-(39, 12, 11, 1, 4, 2, 25, 40.07, '1', '2019-12-12 13:43:49', '1', '2019-12-12 13:43:49', 0),
-(40, 12, 11, 1, 4, 2, 25, 40.07, '1', '2019-12-12 13:46:24', '1', '2019-12-12 13:46:24', 0),
-(41, 12, 11, 2, 1, 4, 3, 666.94, '1', '2019-12-12 14:39:08', '1', '2019-12-12 14:39:08', 0);
+INSERT INTO `kontrakt` (`kontrakt_id`, `oprettetaf`, `laangiver_user_id`, `laantager_user_id`, `kontraktbrud_id`, `rente_id`, `beloeb_id`, `bindingsperiode_id`, `maanedlig_afdrag`, `laangiver_underskrift_id`, `reg_underskrift_1`, `laantager_underskrift_id`, `reg_underskrift_2`, `gebyr_id`) VALUES
+(43, 0, 11, 12, 1, 5, 2, 3, 341.67, '1', '2019-12-14 15:21:51', '2', '2019-12-14 15:21:51', 1),
+(44, 0, 11, 12, 3, 1, 6, 10, 301.5, '1', '2019-12-14 14:17:19', '1', '2019-12-14 14:17:19', 2),
+(45, 0, 11, 12, 1, 5, 4, 5, 424, '1', '2019-12-14 14:44:49', '1', '2019-12-14 14:44:49', 2),
+(46, 0, 11, 12, 3, 5, 2, 4, 268.75, '1', '2019-12-14 14:45:52', '1', '2019-12-14 14:45:52', 1),
+(47, 0, 11, 12, 3, 3, 8, 6, 688.33, '1', '2019-12-14 14:46:06', '1', '2019-12-14 14:46:06', 2),
+(48, 0, 12, 11, 2, 4, 1, 4, 140, '2', '2019-12-14 15:11:01', '1', '2019-12-14 15:11:01', 1),
+(49, 12, 12, 12, 3, 5, 4, 3, 706.67, '1', '2019-12-14 15:32:13', '1', '2019-12-14 15:32:13', 2);
 
 -- --------------------------------------------------------
 
@@ -335,10 +332,7 @@ INSERT INTO `stiftelsesgebyr` (`gebyr_id`, `minlaan`, `maxlaan`, `gebyr`) VALUES
 (1, 1, 1000, 50),
 (2, 1001, 5000, 70),
 (3, 5001, 10000, 200),
-(4, 10001, 20000, 400),
-(5, 20001, 50000, 900),
-(6, 50001, 10000, 2000),
-(7, 50001, 10000, 2000);
+(4, 10001, 20000, 400);
 
 -- --------------------------------------------------------
 

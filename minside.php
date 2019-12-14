@@ -97,7 +97,7 @@ $user_id = $_SESSION['user_id'];
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                     <h2>Dine kontrakter klar til udlån</h2>
                     <?php
-            $query2 = "SELECT * FROM kontrakt WHERE laangiver_underskrift_id = '2' AND laantager_underskrift_id = '1' AND laangiver_user_id = '$user_id'";
+            $query2 = "SELECT * FROM kontrakt WHERE oprettetaf = '$user_id' AND laantager_underskrift_id = '2' OR laangiver_underskrift_id = '2'";
                 $result2 = mysqli_query($con, $query2);
                 $row2 = mysqli_num_rows($result2);
                     if($row2 > 0){

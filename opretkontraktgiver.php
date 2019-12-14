@@ -84,7 +84,7 @@ if (isset($_POST['btnsubmit'])) {
 	$maanedligafdrag = (($amount)*(1+($interest/100))/($length))+($gebyrberegn/$length);
 	$maanedlig_afdrag = number_format(round($maanedligafdrag, 2), 2);
 	
-	$qkontrakt = "INSERT INTO kontrakt(laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, reg_underskrift_1, laantager_underskrift_id, reg_underskrift_2, gebyr_id) VALUES('$laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', NOW(), '1', NOW(), '$gebyr_id')";
+	$qkontrakt = "INSERT INTO kontrakt(oprettetaf, laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, reg_underskrift_1, laantager_underskrift_id, reg_underskrift_2, gebyr_id) VALUES('$laangiver_user_id', $laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', NOW(), '1', NOW(), '$gebyr_id')";
 			$rkontrakt = mysqli_query($con, $qkontrakt);
 			if (!$rkontrakt) die(mysqli_error($con));
 			else {

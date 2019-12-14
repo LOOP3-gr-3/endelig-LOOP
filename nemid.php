@@ -29,7 +29,6 @@ if (!isset($_SESSION['user_id'])) {
 </style>
 
 <?php
-//echo $kontrakt_id;
 	$user_id = $_SESSION['user_id'];
 	$kontrakt_id = $_GET['kontrakt_id2'];         
 ?>

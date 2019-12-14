@@ -1,11 +1,8 @@
 <?php
 require_once('conn.php');
-print_r($_POST);
 if (isset($_POST['submit']) && isset($_POST['kontrakt_id2'])) {
 	$user_id = $_SESSION['user_id'];
 	$kontrakt_id = $_POST['kontrakt_id2'];
-	echo $user_id . "<br><br>";
-	echo $kontrakt_id;
     $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id'";
     $result = mysqli_query($con, $query);
 	 if(!$result) die(mysqli_error($con));
