@@ -30,13 +30,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-4">
-                        <h4>Kontaktoplysninger</h4>
-                        <address>
-                            <p><span class="glyphicon glyphicon-map-marker"></span>Birk Centerpark 15, 7400 Herning</p>
-                            <p><span class="glyphicon glyphicon-phone"></span> +45 12345678</p>
-                            <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:kontakt@mpw.dk" target="_blank"> kontakt@mutuum.dk</a></p>
-                             <!-- Det er her forsøgt at lave en mailfunktion, så når brugerne klikker på mailen, vil de komme ind i en ny  -->
-                        </address>
+                        
                     </div>
                 </div>
                 <hr />
@@ -47,11 +41,17 @@
                 </div>
                 <div class="clearermed visible-xs"></div>
                 <div class="col-xs-12 col-sm-8 col-lg-10 col-sm-pull-4 col-lg-pull-2">
-                    <p class="no-margin">
-                        Mutuum (CVR 21212121) tilbyder en platform, hvor du kan låne af din familie, venner og bekendte og få en juridisk kontrakt.
-                        <br>
-                        <br>
-                    </p>
+                    <div class="no-margin text-center" id="footertekst">
+                        <h4>Kontaktoplysninger</h4>
+                        <address>
+                            <p><span>MUTUUM (CVR: 44223311) </span></p>
+                            <p><span class="glyphicon glyphicon-map-marker"></span>Birk Centerpark 15, 7400 Herning</p>
+                            <p><span class="glyphicon glyphicon-phone"></span> +45 12345678</p>
+                            <p><span class="glyphicon glyphicon-envelope"></span><a href="mailto:kontakt@mpw.dk" target="_blank"> kontakt@mutuum.dk</a></p>
+                             <!-- Det her er en mailfunktion, så når brugerne klikker på mailen, vil de komme ind i en ny  -->
+                        </address>
+                       <br> 
+                    </div>
                 </div>
 
             </div>
