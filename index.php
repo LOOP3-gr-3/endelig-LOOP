@@ -13,9 +13,9 @@ if(!$_SESSION['user_id']) {
   <h1 class="margin">VELKOMMEN TIL MUTUUM</h1>
 <?php echo $knappaaforsiden; ?>
     <br> <br>
-  <img src="images/benjamin-sow-CB4z0uTFSYg-unsplash.jpg" class="img-responsive img-circle margin" style="display:inline" width="350" height="350">
+  <img src="images/forsidebillede1.PNG" class="img-responsive img-circle margin" style="display:inline" width="350" height="350">
     <h3 class="margin"><strong>VÆK MED ALT DET BESVÆRLIGE</strong></h3>
-  <p>Med Mutuum kan du investere eller låne fra bare 100 kroner. Det er dine penge, så du bestemmer hvad og hvordan de skal bruges. Med Mutuum kan du løbende se gode bud og dermed tilpasse <br> den til dine ønsker og behov. Mutuum passer på dine penge, så de er i sikre hænder. </p>
+  <p>Med Mutuum kan du låne eller udlåne af venner, familie eller bekendte - undgå konflikter og brud på relationerne vha. en juridisk kontrakt. Kontrakten binder begge parter <br> op på nedskrevne retningslinjer, som långiver og låntager aftaler på forhånd inden der bliver underskrevet. Mutuum blander sig ikke - derfor bestemmer du som låntager hvad og hvordan de skal bruges.<br> Dog passer vi på dine penge som långiver, så de er i sikre hænder. </p>
     <br>
 </div>
 <br>
@@ -25,21 +25,21 @@ if(!$_SESSION['user_id']) {
       <div class="panel panel-white wasbokse">
         <div class="panel-heading wasbokse1"> <strong>STEP 1</strong></div>
         <div class="panel-body"><img src="images/moneey.PNG" class="img-responsive" style="width:60%" alt="Image"></div>
-        <div class="panel-footer wasbokse"><strong>Besvar nogle simple spørgsmål</strong> <br> Fortæl os hvor meget du vil låne eller udlåne, hvor længe, med hvilken rente og lidt om din økonomiske situation</div>
+        <div class="panel-footer wasbokse"><strong>Besvar nogle simple spørgsmål</strong> <br> Fortæl os hvor meget du vil låne eller udlåne, hvor længe og med hvilken rente. Send kontrakten til modtageren og afvent. </div>
       </div>
     </div>
 <div class="col-sm-4" align="center"> 
     <div class="panel panel-white wasbokse">
         <div class="panel-heading wasbokse1"> <strong>STEP 2</strong></div>
         <div class="panel-body"><img src="images/wait.PNG" class="img-responsive" style="width:40%" alt="Image"></div>
-        <div class="panel-footer wasbokse"><strong>Se de diverse bud</strong> <br> På baggrund af dine svar får du som låntager forskellige tilbud, som du enten kan takke ja eller nej til. Som långiver afventer du indtil låntageren har godkendt lånet.</div>
+        <div class="panel-footer wasbokse"><strong>Modtag kontrakt</strong> <br> På baggrund af dine svar får du som långiver eller låntager en nedskrevet bud fra den anden part. Læs kontrakten og erkend dig enig.</div>
     </div>
 </div>
     <div class="col-sm-4" align="center"> 
       <div class="panel panel-white wasbokse">
         <div class="panel-heading wasbokse1"><strong>STEP 3</strong></div>
-        <div class="panel-body"><img src="images/deall.PNG" class="img-responsive" style="width:62%" alt="Image"></div>
-        <div class="panel-footer wasbokse"><strong>Godkend og underskriv</strong> <br> Når du som låntager ser dig tilfreds med de forskellige krav fra långiveren, underskriver du og får straks pengene sendt til din konto</div>
+        <div class="panel-body"><img src="images/deall.PNG" class="img-responsive" style="width:55%" alt="Image"></div>
+        <div class="panel-footer wasbokse"><strong>Godkend og underskriv</strong> <br> Når den anden part ser sig tilfreds med kravene, underskrives der og låntageren får pengene overført til sin konto.</div>
       </div>
     </div>
   </div>
@@ -48,11 +48,11 @@ if(!$_SESSION['user_id']) {
 <!-- Second Container -->
 <div class="container-fluid bg-2 text-center">
       <div class="well wasfarve">
-       <p><strong>Er du långiver?</strong> <br> Start din investering med kun ét klik. Med Mutuum behøver du hverken være økonom eller millionær for at have en professionel investering. Opret dig med det samme <br> og indsæt dit beløb  ved, at lave en kontrakt - læn dig tilbage og tjen med god samvittighed. </p>
+       <p><strong>Er du långiver?</strong> <br> Hvis du er bange for, at penge skal komme mellem dig og en af dine nærmeste, er Mutuum din vej at gå. Du vil måske gerne hjælpe, men er bange for at tage risikoen,<br> så kan Mutuum garantere dig, for vi tager ingen. Med en juridisk kontrakt, kan du læne dig tilbage og hjælp med fortjenste og ro i maven.</p>
       </div>
     <br>
       <div class="well wasfarve">
-       <p><strong>Er du låntager?</strong> <br> Start dit lån med kun ét klik. Mutuum står klar til at hjælpe dig. Du kan oprette dig som bruger med det samme og tage et lån på under 5 minutter. <br> Det er et lån mellem dig og långiver, vi blander os ikke.Lån sikkert med nemID. Nem og hurtig ansøgning. Bliv godkendt samme dag, pengene udbetales direkte til din konto</p>
+       <p><strong>Er du låntager?</strong> <br> Start dit lån med kun ét klik med hjælp fra Mutuum og en relation. En aftale med din kontakt, kan du oprette dig som bruger og tage et lån på under 5 minutter. Det er et lån <br> mellem dig og en relation, vi blander os ikke. Lån nemt, hurtigt og sikkert med nemID. Bliv godkendt samme dag af långiver og få pengene udbetalt direkte til din konto</p>
       </div>
 </div>
 <br>

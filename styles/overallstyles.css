@@ -117,17 +117,16 @@
    .wasfarve {
     border-color: orange;
     background: white;
-    border-radius: 4em;
-    margin-left: 3.5em;
-    margin-right: 3.5em;
+    border-radius: 1em;
+    margin-left: 4em;
+    margin-right: 4em;
     margin-top: -1em;
     }
     .wasfarve p{
     color: black;
     }
     .wasbokse {
-    border-radius: 8em;
-    color: black;
+    border-radius: 1em;
     background: white;
     }
     .wasbokserne {
