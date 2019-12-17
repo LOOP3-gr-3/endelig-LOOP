@@ -34,16 +34,23 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 
 <body id="nemIDfake"> 
+<div class="container-fluid">   
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<form method="post" action="nemidaction.php">
+        <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck"> Accepter betingelserne </label>
+                    <div class="invalid-feedback"> Du skal acceptere betingelserne for, at kunne underskrive </div>
+                    <a href="handelsbetingelser.php" target="_blank">Se betingelserne her</a>
+                </div>
+            </div> 
 		<input type="hidden" name="kontrakt_id2" value="<?php echo $kontrakt_id;?>">
     <button class="btn btn-warning mutuumknap" name="submit">Underskriv kontrakt</button>
 		</form>
-<br><br>
-        <p id='underskrevet'>Kontrakten er endnu ikke underskrevet, klik på "Underskriv kontrakt"</p>
 <br>
+    </div> 
 
-<!--footeren skal HENTES IND HERINDE I STEDET FOR REQUIRE, DA DET LIGE NU KUN ER BAGGRUND OG IKKE NOGET "FYLD"-->
 <?php
 require_once("includes/footer.php");
 ?>
