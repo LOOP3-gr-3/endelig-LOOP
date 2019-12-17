@@ -275,10 +275,14 @@ require_once("includes/header.php");
                 </div>
             </div>
         </div>
+        
 
         
 
 </div>
+            <br>
+            <strong>Bruger meddelelse:</strong><br>
+<p>Personlige lån på Mutuum er også lån. De bør derfor ikke bruges til at undgå finansielle problemer såsom; andre misligholdte aftaler. Hvis disse lån ikke bliver behandlet ordentligt eller betalt rettidigt, kan dette ende med store økonomiske problemer. Hvis du oplever seriøse budget vanskeligheder søg der professionel hjælp først før brug af denne hjemmeside. Du er derved ikke egnet til at bruge denne side. </p>
     </div>
 <br>
 <br>
