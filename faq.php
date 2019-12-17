@@ -153,7 +153,7 @@ if (!isset($_SESSION)) {session_start();}
         </div>
     </div>
 </div>
-</div>
+
 
 <?php
 require_once("includes/footer.php");

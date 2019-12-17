@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
-$query = "SELECT * FROM kontrakt , users WHERE (laangiver_user_id = '$user_id' OR laantager_user_id = '$user_id') AND value = '1' GROUP BY kontrakt_id";
+$query = "SELECT * FROM kontrakt , users WHERE (laangiver_user_id = '$user_id' OR laantager_user_id = '$user_id') AND value = '1' || value ='2' GROUP BY kontrakt_id";
 $result = mysqli_query($con, $query);
 if (!$result) die(mysqli_error($con));
 else {
@@ -28,7 +28,8 @@ else {
 			$rente_id = $row['rente_id'];
 			$beloeb_id = $row['beloeb_id'];
 			$bindingsperiode_id = $row['bindingsperiode_id'];
-			$maanedlig_afdrag = $row['maanedlig_afdrag'];
+			$maanedlig_ad = $row['maanedlig_afdrag'];
+            $maanedlig_afdrag = number_format(round($maanedlig_ad, 2), 2);
 			$reg_underskrift_1 = $row['reg_underskrift_1'];
 			$reg_underskrift_2 = $row['reg_underskrift_2'];
 			$gebyr_id = $row['gebyr_id'];
@@ -178,10 +179,10 @@ else {
 					if (!$resultvalue) die(mysqli_error($con));
 					
 					if ($role == 'giver') {
-						$panelhead = 'Låntager';
+						$panelhead = 'Långiver';
 					}
 					else {
-						$panelhead = "Långiver";
+						$panelhead = "Låntager";
 					}
 					if ($owner == 'Yes') {
 						$badge = "<span class='label label-success'>Ejer</span>";
@@ -189,31 +190,31 @@ else {
 					else if ($owner == 'No') {
 						$badge = "<span></span>";
 					}
-
+if(($value == '2' && $owner == 'No') || ($value == '1' && $owner == 'Yes' && $laantager_underskrift_id == '1' && $laangiver_underskrift_id == '1')) {                    
 			echo '<div class="panel panel-default text-center">';
 					echo '<div class="panel-heading">';
 					echo "<h3>Du er: " . $panelhead . ' ' . $badge . "</h3>";
 					if(($role == 'giver' && $owner == 'Yes') || ($role == 'giver' && $owner == 'No')) {
-						echo '<h4>Långiver: ' . $fornavnc . ' ' .$efternavnc . "</h4>";
+				    echo '<h4>Låntager: ' . $fornavnc . ' ' .$efternavnc . "</h4>";
 					}
 					else if (($role == 'receiver' && $owner == 'Yes') || ($role == 'receiver' && $owner == 'No')) {
-						echo "<h4>Låntager: " . $fornavnlog . ' ' . $efternavnlog . "</h4>";
+						echo "<h4>Långiver: " . $fornavnc . ' ' . $efternavnc . "</h4>";
 					}
 					echo '</div>';
                     echo '<div class="panel-body">';
-                    echo '<p><strong>Underskrevet: </strong>' . $sign . '</p>';
                     echo '<p><strong>Beløb: </strong>' . $beloebValue . ' DKK</p>';
                     echo '<p><strong>Rente: </strong>' . $rente . ' ' . $enhedrente . '</p>';
+                    echo '<p><strong>Månedlig afdrag: </strong>'. $maanedlig_afdrag . ' DKK</p>';
                     echo '<p><strong>Oprettet: </strong>' . $reg . '</p>';
                     echo '</div>';
                     echo '<div class="panel-footer">';
-					echo '<a href="eva_viskontrakt.php?kontrakt_id2=' . $kontrakt_id . '"><button class="btn btn-warning btn-lg">Vis kontrakt</button></a>';
+					echo '<a href="viskontrakt.php?kontrakt_id2=' . $kontrakt_id . '"><button class="btn btn-warning btn-lg">Vis kontrakt</button></a>';
                     echo '</div>';
 					echo '</div>';
-			}
+} else {}
 				}
 
 			}
 	}
-} 
+} } 
 ?>

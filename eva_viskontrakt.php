@@ -19,21 +19,28 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             while($row = mysqli_fetch_assoc($result)){
                 $laangiver_user_id = $row['laangiver_user_id'];   
                 $laangiver_underskrift = $row['reg_underskrift_1'];
+                $oprettetaf = $row['oprettetaf'];
                 $beloeb = $row['beloeb_id'];
                 $rente = $row['rente_id'];
-                $maanedlig_afdrag = $row['maanedlig_afdrag'];
+                $maanedlig_ad = $row['maanedlig_afdrag'];
+                $maanedlig_afdrag = number_format(round($maanedlig_ad, 2), 2);
                 $bindings_id = $row['bindingsperiode_id'];
                 $brud = $row['kontraktbrud_id'];
+                $gebyr_id = $row['gebyr_id'];
                 $laantager_user_id = $row['laantager_user_id'];
                 $laangiver_underskrift = $row['reg_underskrift_1'];
                 $laantager_underskrift = $row['reg_underskrift_2'];
                 $laantager_underskrift_id = $row['laantager_underskrift_id'];
                 $laangiver_underskrift_id = $row['laangiver_underskrift_id'];
+                $value = $row['value'];
             }
         }
-?>
-<div class="container-fluid">
-    <?php  
+    if ($user_id == $oprettetaf) {
+				$owner = 'Yes';
+            }
+    else if($user_id != $oprettetaf) {
+				$owner = 'No';
+
     $query1 = "SELECT fornavn, efternavn FROM users WHERE user_id = '$laangiver_user_id'";
                     $result1 = mysqli_query($con, $query1);
                     $row1 = mysqli_fetch_assoc($result1);
@@ -72,8 +79,13 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                     $result7 = mysqli_query($con, $query7);
                     $row7 = mysqli_fetch_assoc($result7);
                     $enhedloebtid = $row7['enhed']; 
+    $query8 = "SELECT gebyr FROM stiftelsesgebyr WHERE gebyr_id = '$gebyr_id'";
+                    $result8 = mysqli_query($con, $query8);
+                    $row8 = mysqli_fetch_assoc($result8);
+                    $gebyr = $row8['gebyr']; 
 ?>
-    <div class="panel panel-default lasseMargin">
+<div class="container-fluid">   
+<div class="panel panel-default lasseMargin">
         <div class="panel-heading text-center">
             <h3>Din kontrakt</h3>
         </div>
@@ -93,7 +105,7 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
                 </div>
                 <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                     <div><?php  echo $laangiver_underskrift; ?>
-                    </div><br>
+                    </div><br> <br>
                 </div>
             </div>
             <div class="row">
@@ -138,6 +150,14 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             <br>
             <div class="row">
                 <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
+                <p><strong>Oprettelsesgebyr:</strong></p>
+                </div>
+                <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
+                <p><?php echo $gebyr; ?></p>
+                </div>
+                </div>
+            <div class="row">
+                <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
                     <p><strong>Kontraktbrud:</strong></p>
                 </div>
                 <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
@@ -146,44 +166,36 @@ $query = "SELECT * FROM kontrakt WHERE kontrakt_id = '$kontrakt_id2'";
             </div>
         </div>
         </div>
-        <div class="panel-footer">
-
+       <div class="panel-footer">
+         <?php 
+            if($value == '2' && $owner == 'No') { 
+                echo    '<a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?         >">
+                        <button class="btn btn-warning btn-lg">Underskriv</button></a>
+                        <a href="minside.php">
+                        <button class="btn btn-warning btn-lg mutuumknap pull-right"> Tilbage</button></a>
+                        <br><br>';
+            }
+            else if (($value == '1' && $owner == 'Yes' && $laantager_underskrift_id == '1') || ($laangiver_underskrift_id == '1')) {
+                echo    '<a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?         >">
+                        <button class="btn btn-warning btn-lg">Underskriv</button></a>
+                        <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+                        <button class="btn btn-warning btn-lg mutuumknap pull-right">Slet kontrakt</button></a>
+                        <br><br>';
+            }
+            else if(($owner == 'Yes' && $laangiver_underskrift_id == '2' && $laantager_underskrift_id == '1') || ($owner == 'Yes' && $laantager_underskrift_id == '2' && $laangiver_underskrift_id == '1')) {
+                echo    '<a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?         >">
+                        <button class="btn btn-warning btn-lg">Underskriv</button></a>
+                        <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
+                        <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>
+                        <br><br>';
+            } else if ($value == '3') {
+                echo    '<a href="minside.php">
+                        <button class="btn btn-warning btn-lg mutuumknap pull-right"> Tilbage</button></a>
+                        <br><br>';
+            }
+            ?>   
         </div>
     </div>
-    <?php
-    if($laantager_underskrift_id = 1 && $laangiver_underskrift_id = 1 && $user_id == $laangiver_user_id){
-    ?> <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
-        <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>
-    <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
-        <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>
-    <br><br>
-
-    <?php }
-    elseif($laantager_underskrift_id = 1 && $laangiver_underskrift_id = 2 && $user_id == $laangiver_user_id){
-    ?> <a href="sletkontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
-        <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>
-    <br><br>
-    <?php
-        }
-    elseif($laantager_underskrift_id = 1 && $user_id == $laantager_user_id){
-    ?> <a href="nemid.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>">
-        <button class="btn btn-warning btn-lg">Underskriv kontrakt</button></a>
-    <br><br>
-    <?php
-        }
-    elseif($laantager_underskrift_id = 2 && $laangiver_underskrift_id = 2){
-    ?> <a href="minside.php">
-        <button class="btn btn-warning btn-lg">Tilbage til min side</button></a>
-    <p>Aftalen ér afviklet, eller under afvikling.</p>
-    <br><br>
-    <?php
-        }
-    else{
-        echo '<p>Aftalen ér afviklet, eller under afvikling.</p>';
-    }
-        
-    
-?>
 </div>
 
 <?php
