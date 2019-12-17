@@ -198,41 +198,47 @@ $gebyr = $rowgeb['gebyr'];
                     <div><?php  echo $reg_underskrift_2; ?>
                     </div><br><br>
                 </div>
-
+            </div>
                 <div class="row">
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
+                    <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
                         <p><strong>Beløb:</strong></p>
                     </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
+                    <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                         <div><?php echo $beloebValue;?> DKK</div>
+                        <br>
                     </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
+                    </div>
+                    <div class="row">
+                    <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
                         <p><strong>Rente:</strong></p>
                     </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
+                    <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                         <div><?php echo $rente;?> %</div>
-
+                        <br>
                     </div>
                 </div>
-                <br>
                 <div class="row">
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
+                    <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
                         <p><strong>Løbetid:</strong></p>
                     </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
+                    <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                         <div><?php echo $loebetid;?> <?php echo $enhedtid; ?></div>
+                        <br>
                     </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
+                </div>
+                    <div class="row">
+                    
+                    <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
                         <p><strong>Månedlig afdrag:</strong></p>
                     </div>
-                    <div class="col-3 col-xs-3 col-sm-3 col-lg-3 col-xl-3">
+                    <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                         <div><?php echo $maanedlig_afdrag;?> DKK</div>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                 <div class="col-4 col-xs-4 col-sm-4 col-lg-4 col-xl-4">
-                <p><strong>Oprettelsesgebyr:</strong></p>
+                <p><strong>Gebyr:</strong></p>
                 </div>
                 <div class="col-8 col-xs-8 col-sm-8 col-lg-8 col-xl-8">
                 <p><?php echo $gebyr; ?> DKK</p>
@@ -247,8 +253,7 @@ $gebyr = $rowgeb['gebyr'];
                         <br>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>    
         <div class="panel-footer">
          <?php 
             if($value_kont == '2' && $owner == 'No') { 
