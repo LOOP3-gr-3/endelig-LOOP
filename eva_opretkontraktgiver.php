@@ -30,8 +30,7 @@ if (isset($_POST['btnsubmit'])) {
 	$bindingsperiode_id = $_POST['dropdownloebetid'];
 	$beloeb = $_POST['dropdownbeloeb'];
 	$rente = $_POST['dropdownrente'];
-	$bindingsperiode = $_POST['dropdownloebetid'];
-    $gebyr = '1';        
+	$bindingsperiode = $_POST['dropdownloebetid'];       
 	
     $qb = "SELECT * FROM beloeb WHERE beloeb_id = '$beloeb'";
 	$rb = mysqli_query($con, $qb);
