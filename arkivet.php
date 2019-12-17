@@ -194,10 +194,10 @@ else {
 					echo '<div class="panel-heading">';
 					echo "<h3>Du er: " . $panelhead . ' ' . $badge . "</h3>";
 					if(($role == 'giver' && $owner == 'Yes') || ($role == 'giver' && $owner == 'No')) {
-						echo '<h4>Långiver: ' . $fornavnc . ' ' .$efternavnc . "</h4>";
+					echo '<h4>Långiver: ' . $fornavnc . ' ' .$efternavnc . "</h4>";
 					}
 					else if (($role == 'receiver' && $owner == 'Yes') || ($role == 'receiver' && $owner == 'No')) {
-						echo "<h4>Låntager: " . $fornavnlog . ' ' . $efternavnlog . "</h4>";
+						echo "<h4>Låntager: " . $fornavnc . ' ' . $efternavnc . "</h4>";
 					}
 					echo '</div>';
                     echo '<div class="panel-body">';
@@ -209,7 +209,7 @@ else {
 					echo '<p><strong>Underskevet af låntager den: </strong>' . $reg_underskrift_2 . '</p>';
                     echo '</div>';
                     echo '<div class="panel-footer">';
-					echo '<a href="eva_viskontrakt.php?kontrakt_id2=' . $kontrakt_id . '"><button class="btn btn-warning btn-lg">Vis kontrakt</button></a>';
+					echo '<a href="viskontrakt.php?kontrakt_id2=' . $kontrakt_id . '"><button class="btn btn-warning btn-lg">Vis kontrakt</button></a>';
                     echo '</div>';
 					echo '</div>';
 			}

@@ -1,5 +1,5 @@
 <?php
-$page = ('Din side');
+$page = ('Min side');
 require_once("includes/header.php");
 if (!isset($_SESSION)) {session_start();}
 if (!isset($_SESSION['user_id'])) {
@@ -57,9 +57,10 @@ $user_id = $_SESSION['user_id'];
 				<hr>
 				<h1>HISTORIK</h1>
 				<hr>
-				<div class="col-sm-6 text-center">
+				<div class="col-sm-12 text-center">
 					<h3>Underskrevne kontrakter</h3>
 					<?php require_once("arkivet.php");?>
+                    <br><br>
 				</div>
 			</div>
 		</div>

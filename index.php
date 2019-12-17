@@ -13,7 +13,7 @@ if(!$_SESSION['user_id']) {
   <h1 class="margin">VELKOMMEN TIL MUTUUM</h1>
 <?php echo $knappaaforsiden; ?>
     <br> <br>
-  <img src="images/forsidebillede1.PNG" class="img-responsive img-circle margin" style="display:inline" width="350" height="350">
+  <img src="images/forsidebillede10.PNG" class="img-responsive margin img-circle " style="display:inline" width="350" height="350">
     <h3 class="margin"><strong>VÆK MED ALT DET BESVÆRLIGE</strong></h3>
   <p>Med Mutuum kan du låne eller udlåne af venner, familie eller bekendte - undgå konflikter og brud på relationerne vha. en juridisk kontrakt. Kontrakten binder begge parter <br> op på nedskrevne retningslinjer, som långiver og låntager aftaler på forhånd inden der bliver underskrevet. Mutuum blander sig ikke - derfor bestemmer du som låntager hvad og hvordan de skal bruges.<br> Dog passer vi på dine penge som långiver, så de er i sikre hænder. </p>
     <br>
