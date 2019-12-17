@@ -247,7 +247,8 @@ require_once("includes/header.php");
             </div>
             <div id="collapseF" class="panel-collapse collapse">
                 <div class="panel-body">
-                  <p>Mutuum er ansvarlig for behandling af dine personolysninger og skal ses anses som værende dataansvarlig i Persondataforordningens forstand.<br> Mutuum følger lovgivningen for Europa-Parlamentets og Rådets Forordning (EU) 2016/679 af 27. april 2016 om beskyttelse af fysiske personer i forbindelse med behandling af personoplysninger og om fri udveksling af sådanne oplysninger og om ophævelse af Direktiv 95/46/EF (generel forordning om databeskyttelse).</p> 
+                  <p>Mutuum er ansvarlig for behandling af dine personolysninger og skal ses anses som værende dataansvarlig i Persondataforordningens forstand.<br> Mutuum følger lovgivningen for Europa-Parlamentets og Rådets Forordning (EU) 2016/679 af 27. april 2016 om beskyttelse af fysiske personer i forbindelse med behandling af personoplysninger og om fri udveksling af sådanne oplysninger og om ophævelse af Direktiv 95/46/EF (generel forordning om databeskyttelse).</p>
+                <p>Se Europa-Parlamentets og Rådets Forordring <a href="https://ec.europa.eu/info/sites/info/files/standard_european_consumer_credit_information_en.pdf" target="_blank">her</a></p>   
                 </div>
             </div>
         </div>

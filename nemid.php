@@ -36,8 +36,7 @@ if (!isset($_SESSION['user_id'])) {
 <body id="nemIDfake"> 
 <div class="container-fluid">   
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	<form method="post" action="nemidaction.php">
-        <div class="form-group">
+    <div class="form-group">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                     <label class="form-check-label" for="invalidCheck"> Accepter betingelserne </label>
@@ -45,6 +44,7 @@ if (!isset($_SESSION['user_id'])) {
                     <a href="handelsbetingelser.php" target="_blank">Se betingelserne her</a>
                 </div>
             </div> 
+	<form method="post" action="nemidaction.php">
 		<input type="hidden" name="kontrakt_id2" value="<?php echo $kontrakt_id;?>">
     <button class="btn btn-warning mutuumknap" name="submit">Underskriv kontrakt</button>
 		</form>

@@ -11,10 +11,9 @@ if (isset($_POST['submit']) && isset($_POST['kontrakt_id2'])) {
 		 if($rows > 0){
 			while($row = mysqli_fetch_assoc($result)) {
 				$laangiver_user_id_hent = $row['laangiver_user_id'];
-				echo "<h1>" . $laangiver_user_id_hent . "</h1>";
-				
+								
 				$laantager_user_id_hent = $row['laantager_user_id'];
-				echo "<h1>" . $laantager_user_id_hent . "</h1>";
+				
 				if ($laangiver_user_id_hent == $user_id){
                     $id2 = '2';
 					$query1 = "UPDATE kontrakt SET laangiver_underskrift_id = '$id2', reg_underskrift_1 = NOW() WHERE kontrakt_id = '$kontrakt_id'";
