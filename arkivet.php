@@ -1,5 +1,5 @@
 <?
-require_once("conn.php");
+require_once("includes/header.php");
 if (!isset($_SESSION)) {session_start();}
 if (!isset($_SESSION['user_id'])) {
         echo '<script>alert("Du er ikke logget ind på MUTUUM - log ind her, eller opret en bruger og få gratis adgang til platformen!");';
@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
-$query = "SELECT * FROM kontrakt , users WHERE (laangiver_user_id = '$user_id' OR laantager_user_id = '$user_id') AND value = '1' GROUP BY kontrakt_id";
+$query = "SELECT * FROM kontrakt , users WHERE (laangiver_user_id = '$user_id' OR laantager_user_id = '$user_id') AND value = '3' GROUP BY kontrakt_id";
 $result = mysqli_query($con, $query);
 if (!$result) die(mysqli_error($con));
 else {
@@ -205,6 +205,8 @@ else {
                     echo '<p><strong>Beløb: </strong>' . $beloebValue . ' DKK</p>';
                     echo '<p><strong>Rente: </strong>' . $rente . ' ' . $enhedrente . '</p>';
                     echo '<p><strong>Oprettet: </strong>' . $reg . '</p>';
+					echo '<p><strong>Underskevet af långiver den: </strong>' . $reg_underskrift_1 . '</p>';
+					echo '<p><strong>Underskevet af låntager den: </strong>' . $reg_underskrift_2 . '</p>';
                     echo '</div>';
                     echo '<div class="panel-footer">';
 					echo '<a href="eva_viskontrakt.php?kontrakt_id2=' . $kontrakt_id . '"><button class="btn btn-warning btn-lg">Vis kontrakt</button></a>';
@@ -216,4 +218,5 @@ else {
 			}
 	}
 }
+
 ?>

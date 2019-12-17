@@ -8,6 +8,11 @@ if (!isset($_SESSION['user_id'])) {
         echo '</script>' ;
         die();
   }
+if (!isset($_POST['submit'])) {
+	$interest = 0;
+	$length = 1;
+	$maanedligafdrag = 0;
+}
 if (isset($_POST['btnsubmit'])) {
 	if(isset($_POST['laangiveremail'])) {
         $mail = $_POST['laangiveremail'];

@@ -1,5 +1,5 @@
 <?
-require_once("conn.php");
+require_once("includes/header.php");
 if (!isset($_SESSION)) {session_start();}
 if (!isset($_SESSION['user_id'])) {
         echo '<script>alert("Du er ikke logget ind på MUTUUM - log ind her, eller opret en bruger og få gratis adgang til platformen!");';
@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
-$query = "SELECT * FROM kontrakt , users WHERE (laangiver_user_id = '$user_id' OR laantager_user_id = '$user_id') AND value = '2' GROUP BY kontrakt_id";
+$query = "SELECT * FROM kontrakt , users WHERE (laangiver_user_id = '$user_id' OR laantager_user_id = '$user_id') AND value = '1' GROUP BY kontrakt_id";
 $result = mysqli_query($con, $query);
 if (!$result) die(mysqli_error($con));
 else {
@@ -215,5 +215,5 @@ else {
 
 			}
 	}
-}
+} 
 ?>

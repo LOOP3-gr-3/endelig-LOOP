@@ -8,11 +8,6 @@ if (!isset($_SESSION['user_id'])) {
         echo '</script>' ;
         die();
   }
-if (!isset($_POST['submit'])) {
-	$interest = 0;
-	$length = 1;
-	$maanedligafdrag = 0;
-}
 if (isset($_POST['btnsubmit'])) {
 	if(isset($_POST['laantageremail'])) {
         $mail = $_POST['laantageremail'];
@@ -30,7 +25,8 @@ if (isset($_POST['btnsubmit'])) {
 	$bindingsperiode_id = $_POST['dropdownloebetid'];
 	$beloeb = $_POST['dropdownbeloeb'];
 	$rente = $_POST['dropdownrente'];
-	$bindingsperiode = $_POST['dropdownloebetid'];       
+	$bindingsperiode = $_POST['dropdownloebetid'];
+    $gebyr = '1';        
 	
     $qb = "SELECT * FROM beloeb WHERE beloeb_id = '$beloeb'";
 	$rb = mysqli_query($con, $qb);
@@ -70,7 +66,7 @@ if (isset($_POST['btnsubmit'])) {
                 $gebyr_id = '3';
             } else if ($amount1 < "20001") {
                 $gebyr_id = '4';     
-            } else {
+            }else {
                 $gebyr_id = '1';
             }
 		}
@@ -88,7 +84,7 @@ if (isset($_POST['btnsubmit'])) {
 	$maanedligafdrag = (($amount)*(1+($interest/100))/($length))+($gebyrberegn/$length);
 	$maanedlig_afdrag = number_format(round($maanedligafdrag, 2), 2);
 	
-	$qkontrakt = "INSERT INTO kontrakt(oprettetaf, laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, reg_underskrift_1, laantager_underskrift_id, reg_underskrift_2, gebyr_id) VALUES('$laangiver_user_id', '$laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', NOW(), '1', NOW(), '$gebyr_id')";
+	$qkontrakt = "INSERT INTO kontrakt(oprettetaf, laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, reg_underskrift_1, laantager_underskrift_id, reg_underskrift_2, gebyr_id) VALUES('$laangiver_user_id', $laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', NOW(), '1', NOW(), '$gebyr_id')";
 			$rkontrakt = mysqli_query($con, $qkontrakt);
 			if (!$rkontrakt) die(mysqli_error($con));
 			else {
@@ -99,7 +95,7 @@ if (isset($_POST['btnsubmit'])) {
 			}
 		}
 	}
-} } 
+} }
 	
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
