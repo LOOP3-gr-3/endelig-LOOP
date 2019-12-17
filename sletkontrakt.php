@@ -15,7 +15,6 @@ if (!isset($_GET['kontrakt_id2'])) {
 } else {
 	$kontrakt_id2 = $_GET['kontrakt_id2'];
 	$user_id = $_SESSION['user_id'];
-	echo $user_id;
 }
 ?>
 <div class="container-fluid">
@@ -38,9 +37,12 @@ if (!isset($_GET['kontrakt_id2'])) {
         die();
             }} ?>
 
-            <a href="minside.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>"><button name="submit" type="submit" class="btn btn-warning btn-lg mutuumknap"> Slet </button></a>
+            <a href="minside.php?kontrakt_id2=<?php echo $kontrakt_id2 ?>"><button name="submit" type="submit" class="btn btn-warning btn-lg"> Slet </button></a> 
+            
         </form>
-        <br><br>
+       
+            <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id2; ?>"><button class="btn btn-warning pull-right mutuumknap"> Tilbage </button></a>
+        <br><br><br>
     </div>
 </div>
 <?php

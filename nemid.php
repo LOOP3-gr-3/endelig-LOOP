@@ -46,8 +46,10 @@ if (!isset($_SESSION['user_id'])) {
             </div> 
 	<form method="post" action="nemidaction.php">
 		<input type="hidden" name="kontrakt_id2" value="<?php echo $kontrakt_id;?>">
-    <button class="btn btn-warning mutuumknap" name="submit">Underskriv kontrakt</button>
+    <button class="btn btn-warning" name="submit">Underskriv kontrakt</button>
 		</form>
+    <a href="viskontrakt.php?kontrakt_id2=<?php echo $kontrakt_id; ?>"><button class="btn btn-warning mutuumknap pull-right mutuumknap"> Tilbage </button></a>
+        <br><br><br>
 <br>
     </div> 
 

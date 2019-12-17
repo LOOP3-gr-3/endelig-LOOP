@@ -257,34 +257,33 @@ $gebyr = $rowgeb['gebyr'];
         <div class="panel-footer">
          <?php 
             if($value_kont == '2' && $owner == 'No') { 
-                echo    '<a href="nemid.php?kontrakt_id2=' . $kontrakt_id2 .'">
+                echo    '<a href="nemid.php?kontrakt_id2=' .                 $kontrakt_id2 .'">
                         <button class="btn btn-warning btn-lg">Underskriv</button></a>
-                        <a href="minside.php">
-                        <button class="btn btn-warning btn-lg mutuumknap pull-right"> Tilbage</button></a>
+                        
                         <br><br>';
             }
             else if (($value_kont == '1' && $owner == 'Yes' && $laantager_underskrift_id == '1') || ($value_kont == '1' && $owner == 'Yes' && $laangiver_underskrift_id == '1')) {
                 echo    '<a href="nemid.php?kontrakt_id2=' . $kontrakt_id2 .'">
-                        <button class="btn btn-warning btn-lg">Underskriv</button></a>
+                        <button class="btn btn-warning mutuumknap btn-lg">Underskriv</button></a>
                         <a href="sletkontrakt.php?kontrakt_id2=' . $kontrakt_id2 .'">
-                        <button class="btn btn-warning btn-lg mutuumknap pull-right">Slet kontrakt</button></a>
+                        <button class="btn btn-warning btn-lg pull-right">Slet kontrakt</button></a>
                         <br><br>';
             }
             else if($value_kont == '2' && $owner == 'Yes') { 
                 echo    '<a href="sletkontrakt.php?kontrakt_id2=' .         $kontrakt_id2 . '">
                         <button class="btn btn-warning btn-lg">Slet kontrakt</button></a>
-                        <a href="minside.php">
-                        <button class="btn btn-warning btn-lg mutuumknap pull-right">Tilbage</button></a>
-                        <br><br>';
+                        ';
             }
             else if ($value_kont == '3') {
-                echo    '<a href="minside.php">
-                        <button class="btn btn-warning btn-lg mutuumknap pull-right"> Tilbage</button></a>
+                echo    '                        
                         <br><br>';
             }
             ?>   
         </div>
     </div>
+    '<a href="minside.php">
+    <button class="btn btn-warning mutuumknap pull-right"> Tilbage</button></a>
+    <br><br>';
 </div>
 
 
