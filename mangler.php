@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
         die();
   }
 $user_id = $_SESSION['user_id'];
-$query = "SELECT * FROM kontrakt , users WHERE (laangiver_user_id = '$user_id' OR laantager_user_id = '$user_id') AND value = '1' || value ='2' GROUP BY kontrakt_id";
+$query = "SELECT * FROM kontrakt , users WHERE (laangiver_user_id = '$user_id' OR laantager_user_id = '$user_id') AND (value = '1' || value ='2') GROUP BY kontrakt_id";
 $result = mysqli_query($con, $query);
 if (!$result) die(mysqli_error($con));
 else {
@@ -211,7 +211,7 @@ if(($value == '2' && $owner == 'No') || ($value == '1' && $owner == 'Yes' && $la
 					echo '<a href="viskontrakt.php?kontrakt_id2=' . $kontrakt_id . '"><button class="btn btn-warning btn-lg">Vis kontrakt</button></a>';
                     echo '</div>';
 					echo '</div>';
-} else {}
+} else {echo "<hr><h4>Ingen kontrakter til rådighed</h4>";}
 				}
 
 			}

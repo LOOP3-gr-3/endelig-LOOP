@@ -178,10 +178,10 @@ else {
 					if (!$resultvalue) die(mysqli_error($con));
 					
 					if ($role == 'giver') {
-						$panelhead = 'Låntager';
+						$panelhead = 'Långiver';
 					}
 					else {
-						$panelhead = "Långiver";
+						$panelhead = "Låntager";
 					}
 					if ($owner == 'Yes') {
 						$badge = "<span class='label label-success'>Ejer</span>";
@@ -194,10 +194,10 @@ else {
 					echo '<div class="panel-heading">';
 					echo "<h3>Du er: " . $panelhead . ' ' . $badge . "</h3>";
 					if(($role == 'giver' && $owner == 'Yes') || ($role == 'giver' && $owner == 'No')) {
-					echo '<h4>Långiver: ' . $fornavnc . ' ' .$efternavnc . "</h4>";
+					echo '<h4>Låntager: ' . $fornavnc . ' ' .$efternavnc . "</h4>";
 					}
 					else if (($role == 'receiver' && $owner == 'Yes') || ($role == 'receiver' && $owner == 'No')) {
-						echo "<h4>Låntager: " . $fornavnc . ' ' . $efternavnc . "</h4>";
+						echo "<h4>Långiver: " . $fornavnc . ' ' . $efternavnc . "</h4>";
 					}
 					echo '</div>';
                     echo '<div class="panel-body">';

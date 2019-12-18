@@ -25,10 +25,11 @@ if(isset($_SESSION['user_id'])) {
                     <li><a href="opretbruger.php"><span class="glyphicon glyphicon-user"></span> Opret bruger</a></li>
                     </ul>';
 }
+
 ?>
 <!-- Dette gør siden dynamisk, så navbaren bliver ændret alt efter om brugerne er logget ind eller ej-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 
 <head>
     <meta charset="utf-8">

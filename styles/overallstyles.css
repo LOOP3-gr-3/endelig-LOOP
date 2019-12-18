@@ -103,41 +103,41 @@
 .p {
      font-size: 1em;
 }
-  .margin {
+.margin {
       margin-bottom: 0.8em;
 }
-  .bg-1 { 
+.bg-1 { 
     background-color: darkslategrey;
     color: #ffffff;
-    }
-    .bg-2 { 
+}
+.bg-2 { 
     background-color: white;
     color: black;
-    }
-   .wasfarve {
+}
+.wasfarve {
     border-color: orange;
     background: white;
     border-radius: 1em;
     margin-left: 4em;
     margin-right: 4em;
     margin-top: -1em;
-    }
-    .wasfarve p{
+}
+.wasfarve p{
     color: black;
-    }
-    .wasbokse {
+}
+.wasbokse {
     border-radius: 1em;
     background: white;
-    }
-    .wasbokserne {
+}
+.wasbokserne {
     width: 85%;
-    }
-    .wasknap {
+}
+.wasknap {
     border-radius: 2em;
-    }
-    .wastekst {
+}
+.wastekst {
     color: white;
-    }
+}
 
 /*____________________________ OM OS _____________________ WASFIA */
   .wasoverskrift {

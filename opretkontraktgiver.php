@@ -219,7 +219,7 @@ if (isset($_POST['btnsubmit'])) {
 	} }}
                                 ?>
                         <br>    
-                        <h4>Månedligt afdrag </h4>
+                        <h4>Månedligt afdrag inkl. gebyr </h4>
 <?php
 	if (!isset($_POST['dropdownbeloeb']) && !isset($_POST['dropdownrente']) && !isset($_POST['dropdownloebetid'])) {
 	echo "";
