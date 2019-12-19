@@ -2,6 +2,7 @@
     $page = ('Oprettelse af kontrakt');
     require_once('includes/header.php');
     if(!isset($_SESSION)){session_start();}
+    date_default_timezone_set("Europe/Copenhagen");
 if (!isset($_SESSION['user_id'])) {
         echo '<script>alert("Du er ikke logget ind på MUTUUM - log ind her, eller opret en bruger og få gratis adgang til platformen!");';
         echo 'window.location.href="login.php";';
@@ -87,8 +88,10 @@ if (isset($_POST['btnsubmit'])) {
 			//I am assumming that the selected interest rate is simple, per year and based on the borrowed amount. If you need complex interest rate calculation then you need to revise the formula.
 	$maanedligafdrag = (($amount)*(1+($interest/100))/($length))+($gebyrberegn/$length);
 	$maanedlig_afdrag = number_format(round($maanedligafdrag, 2), 2);
+   
+    $time = date("Y-m-d H:i:s");
 	
-	$qkontrakt = "INSERT INTO kontrakt(oprettetaf, laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, laantager_underskrift_id, gebyr_id) VALUES('$laantager_user_id','$laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', '1', '$gebyr_id')";
+	$qkontrakt = "INSERT INTO kontrakt(oprettetaf, laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, laantager_underskrift_id, gebyr_id, reg) VALUES('$laantager_user_id','$laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', '1', '$gebyr_id', '$time')";
 			$rkontrakt = mysqli_query($con, $qkontrakt);
 			if (!$rkontrakt) die(mysqli_error($con));
 			else {

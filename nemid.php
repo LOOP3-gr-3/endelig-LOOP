@@ -30,7 +30,8 @@ if (!isset($_SESSION['user_id'])) {
 
 <?php
 	$user_id = $_SESSION['user_id'];
-	$kontrakt_id = $_GET['kontrakt_id2'];         
+	$kontrakt_id = $_GET['kontrakt_id2'];   
+    
 ?>
 
 <body id="nemIDfake"> 
@@ -40,8 +41,9 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                     <label class="form-check-label" for="invalidCheck"> Accepter betingelserne </label>
+                    <p>Mutuum retter sig efter standardiseret EU regler for optagelse af lån </p>
                     <div class="invalid-feedback"> Du skal acceptere betingelserne for, at kunne underskrive </div>
-                    <a href="handelsbetingelser.php" target="_blank">Se betingelserne her</a>
+                    <a href="https://ec.europa.eu/info/sites/info/files/standard_european_consumer_credit_information_en.pdf" target="_blank">Se betingelserne her</a>
                 </div>
             </div> 
 	<form method="post" action="nemidaction.php">
