@@ -3,14 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: mpw.dk.mysql.service.one.com:3306
--- Genereringstid: 18. 12 2019 kl. 08:49:23
+-- Genereringstid: 19. 12 2019 kl. 13:19:20
 -- Serverversion: 10.3.17-MariaDB-1:10.3.17+maria~bionic
 -- PHP-version: 7.2.24-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET time_zone = '+01:00';
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -39,7 +39,6 @@ CREATE TABLE `beloeb` (
 --
 
 INSERT INTO `beloeb` (`beloeb_id`, `beloeb`, `enhed_key`) VALUES
-(1, 500, '1'),
 (2, 1000, '1'),
 (3, 1500, '1'),
 (4, 2000, '1'),
@@ -205,7 +204,7 @@ INSERT INTO `kontrakt` (`kontrakt_id`, `oprettetaf`, `laangiver_user_id`, `laant
 (5, 12, 11, 12, 1, 3, 4, 5, 420.0000000000, '2', '2019-12-17 15:13:43', '2', '2019-12-17 10:12:24', 2, '2019-12-17 09:03:09', 3),
 (7, 12, 12, 11, 3, 6, 6, 10, 316.0000000000, '2', '2019-12-18 08:28:12', '2', '2019-12-18 08:30:51', 2, '2019-12-17 10:28:50', 3),
 (8, 13, 13, 13, 2, 41, 3, 4, 392.5000000000, '2', '2019-12-18 07:21:19', '1', NULL, 2, '2019-12-17 13:36:23', 2),
-(10, 11, 11, 11, 1, 3, 3, 5, 318.5000000000, '1', NULL, '1', NULL, 2, '2019-12-17 15:20:04', 1),
+(10, 11, 11, 11, 1, 3, 3, 5, 318.5000000000, '2', '2019-12-18 09:08:48', '1', NULL, 2, '2019-12-17 15:20:04', 2),
 (11, 25, 25, 12, 2, 1, 7, 4, 896.8800048828, '2', '2019-12-17 18:47:00', '2', '2019-12-17 18:47:49', 2, '2019-12-17 18:46:32', 3),
 (12, 25, 25, 12, 2, 2, 4, 7, 298.5700073242, '2', '2019-12-17 18:49:09', '2', '2019-12-17 18:49:40', 2, '2019-12-17 18:48:55', 3),
 (13, 11, 12, 11, 1, 2, 2, 2, 530.0000000000, '2', '2019-12-18 08:30:44', '2', '2019-12-18 08:04:31', 1, '2019-12-18 08:04:17', 3),
@@ -215,7 +214,11 @@ INSERT INTO `kontrakt` (`kontrakt_id`, `oprettetaf`, `laangiver_user_id`, `laant
 (17, 27, 27, 26, 2, 20, 29, 36, 438.8900146484, '2', '2019-12-18 08:26:46', '2', '2019-12-18 08:27:19', 4, '2019-12-18 08:25:51', 3),
 (18, 12, 26, 12, 3, 13, 14, 15, 510.3299865723, '2', '2019-12-18 08:31:06', '2', '2019-12-18 08:30:50', 3, '2019-12-18 08:30:28', 3),
 (19, 28, 27, 28, 1, 12, 9, 12, 403.3299865723, '2', '2019-12-18 08:31:08', '2', '2019-12-18 08:30:45', 2, '2019-12-18 08:30:35', 3),
-(20, 27, 28, 27, 3, 41, 14, 14, 514.2899780273, '2', '2019-12-18 08:33:15', '2', '2019-12-18 08:32:28', 3, '2019-12-18 08:30:55', 3);
+(20, 27, 28, 27, 3, 41, 14, 14, 514.2899780273, '2', '2019-12-18 08:33:15', '2', '2019-12-18 08:32:28', 3, '2019-12-18 08:30:55', 3),
+(22, 11, 12, 11, 1, 2, 2, 3, 353.3299865723, '1', NULL, '1', NULL, 1, '2019-12-18 09:14:07', 1),
+(23, 11, 12, 11, 1, 3, 4, 4, 525.0000000000, '1', NULL, '1', NULL, 2, '2019-12-18 09:16:24', 1),
+(24, 11, 12, 11, 1, 5, 6, 7, 449.2900085449, '1', NULL, '1', NULL, 2, '2019-12-19 08:45:33', 1),
+(25, 11, 11, 12, 1, 6, 6, 8, 395.0000000000, '2', '2019-12-19 09:48:14', '1', NULL, 2, '2019-12-19 09:47:58', 2);
 
 -- --------------------------------------------------------
 
@@ -401,7 +404,8 @@ INSERT INTO `users` (`user_id`, `fornavn`, `efternavn`, `mobil`, `mail`, `passwo
 (25, 'Elisabeth', 'Katballe', 40248285, 'elisabeth.katballe@gmail.com', '$2y$10$XYrxmnnKlLndGr4f3B8qT.0Lzl86cyJ1N2fVvXsiXaMjuhFIsGw0O'),
 (26, 'Mikkel', 'Hansen', 110011, 'langt@xn--hr-yia.dk', '$2y$10$SHIjX3FU/FgQU1tyQV/PYOuIgEiFRUBKbZEWcxm1GnmGFqh4p0XLS'),
 (27, 'Maja', 'Pallesen', 60173250, 'xiastald@hotmail.com', '$2y$10$XpSHk1KO1yJIb/op6b9wfOD3Wh0vXaNX6LYw80zaflA6Wwl1ka5Aq'),
-(28, 'Wasfia', 'Hashemi', 12345678, 'Wasfia@live.dk', '$2y$10$p5pSf50nHptONK14tMIVwew1TUkOwzLM3cqAYzhIPqS4wovPrIGNa');
+(28, 'Wasfia', 'Hashemi', 12345678, 'Wasfia@live.dk', '$2y$10$p5pSf50nHptONK14tMIVwew1TUkOwzLM3cqAYzhIPqS4wovPrIGNa'),
+(29, '1', '1', 1, 'åge@år.dk', '$2y$10$oi4s.mEmNwaKx/UEe3VHkuetWEyCNjUMEyt4ZZdN4oXwP0IdMW6Ei');
 
 --
 -- Begrænsninger for dumpede tabeller
@@ -489,7 +493,7 @@ ALTER TABLE `enhedstabel`
 -- Tilføj AUTO_INCREMENT i tabel `kontrakt`
 --
 ALTER TABLE `kontrakt`
-  MODIFY `kontrakt_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `kontrakt_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Tilføj AUTO_INCREMENT i tabel `rente`
@@ -513,7 +517,7 @@ ALTER TABLE `underskrift`
 -- Tilføj AUTO_INCREMENT i tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
