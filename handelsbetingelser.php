@@ -4,7 +4,6 @@ require_once("includes/header.php");
 ?>
 
 <!--Nedenstående kode er implementere fra en template fra Bootstrap. Der er foretaget rettelser mhp. tekst og indhold.-->
-
         <div class="jumbotron text-center wasoverskrift">
         <h1>Handelsbetingelser</h1></div>
 <div class="container-fluid">

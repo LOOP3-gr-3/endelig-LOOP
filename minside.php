@@ -30,6 +30,7 @@ $user_id = $_SESSION['user_id'];
                         echo "";
                         }   
         ?>
+            <!-- Her kan brugeren enten rette sine oplysninger i sin profil eller oprette en ny kontrakt-->
 			<a href="retoplysninger.php" id="vispamobil"><button class="btn btn-warning mutuumknap">Ret oplysninger</button></a>
 			<a href="opretkontraktstep1.php"><button class="btn btn-warning pull-right">Opret kontrakt</button></a>
 			<br>
@@ -45,10 +46,12 @@ $user_id = $_SESSION['user_id'];
 			</div>
 				<div class="col-sm-6 text-center">
 					<h3>Mangler din underskrift</h3>
+                    <!-- Her hentes php filen, mangler.php til visning af de kontrakter som mangler underskrift af brugeren, som er logget ind-->
 				<?php require_once("mangler.php");?>
 			</div>
 			<div class="col-sm-6 text-center">
 				<h3>Mangler modpartssignatur</h3>
+                <!-- Her hentes php filen, klar.php til visning af de kontrakter som mangler underskrift af modparten-->
 				<?php require_once("klar.php");?>
 			</div>
 		</div>
@@ -59,6 +62,7 @@ $user_id = $_SESSION['user_id'];
 				<hr>
 				<div class="col-sm-12 text-center">
 					<h3>Underskrevne kontrakter</h3>
+                    <!-- Her hentes php filen, arkivet.php til visning af de kontrakter, som er underskrevet af begge parter -->
 					<?php require_once("arkivet.php");?>
                     <br><br>
 				</div>

@@ -77,12 +77,12 @@
     border-width: 5px 5px 0;
     border-top-color: #000;
 }
-/*Dette gør border farven gennemsigtig*/
+/*Dette gør border farven sort*/
 .topfooter {
     border-color: black;
 }
 
-/*____________________________GENERELT KNAP______________________ */
+/*____________________________GENERELT KNAP, som er den samme grønne farve som baggrunden på forsiden______________________ */
 .mutuumknap {
   background-color: rgb(47, 79, 79);
   border-color: rgb(47, 79, 79); 

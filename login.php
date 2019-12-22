@@ -38,7 +38,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
 }
 ?>
 
-
+<!-- Nedenstående er frontend for brugeren, hvor brugeren kan udfylde med mail og password -->
 <div class="text-center">
 <h1><strong>Log ind</strong></h1>
 </div>
@@ -60,6 +60,7 @@ if(isset($_POST['mail']) && isset($_POST['password'])) { /* Her tjekker vi for a
 </form>
 
 <br>
+        <!-- Her kan brugeren blive sendt hen til siden, hvor brugeren kan få tilsendt sit password.-->
     <a href="glemt-password.php">Glemt password?</a>
 <br>
 <br>    

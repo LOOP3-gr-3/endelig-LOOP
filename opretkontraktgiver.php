@@ -2,6 +2,7 @@
     $page = ('Oprettelse af kontrakt');
     require_once('includes/header.php');
     if(!isset($_SESSION)){session_start();}
+    /* Her sættes tiden til dansk tid: */
     date_default_timezone_set("Europe/Copenhagen");
 if (!isset($_SESSION['user_id'])) {
         echo '<script>alert("Du er ikke logget ind på MUTUUM - log ind her, eller opret en bruger og få gratis adgang til platformen!");';
@@ -9,11 +10,13 @@ if (!isset($_SESSION['user_id'])) {
         echo '</script>' ;
         die();
   }
+/* Nedenstående bruges til opdatering af beregningerne for maanedlig afdrag og afkast */
 if (!isset($_POST['submit'])) {
 	$interest = 0;
 	$length = 1;
 	$maanedligafdrag = 0;
 }
+/* Når knappen "btnsubmit" bliver trykket, så hentes nedenstående data ind: */
 if (isset($_POST['btnsubmit'])) {
 	if(isset($_POST['laantageremail'])) {
         $mail = $_POST['laantageremail'];
@@ -62,7 +65,7 @@ if (isset($_POST['btnsubmit'])) {
 		else {
 			while($rowb1 = mysqli_fetch_assoc($rb1)) {
 				$amount1 = $rowb1['beloeb'];
-            
+            /* Her sættes stiftelsesgebyret udfra beløbet: */
             if($amount1 < "1001") {
                 $gebyr_id = '1';
             } else if ($amount1 < "5001") {
@@ -85,11 +88,11 @@ if (isset($_POST['btnsubmit'])) {
 			}
     }    
 	}
-			//I am assumming that the selected interest rate is simple, per year and based on the borrowed amount. If you need complex interest rate calculation then you need to revise the formula.
+        /* Her beregnes det månedlige afdrag, og afrundes til to decimaler: */
 	$maanedligafdrag = (($amount)*(1+($interest/100))/($length))+($gebyrberegn/$length);
 	$maanedlig_afdrag = number_format(round($maanedligafdrag, 2), 2);
     $time = date("Y-m-d H:i:s");
-	
+	/* og en ny kontrakt oprettes på databasen i nedenstående query: */
 	$qkontrakt = "INSERT INTO kontrakt(oprettetaf, laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, laantager_underskrift_id, gebyr_id, reg) VALUES('$laangiver_user_id', '$laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', '1', '$gebyr_id', '$time')";
 			$rkontrakt = mysqli_query($con, $qkontrakt);
 			if (!$rkontrakt) die(mysqli_error($con));
@@ -104,6 +107,7 @@ if (isset($_POST['btnsubmit'])) {
 } } 
 	
 ?>
+<!-- Her er kontrakten frontend til brugeren:-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <div class="jumbotron text-center wasoverskrift">
         <h1>Opret udlån</h1>
@@ -197,11 +201,7 @@ if (isset($_POST['btnsubmit'])) {
             } else if ($amount1 < "10001") {
                 $gebyr_id = '3';
             } else if ($amount1 < "20001") {
-                $gebyr_id = '4';   
-            } else if ($amount1 < "50001") {
-                $gebyr_id = '5';
-            } else if ($amount1 < "10001") {
-                $gebyr_id = '6';      
+                $gebyr_id = '4';         
             }else {
                 $gebyr_id = '1';
             }

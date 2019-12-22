@@ -4,10 +4,7 @@ require_once("includes/header.php");
 if (!isset($_SESSION)) {session_start();}
 ?>
 
-
 <!--Nedenstående kode er implementere fra en template fra Bootstrap. Der er foretaget rettelser mhp. tekst og indhold.-->
-
-
     <div class="jumbotron text-center wasoverskrift">
         <h1>FAQ</h1></div>
 <div class="container-fluid">

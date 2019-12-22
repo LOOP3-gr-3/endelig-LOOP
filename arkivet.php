@@ -7,7 +7,10 @@ if (!isset($_SESSION['user_id'])) {
         echo '</script>' ;
         die();
   }
+/* Dette dokument bliver hentet ind, når begge parter har underskrevet kontrakten under "Min side" */
+/* Først sættes brugerens user_id ud fra sessionen. Hvor efter kontrakterne hentes ind. */
 $user_id = $_SESSION['user_id'];
+/* Value 3 er de kontrakter, som er underskrevet af begge parter */
 $query = "SELECT * FROM kontrakt , users WHERE (laangiver_user_id = '$user_id' OR laantager_user_id = '$user_id') AND value = '3' GROUP BY kontrakt_id";
 $result = mysqli_query($con, $query);
 if (!$result) die(mysqli_error($con));
@@ -48,6 +51,7 @@ else {
 								}
 
 							}
+                    /* Her sættes hvem der ejer kontrakten, samt hvem der er långiver og låntager */
 					if ($user_idlog == $oprettetaf) {
 						$owner = 'Yes';
 					}
@@ -77,6 +81,7 @@ else {
 					}
 						
 					}
+            /* Nedenstående indhenter ID'erne fra kontrakten og oversættes i nedenstående 6 queries, så brugeren får vist de forståelige data fra serveren */
 			$querybeloeb = "SELECT * FROM beloeb WHERE beloeb_id = '$beloeb_id'";
             $resultb = mysqli_query($con, $querybeloeb);
 			if (!$resultb) die(mysqli_error($con));
@@ -146,6 +151,7 @@ else {
 						$rowgeb = mysqli_fetch_assoc($resultgeb);
 						$gebyr = $rowgeb['gebyr'];
 					}
+                    /* Nedenstående anvendes til at opdatere kontrakten - dog ikke på arkivet, da disse ikke kan opdateres, da aftalen er indgået */
 					if (($owner == 'Yes' && $laangiver_underskrift_id == '1') || ($owner == 'Yes' && $laantager_underskrift_id == '1')) {
 						$status = 'mangler';
 						$value = '1';
@@ -172,7 +178,7 @@ else {
 						$value = '3';
 						$sign = 'Ja';
 					}
-					
+					/* Her opdateres kontrakten med en ny value, dog ikke under arkivet - da det ikke skal opdateres. */
 					$queryvalue = "UPDATE kontrakt SET value = '$value' WHERE kontrakt_id = '$kontrakt_id'";
 					$resultvalue = mysqli_query($con, $queryvalue);
 					if (!$resultvalue) die(mysqli_error($con));
@@ -189,7 +195,7 @@ else {
 					else if ($owner == 'No') {
 						$badge = "<span></span>";
 					}
-
+/* Nedenstående bliver vist front-end for brugeren, hvor kontrakterne som er underskrevet bliver vist */
 			echo '<div class="panel panel-default text-center">';
 					echo '<div class="panel-heading">';
 					echo "<h3>Du er: " . $panelhead . ' ' . $badge . "</h3>";

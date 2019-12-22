@@ -14,6 +14,7 @@ if (!isset($_SESSION['user_id'])) {
     <div class="jumbotron text-center wasoverskrift">
             <h1>Økonomisk Rådgivning</h1>
             </div> 
+<!-- Nedenstående bruges bootstrap til at styrer viewporten til Step by step guiden til økonomisk håndtering-->
 <div class="container-fluid lasseMargin">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-lg-6">   

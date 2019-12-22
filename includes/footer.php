@@ -1,16 +1,15 @@
-<footer class="navbar-static-bottom container-fluid bg-white">
-    <!-- Her bliver footer fastgjort til bunden af viewporten -->
+<footer class="navbar-static-bottom container-fluid bg-white"> <!-- Her bliver footer fastgjort til bunden af viewporten -->
     <hr class="topfooter no-margin-top" /> <!-- Dette skaber horisontal linjen på footer - / gør at den skaber en mere, når footeren er foldet ud -->
     <div class="row">
-        <div class="col-xs-12 col-sm-">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12"> <!-- Her anvendes BS til at styre viewporten, så footeren altid er lige så bred som brugerens skærm-->
             <div class="row vertical-align">
                 <div class="col-xs-12 col-sm-4 col-lg-2 col-sm-push-8 col-lg-push-10">
-                    <a href="handelsbetingelser.php"><button class="btn btn-block btn-warning">Handelsbetingelser</button></a>
+                    <a href="handelsbetingelser.php"><button class="btn btn-block btn-warning">Handelsbetingelser</button></a> <!-- Her er en knap, som henviser til handelsbetingelserne -->
                 </div>
                 <div class="clearermed visible-xs"></div>
                 <div class="col-xs-12 col-sm-8 col-lg-10 col-sm-pull-4 col-lg-pull-2">
                     <div class="no-margin text-center">
-                        <h4>Kontaktoplysninger</h4>
+                        <h4>Kontaktoplysninger</h4> <!-- Kontaktoplysningerne er altid synlige for brugeren -->
                         <address>
                             <p><span>MUTUUM (CVR: 44223311) </span></p>
                             <p><span class="glyphicon glyphicon-map-marker"></span>Birk Centerpark 15, 7400 Herning</p>

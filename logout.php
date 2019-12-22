@@ -7,3 +7,4 @@ echo '<script>alert("Du er nu logget ud af Mutuum. Du må have en god dag!");';
         echo '</script>' ;
         die();
 ?>
+<!-- Her ødelægges sessionen og brugeren bliver derefter logget ud og sendt tilbage til forsiden. -->

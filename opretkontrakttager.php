@@ -202,11 +202,7 @@ if (isset($_POST['btnsubmit'])) {
             } else if ($amount1 < "10001") {
                 $gebyr_id = '3';
             } else if ($amount1 < "20001") {
-                $gebyr_id = '4';   
-            } else if ($amount1 < "50001") {
-                $gebyr_id = '5';
-            } else if ($amount1 < "10001") {
-                $gebyr_id = '6';      
+                $gebyr_id = '4';        
             }else {
                 $gebyr_id = '1';
             }

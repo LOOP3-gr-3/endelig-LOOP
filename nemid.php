@@ -10,6 +10,7 @@ if (!isset($_SESSION['user_id'])) {
   }
 ?>
 <style>
+    /* Her laves stylet til nemid siden, da baggrunden skal styres i dette dokument - som det eneste på hele hjemmesiden */
 #nemIDfake {
     background-image: url(images/nemID1.PNG);
     background-color: whitesmoke;
@@ -29,6 +30,7 @@ if (!isset($_SESSION['user_id'])) {
 </style>
 
 <?php
+/* Her hentes brugerens user_id, samt kontrakt_id for den valgte kontrakt, som skal underskrives*/
 	$user_id = $_SESSION['user_id'];
 	$kontrakt_id = $_GET['kontrakt_id2'];   
     
@@ -46,6 +48,7 @@ if (!isset($_SESSION['user_id'])) {
                     <a href="https://ec.europa.eu/info/sites/info/files/standard_european_consumer_credit_information_en.pdf" target="_blank">Se betingelserne her</a>
                 </div>
             </div> 
+    <!-- Her køres underskrift backend - nemidaction.php, hvor underskriften bliver opdateret og sat på serveren. -->
 	<form method="post" action="nemidaction.php">
 		<input type="hidden" name="kontrakt_id2" value="<?php echo $kontrakt_id;?>">
     <button class="btn btn-warning" name="submit">Underskriv kontrakt</button>

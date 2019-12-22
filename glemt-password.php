@@ -5,6 +5,7 @@ if(isset($_POST["email"]) && (!empty($_POST["email"]))){
 $email = $_POST["email"];
 $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+/* Her tjekkes der op mod serverien om mailen findes på vores server*/
 if (!$email) {
    $error .="<p>Denne email findes ikke i vores system, indtast venligst en anden!</p>";
    }else{
@@ -31,7 +32,7 @@ if (!$email) {
      $result = mysqli_query($con, $query);
      if (!$result) die(mysqli_error($con));
      else {
- 
+/* Her skrives det output, som bliver vist for brugeren efter trykket "Send link" */ 
 $output='<p>Kære bruger,</p>';
 $output.='<p>Klik venligst på det følgende link for, at resette dit password.</p>';
 $output.='<p>-------------------------------------------------------------</p>';
@@ -74,6 +75,7 @@ echo "<div class='error'>
    }
 else{
 ?>
+<!-- Her er følgende, som er vist for brugeren - hvor brugeren skal indtaste den mail, som brugeren er oprettet med, og derefter submittes igennem "Send link". -->
 <div class="container text-center">
 <form method="post" action="" name="reset"><br /><br />
     <label><strong><h4>Indtast din email:</h4></strong></label><br /><br />
