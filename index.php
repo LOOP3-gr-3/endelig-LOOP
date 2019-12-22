@@ -10,7 +10,7 @@ if(!$_SESSION['user_id']) {
 
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center wastekst no-margin">
-    <h1 class="margin">RELATIONSLÅN FOR ALLE</h1>
+    <h1 class="margin"><strong>RELATIONSLÅN FOR ALLE</strong></h1>
     <?php echo $knappaaforsiden; ?>
     <br> <br>
     <img src="images/forsidebillede11.PNG" class="img-responsive margin" style="display:inline" width="350" height="350">

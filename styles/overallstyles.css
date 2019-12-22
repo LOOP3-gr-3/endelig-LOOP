@@ -93,12 +93,6 @@
         background-color: whitesmoke !important;
     }
 
-@media screen (min-width:900px) {
-#vispamobil {
-        display: none;
-    }
-}
-
 /*________________________ FORSIDE _______________________________ WASFIA */ 
 .p {
      font-size: 1em;
