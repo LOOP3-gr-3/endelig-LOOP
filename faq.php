@@ -6,12 +6,13 @@ if (!isset($_SESSION)) {session_start();}
 
 <!--Nedenstående kode er implementering fra en template fra Bootstrap. Der er foretaget rettelser mhp. tekst og indhold.-->
     <div class="jumbotron text-center wasoverskrift">
-        <h1>FAQ</h1></div>
+        <h1>FAQ</h1></div>  <!-- Overskriften fr hele siden-->
 <div class="container-fluid">
     <div class="lasseMargin">
-    <div class="alert alert-info alert-dismissible" role="alert">
+          <!-- Alert som man kan lukke -->
+    <div class="alert alert-info alert-dismissible" role="alert"> 
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        Hvis du ikke finder svaret på dine spørgsmål herinde, så er du velkommen til at kontakte os via mobil eller email.  
+        Hvis du ikke finder svaret på dine spørgsmål herinde, så er du velkommen til at kontakte os via mobil eller email.   <!-- Dette er første dropdown menu som man kan trykke på for at se svaret på spørgsmålt-->
     </div>
     <div class="panel-group" id="accordion">
         <div class="faqHeader"><h2>Generelle spørgsmål</h2></div>
@@ -21,7 +22,9 @@ if (!isset($_SESSION)) {session_start();}
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Hvordan opretter jeg et udlån?</a>
                 </h4>
             </div>
+              <!--Her kommer det indhold som den ovenstående dropdown menu har-->
             <div id="collapseOne" class="panel-collapse collapse in">
+            
                 <div class="panel-body">
                     <p>Så snart du har oprettet en profil så er du godt på vej. Når du tilgår "Min side" så vil du se en funktion der lader dig oprettet et lån. Ved et klik her kommer du til kontraktsiden, hvor du selv vælger hvilke oplysninger og handelsbetingelser som skal være i dit udlån.</p> 
                 </div>
@@ -39,12 +42,14 @@ if (!isset($_SESSION)) {session_start();}
                 </div>
             </div>
         </div>
+         <!-- ny dropdown-->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">Hvordan får jeg kontakt til jer?</a>
                 </h4>
             </div>
+             <!-- nyt indhold til dropdown - og sådan fortsætter det gennem hele koden 1. overskrift 2. dropdown med indhold-->
             <div id="collapseEleven" class="panel-collapse collapse">
                 <div class="panel-body">
                     <p>Du kan sende os en email eller ringe os op i åbningstiden. Så vil vi hjælpe dig med, at løse de problemer du måtte have.</p>    

@@ -4,15 +4,16 @@ require_once("includes/header.php");
 ?>
 
 <!--Nedenstående kode er implementere fra en template fra Bootstrap. Der er foretaget rettelser mhp. tekst og indhold.-->
-        <div class="jumbotron text-center wasoverskrift">
+        <div class="jumbotron text-center wasoverskrift"> <!-- Dette giver overskriften Handelsbetingelser -->
         <h1>Handelsbetingelser</h1></div>
 <div class="container-fluid">
         <div class="lasseMargin">
+        <!-- Alert som man kan lukke -->
     <div class="alert alert-info alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <p>Har du ydereligere spørgsmål til de angivne betingelser, så er du velkommen til at kontakte os via mobil eller email. </p> 
     </div>
-     
+     <!-- Dette er første dropdown menu som man kan trykke på for at se svaret på spørgsmålt-->
     <div class="panel-group" id="accordion">
         <div><h2>Betingelser for Låntager</h2></div>
         <div class="panel panel-default">
@@ -21,6 +22,7 @@ require_once("includes/header.php");
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Lånebetingelser</a>
                 </h4>
             </div>
+            <!--Her kommer det indhold som den ovenstående dropdown menu har-->
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
                    <p> Mutuum (herefter ”Långiver”) kan bevilge kredit til en fysisk person (herefter ”Låntageren”), som opfylder følgende betingelser</p>
@@ -38,12 +40,14 @@ require_once("includes/header.php");
                 </div>
             </div>
         </div>
+        <!-- ny dropdown-->
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFourtyThree">Konto</a>
                 </h4>
             </div>
+            <!-- nyt indhold til dropdown - og sådan fortsætter det gennem hele koden 1. overskrift 2. dropdown med indhold-->
             <div id="collapseFourtyThree" class="panel-collapse collapse">
                 <div class="panel-body">
                     <p>Der oprettes en brugerkonto til dig, i det øjeblik du acceptere Mutuums Handelsbetingelser:
@@ -127,6 +131,7 @@ require_once("includes/header.php");
             </div>
         </div>
        
+        <!-- start på ny overskrift, de næste spørgsmål omhandler altså långiver - elllers samme kode opbygning -->
         <h2>Betingelser for Långiver</h2>
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -209,7 +214,7 @@ require_once("includes/header.php");
             </div>
         </div>
         
-
+<!-- nyt område igen med nyt indhold, samme kode -->
        
          <h2>Ansvarsfrasigelse</h2>
         <div class="panel panel-default">
@@ -278,7 +283,7 @@ require_once("includes/header.php");
         
 
         
-
+<!-- Her er der bare blevet lavet lidt brødtekst for at samle op på handelsbetingelser-->
 </div>
             <br>
             <strong>Bruger meddelelse:</strong><br>
