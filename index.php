@@ -7,7 +7,7 @@ if(!$_SESSION['user_id']) {
         } else {
         $knappaaforsiden = '<a href="minside.php"><button href="minside.php" class="btn btn-warning btn-lg margin margin wasknap"><h5><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MIN SIDE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h5></button></a>';}
 ?>
-
+<!-------Selve opbygningen er templates fra bootstrap---->
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center wastekst no-margin">
     <h1 class="margin"><strong>RELATIONSLÅN FOR ALLE</strong></h1>
@@ -19,6 +19,7 @@ if(!$_SESSION['user_id']) {
     <br>
 </div>
 <br>
+<!----Det næste er bokse med de tre steps, hvor boksene er templates fra bootstrap---->
 <div class="container text-center">
         <div class="row">
                 <div class="col-12 col-xs col-sm-4 col-lg-4 col-xl-4" align="center">
@@ -32,8 +33,8 @@ if(!$_SESSION['user_id']) {
                               <div class="wasbokse"> 
                                 <strong>Besvar nogle simple spørgsmål</strong> <br> Fortæl os hvor meget du vil låne eller udlåne, hvor længe og med hvilken rente. Send kontrakten til modtageren og afvent. </div>
                             </div>
-                            </div>
-                            </div> 
+                        </div>
+                    </div> 
                         </div>
                 <div class="col-12 col-xs col-sm-4 col-lg-4 col-xl-4" align="center">
                     <div class="panel panel-white">
@@ -46,9 +47,9 @@ if(!$_SESSION['user_id']) {
                             <div class="wasbokse"> 
                             <strong>Modtag kontrakt</strong> <br> På baggrund af dine svar får du som långiver eller låntager en nedskrevet bud fra den anden part. Læs kontrakten og erkend dig enig.</div>
                             </div>
-                            </div> 
-                        </div>
+                        </div> 
                     </div>
+                </div>
                 <div class="col-12 col-xs col-sm-4 col-lg-4 col-xl-4" align="center">
                     <div class="panel panel-white">
                         <div class="wasbokse">
@@ -59,16 +60,16 @@ if(!$_SESSION['user_id']) {
                         <div class="panel-footer">
                         <div class="wasbokse">    
                             <strong>Godkend og underskriv</strong> <br> Når den anden part ser sig tilfreds med kravene, underskrives der og låntageren får pengene overført til sin konto.</div>
-                            </div>
-                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
-            </div>
+        </div>
+</div>
     
 
     <br> <br>
-    <!-- Second Container -->
+    <!-- Second Container-->
     <div class="container-fluid bg-2 text-center">
         <div class="well wasfarve">
             <p><strong>Er du långiver?</strong> <br> Hvis du er bange for, at penge skal komme mellem dig og en af dine nærmeste, er Mutuum din vej at gå. Du vil måske gerne hjælpe, men er bange for at tage risikoen,<br> så kan Mutuum garantere dig, for vi tager ingen. Med en juridisk kontrakt, kan du læne dig tilbage og hjælp med fortjenste og ro i maven.</p>

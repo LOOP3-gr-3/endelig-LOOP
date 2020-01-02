@@ -9,7 +9,7 @@ if (!isset($_SESSION)) session_start();
   <p>Læs om Mutuum og få indblik i din kommende verden</p> 
 </div>
 
-<!-- Container (About Section) -->
+<!-- Templates fra bootstrap -->
 <div class="container-fluid">
     <div class="lasseMargin">
   <div class="row">
