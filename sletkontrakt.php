@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
         echo '</script>' ;
         die();
   }
-
+/*Det sikres at der er medtaget en kontrakt ID fra min side*/
 if (!isset($_GET['kontrakt_id2'])) {
 	echo '<script>alert("Vælg venligst en kontrakt");</script>';
 	echo '<script>window.location.href = "minside.php";</script>';
@@ -17,6 +17,7 @@ if (!isset($_GET['kontrakt_id2'])) {
 	$user_id = $_SESSION['user_id'];
 }
 ?>
+<!--Her starter frontend. backend koden står inde i de containers de skal anvendes, for at undgå scope-problemer-->
 <div class="container-fluid">
     <h1>Er du sikker på du vil slette kontrakten?</h1>
     <div class="text-center">

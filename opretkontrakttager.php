@@ -2,18 +2,22 @@
     $page = ('Oprettelse af kontrakt');
     require_once('includes/header.php');
     if(!isset($_SESSION)){session_start();}
+/*Her sættes tiden til dansk tid*/
     date_default_timezone_set("Europe/Copenhagen");
+/*Der tjekkes i session om brugeren er logget ind*/
 if (!isset($_SESSION['user_id'])) {
         echo '<script>alert("Du er ikke logget ind på MUTUUM - log ind her, eller opret en bruger og få gratis adgang til platformen!");';
         echo 'window.location.href="login.php";';
         echo '</script>' ;
         die();
   }
+/*Her sættet defaultværdier til variablene der bruges til at udregne den månedlige afdrag og afkast*/
 if (!isset($_POST['submit'])) {
 	$interest = 0;
 	$length = 1;
 	$maanedligafdrag = 0;
 }
+/*Data indhentes fra databasen, når knappen btnsubmit trykkes */
 if (isset($_POST['btnsubmit'])) {
 	if(isset($_POST['laangiveremail'])) {
         $mail = $_POST['laangiveremail'];
@@ -32,7 +36,7 @@ if (isset($_POST['btnsubmit'])) {
 	$beloeb = $_POST['dropdownbeloeb'];
 	$rente = $_POST['dropdownrente'];
 	$bindingsperiode = $_POST['dropdownloebetid'];      
-	
+	/*beløbet  indhentes*/
     $qb = "SELECT * FROM beloeb WHERE beloeb_id = '$beloeb_id'";
 	$rb = mysqli_query($con, $qb);
 	if (!$rb) die (mysqli_error($con));
@@ -41,6 +45,7 @@ if (isset($_POST['btnsubmit'])) {
 			$amount = $rowb['beloeb'];
 		}
 	}
+            /*renten indhentes*/
 	$qr = "SELECT * FROM rente WHERE rente_id = '$rente_id'";
 	$rr = mysqli_query($con, $qr);
 	if (!$rr) die (mysqli_error($con));
@@ -49,6 +54,7 @@ if (isset($_POST['btnsubmit'])) {
 			$interest = $rowr['rente'];
 		}
 	}
+            /*bindingsperioden indhentes*/
 	$ql = "SELECT * FROM bindingsperiode WHERE bindingsperiode_id = '$bindingsperiode_id'";
 	$rl = mysqli_query($con, $ql);
 	if (!$rl) die (mysqli_error($con));
@@ -57,13 +63,14 @@ if (isset($_POST['btnsubmit'])) {
 			$length = $rowl['loebetid'];
 		}
 	}
+            /*beløbet indhentes igen med henblik på at definere gebyret*/
 		$qb1 = "SELECT * FROM beloeb WHERE beloeb_id = '$beloeb_id'";
 		$rb1 = mysqli_query($con, $qb1);
 		if (!$rb1) die (mysqli_error($con));
 		else {
 			while($rowb1 = mysqli_fetch_assoc($rb1)) {
 				$amount1 = $rowb1['beloeb'];
-            
+            /*ud fra beløbets størrelse tilskrives der et stiftelsesgebyr. ID'et for gebyret ligges i variablen $gebyr_id */
             if($amount1 < "1001") {
                 $gebyr_id = '1';
             } else if ($amount1 < "5001") {
@@ -76,7 +83,7 @@ if (isset($_POST['btnsubmit'])) {
                 $gebyr_id = '1';
             }
 		}
-        
+        /*stiftelsesgebyret sættes/hentes ud fra variablen defineret lige ovenfor*/
         $qstif = "SELECT * FROM stiftelsesgebyr WHERE gebyr_id = '$gebyr_id'";
         $rstif = mysqli_query($con, $qstif); 
         if (!$rstif) die (mysqli_error($con));
@@ -85,12 +92,12 @@ if (isset($_POST['btnsubmit'])) {
 				$gebyrberegn = $rowstif['gebyr'];
 			}
     }}
-			//I am assumming that the selected interest rate is simple, per year and based on the borrowed amount. If you need complex interest rate calculation then you need to revise the formula.
+	/*Her foretages en beregning med 2 decimaler for mnd-afdrag. renten tilskives kun 1 gang årligt*/
 	$maanedligafdrag = (($amount)*(1+($interest/100))/($length))+($gebyrberegn/$length);
 	$maanedlig_afdrag = number_format(round($maanedligafdrag, 2), 2);
    
     $time = date("Y-m-d H:i:s");
-	
+	/*Her defineres hvilke variable der skal sættes ind i hvilke rows i kontrakttablet, når vi opretter kontrakten */
 	$qkontrakt = "INSERT INTO kontrakt(oprettetaf, laangiver_user_id, laantager_user_id, kontraktbrud_id, rente_id, beloeb_id, bindingsperiode_id, maanedlig_afdrag, laangiver_underskrift_id, laantager_underskrift_id, gebyr_id, reg) VALUES('$laantager_user_id','$laangiver_user_id', '$laantager_user_id', '$kontraktbrud_id', '$rente_id', '$beloeb_id', '$bindingsperiode_id', '$maanedlig_afdrag', '1', '1', '$gebyr_id', '$time')";
 			$rkontrakt = mysqli_query($con, $qkontrakt);
 			if (!$rkontrakt) die(mysqli_error($con));
@@ -105,6 +112,7 @@ if (isset($_POST['btnsubmit'])) {
 }
 	
 ?>
+<!-- Her starter frontend koden -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <div class="jumbotron text-center wasoverskrift">
     <h1>Opret lån</h1>

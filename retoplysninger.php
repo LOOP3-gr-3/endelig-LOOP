@@ -10,13 +10,13 @@ if (!isset($_SESSION['user_id'])) {
     }
 $user_id = $_SESSION['user_id'];
 
-
+/*når knappen btnsubmit trykkes, tjekkes om der er input, og det ligges i variable*/
 if(isset($_POST['btnupdate'])) {
     if(isset($_POST['fornavn']) && isset($_POST['efternavn']) && isset($_POST['mobil'])) {
     $fornavnRet = get_post($con, 'fornavn');
     $efternavnRet = get_post($con, 'efternavn');
     $mobilRet = get_post($con, 'mobil');
-    
+/*Her smides variablene ind i databasen*/    
     $query1 = "UPDATE users 
     SET fornavn = '$fornavnRet', 
     efternavn = '$efternavnRet', 
@@ -34,7 +34,7 @@ if(isset($_POST['btnupdate'])) {
         die();
     }
 }}         
-
+/*Her hentes variablene der i forvejen er i databasen, så de kan displayes frontend*/
 $hent = "SELECT * FROM users WHERE user_id = '$user_id'";
 $resulthent = mysqli_query($con, $hent);
 $row1 = mysqli_num_rows($resulthent);
@@ -44,6 +44,7 @@ $row1 = mysqli_num_rows($resulthent);
         $mobilFyldInd = $row1["mobil"]; 
 
 ?>
+<!--Her starter frontend koden-->
 <div class="text-center">
 <h1><strong>Log ind</strong></h1>
 </div>

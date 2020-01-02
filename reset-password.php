@@ -2,14 +2,15 @@
 $page = ('Nulstil password');
 require_once('includes/header.php');
 if(!isset($_SESSION)){session_start();}
+/*Her tjekkes det at vaiablene der er sendt over mail er hentet*/
 if (!isset($_GET['email']) && !isset($_GET['key'])) {
   echo "<script>alert('Du har ikke adgang til denne side');
   window.location.href='index.php';</script>";
 }
+/*Her hentes de bruger oplysninger der passer til variablene, og sikres at det er den rigetige brugeer der får resettet sit password*/
 if (isset($_GET['email']) && isset($_GET['key'])) {
   $email = mysqli_real_escape_string($con,$_GET['email']);
   $key = $_GET['key'];
-  //echo "<p>" . $email . "</p>";
   $query = "SELECT * FROM password_reset_temp NATURAL JOIN users WHERE mail = '$email' AND accesskey = '$key'";
   $result = mysqli_query($con, $query);
   if (!$result) die(mysqli_error($con));
@@ -22,7 +23,7 @@ if (isset($_GET['email']) && isset($_GET['key'])) {
   }
 }
 ?>
-
+<!--Her starter frontend til siden-->
 	<main class="text-center">
 		<div class="container">
           <form method="post" action="resetpassword.php?mail=<?php echo $email;?>">
